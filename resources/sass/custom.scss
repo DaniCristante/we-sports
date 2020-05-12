@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+$primary: #3d5a80;
+$secondary: #ee6c4d;
+$info: #98c1d9;
+$light: #eff7f7;
+$dark: #293241;
+$warning: #f4cc84;
+$success: #229422;
+$danger: #ed6f6f;
+
+* {
+    font-family: Roboto;
+    font-size: medium;
+}
+
+h1 {
+    font-weight: 900 bolder;
+    color: $primary;
+    letter-spacing: 0.2em;
+}
+
+h2 {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: $secondary;
+}
+
+p{
+    font-weight: 400;
+}
+i {
+    font-weight: 300 lighter;
+}
+
+// Custom form
+
+.form {
+
+    border: 2px $primary solid;
+    border-radius: 0.5em;
+
+    background-color: white;
+  
+
+    .form-title {
+        text-align: center;
+        font-weight: bold;
+         background-color: $primary;
+        padding: 10px;
+    }
+
+  
+
+}
+
