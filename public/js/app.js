@@ -37326,8 +37326,6 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./main */ "./resources/js/main.js");
-
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 /***/ }),
@@ -37374,32 +37372,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/main.js":
-/*!******************************!*\
-  !*** ./resources/js/main.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  var registerPanel = $('#registerPanel');
-  var loginPanel = $('#loginPanel');
-  var loginBtn = $('#loginBtn');
-  var registerBtn = $('#registerBtn'); //Al cargar la pagina ocultar el panel de registro
-
-  registerPanel.hide();
-  registerBtn.click(function () {
-    loginPanel.hide();
-    registerPanel.show();
-  });
-  loginBtn.click(function () {
-    registerPanel.hide();
-    loginPanel.show();
-  });
-});
 
 /***/ }),
 
