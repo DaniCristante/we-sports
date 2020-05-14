@@ -17,16 +17,16 @@
 </head>
 <body>
 
-<div class="container">
+
+<x-header></x-header>
+
+<main>
+    @yield('content')
+</main>
 
 
+<x-footer></x-footer>
 
-
-
-    <main class="py-4">
-        @yield('content')
-    </main>
-</div>
 
 </body>
 </html>

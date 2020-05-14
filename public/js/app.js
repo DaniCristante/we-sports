@@ -37328,6 +37328,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./login */ "./resources/js/login.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37372,6 +37374,21 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/login.js":
+/*!*******************************!*\
+  !*** ./resources/js/login.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#exampleModal').click(function () {
+    console.log('clis');
+  });
+});
 
 /***/ }),
 

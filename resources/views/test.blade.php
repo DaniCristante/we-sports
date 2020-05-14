@@ -9,10 +9,7 @@
 
         <h2>Subtitle</h2> <br>
 
-
-        {{--        Login Component--}}
-
-        <x-login></x-login>
-
+        <i class="fab fa-laravel"></i>
+        <i class="fas fa-*"> </i>
     </div>
 @endsection
