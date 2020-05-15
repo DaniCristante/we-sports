@@ -10,12 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
-
-    {{-- Bootstrap Style --}}
-
-    {{-- <link rel="stylesheet" href=" {{asset('bootstrap/css/bootstrap.min.css')}} "> --}}
-
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{--    Styles--}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -75,5 +71,6 @@
             @yield('content')
         </main>
     </div>
+    @include('components.footer')
 </body>
 </html>
