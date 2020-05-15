@@ -52,7 +52,7 @@ class LoginController extends Controller
         $this->validateLogin($request);
 
         if ($this->attemptLogin($request)) {
-            $response = Http::post('http://52.91.0.226:8000/api/auth/login', [
+            $response = Http::post('http://52.91.0.226:8000/api/login', [
                 'email' => $request->input('email'),
                 'password' => $request->input('password')
             ]);
