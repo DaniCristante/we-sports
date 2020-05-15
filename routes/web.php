@@ -22,5 +22,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-Route::view('/entry', 'user.entry');
+Route::get('/welcome', )
+Route::view('/welcome', 'user.login-register');

@@ -29,12 +29,12 @@ p {
 }
 
 i {
-  font-weight: 300 lighter;
+  font-weight: 300;
 }
 
 .form {
-  border: 2px #3d5a80 solid;
-  border-radius: 0.5em;
+  border: 1px #3d5a80 solid;
+  border-radius: 2px;
   background-color: white;
 }
 

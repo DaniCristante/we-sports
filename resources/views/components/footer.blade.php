@@ -3,8 +3,8 @@
         <div class="col-12 bg-dark p-2">
 
             <div class="row justify-content-center text-white align-items-center p-2 mt-3">
-                <div class="col-4">
-                    <ul>
+                <div class="col-12 col-md-6 text-center px-2">
+                    <ul class="list-unstyled">
                         <li>
                             <a href="" class="btn text-white">Link1</a>
                         </li>
@@ -20,7 +20,7 @@
 
                     </ul>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6 p-4">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nobis sunt? Accusamus
                         cupiditate debitis dolorum, earum id illo incidunt maiores nemo nobis odit quasi, reprehenderit
@@ -32,7 +32,7 @@
                             <div>
                                 <input type="email" class="form-control" placeholder="email">
                             </div>
-                            <div >
+                            <div>
                                 <input type="submit" name="" id="" class="btn btn-outline-info my-2 text-center"
                                        value="Suscribe">
 
