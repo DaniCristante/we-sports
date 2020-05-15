@@ -42,17 +42,12 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function showWelcome()
-    {
-        return view('user.login-register');
-    }
-
     public function login(Request $request)
     {
         $this->validateLogin($request);
 
         if ($this->attemptLogin($request)) {
-            $response = Http::post('http://52.91.0.226:8000/api/login', [
+            $response = Http::post(env('API_ENDPOINT').'api/login', [
                 'email' => $request->input('email'),
                 'password' => $request->input('password')
             ]);
