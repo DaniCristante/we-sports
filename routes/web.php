@@ -23,4 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/welcome', 'LoginController@showWelcome');
-Route::view('/welcome', 'user.login-register');
+Route::get('/welcome', 'Auth\LoginController@showWelcome');
+Route::post('callapi-login', 'Auth\LoginController@callApiLogin');
+
+
