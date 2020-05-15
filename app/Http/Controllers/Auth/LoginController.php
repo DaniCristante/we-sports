@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Http;
 
 class LoginController extends Controller
 {
-    protected const BASE_URL = 'http://52.91.0.226:8000';
     /*
     |--------------------------------------------------------------------------
     | Login Controller
