@@ -19,14 +19,11 @@
 
 
 <x-header></x-header>
-
-<main>
+<div class="container-fluid mt-2">
     @yield('content')
-</main>
 
-
+</div>
 <x-footer></x-footer>
-
 
 @yield('scripts')
 
