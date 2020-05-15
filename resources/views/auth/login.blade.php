@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         {{--        LOGIN PANEL--}}
         <div class="col-12 col-xs-7 col-md-6 " id="loginPanel">
-            <form action="{{url('callapi-login')}}" class="form-group form p-4" method="POST">
+            <form action="{{route('login')}}" class="form-group form p-4" method="POST">
                 @csrf
                 <div class="row align-items-center justify-content-between form-title mb-2 ">
                     <h4>

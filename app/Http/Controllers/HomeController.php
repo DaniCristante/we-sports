@@ -24,4 +24,11 @@ class HomeController extends Controller
     {
         return view('homepage');
     }
+
+    public function test(Request $request){
+        $token = $request->session()->get('api-key');
+        return view('test', [
+            'apiKey' => $token
+        ]);
+    }
 }

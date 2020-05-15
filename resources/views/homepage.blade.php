@@ -7,5 +7,6 @@
 
         <i class="fab fa-laravel"></i>
         <i class="fas fa-*"> </i>
+        <a href="{{url('test')}}">test</a>
     </div>
 @endsection

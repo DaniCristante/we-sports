@@ -17,6 +17,8 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::post('callapi-login', 'Auth\LoginController@callApiLogin');
+Route::get('test', 'HomeController@test');
+
+//Route::post('callapi-login', 'Auth\LoginController@callApiLogin');
 
 
