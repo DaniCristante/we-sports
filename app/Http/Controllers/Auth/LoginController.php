@@ -69,17 +69,4 @@ class LoginController extends Controller
 
         return $this->sendFailedLoginResponse($request);
     }
-//    public function callApiLogin(Request $request)
-//    {
-//        $response = Http::post(self::BASE_URL.'/api/auth/login', [
-//            'email' => $request->input('email'),
-//            'password' => $request->input('password')
-//        ]);
-//        if ($response) {
-//            $token = $response->json();
-//            $token = $token["access_token"];
-//
-//            return redirect()->action(Auth::routes(), [$request]);
-//        }
-//    }
 }
