@@ -48,6 +48,27 @@ class LoginController extends Controller
         return view('user.login-register');
     }
 
+    public function login(Request $request)
+    {
+        $this->validateLogin($request);
+
+        if ($this->attemptLogin($request)) {
+            $response = Http::post('http://52.91.0.226:8000/api/auth/login', [
+                'email' => $request->input('email'),
+                'password' => $request->input('password')
+            ]);
+            if ($response) {
+                $token = $response->json();
+                $token = $token["access_token"];
+                $request->session()->put('api-key', $token);
+            }
+            return $this->sendLoginResponse($request);
+        }
+
+        $this->incrementLoginAttempts($request);
+
+        return $this->sendFailedLoginResponse($request);
+    }
 //    public function callApiLogin(Request $request)
 //    {
 //        $response = Http::post(self::BASE_URL.'/api/auth/login', [
