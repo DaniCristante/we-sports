@@ -10,7 +10,7 @@
     </div>
     <div class="col-4 col-md-6 text-right">
 
-        <a class="btn btn-outline-light" href="http://localhost/weSports/we-sports/public/welcome">Iniciar sesión</a>
+        <a class="btn btn-outline-light" href="{{url('welcome')}}">Iniciar sesión</a>
 
     </div>
 
