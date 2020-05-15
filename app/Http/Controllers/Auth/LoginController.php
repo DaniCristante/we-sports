@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class LoginController extends Controller
@@ -46,15 +48,17 @@ class LoginController extends Controller
         return view('user.login-register');
     }
 
-    public function callApiLogin(Request $request)
-    {
-        $response = Http::post(self::BASE_URL.'/api/auth/login', [
-            'email' => $request->input('email'),
-            'password' => $request->input('password')
-        ]);
-        if ($response) {
-            $token = $response->json();
-            dump($token);
-        }
-    }
+//    public function callApiLogin(Request $request)
+//    {
+//        $response = Http::post(self::BASE_URL.'/api/auth/login', [
+//            'email' => $request->input('email'),
+//            'password' => $request->input('password')
+//        ]);
+//        if ($response) {
+//            $token = $response->json();
+//            $token = $token["access_token"];
+//
+//            return redirect()->action(Auth::routes(), [$request]);
+//        }
+//    }
 }

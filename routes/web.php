@@ -13,16 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('test');
-    return view('test');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('test', 'HomeController@test');
 
-Route::get('/welcome', 'Auth\LoginController@showWelcome');
-Route::post('callapi-login', 'Auth\LoginController@callApiLogin');
+//Route::post('callapi-login', 'Auth\LoginController@callApiLogin');
 
 

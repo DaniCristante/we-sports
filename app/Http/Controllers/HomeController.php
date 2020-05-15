@@ -13,7 +13,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -23,6 +22,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('homepage');
+    }
+
+    public function test(Request $request){
+        $token = $request->session()->get('api-key');
+        return view('test', [
+            'apiKey' => $token
+        ]);
     }
 }
