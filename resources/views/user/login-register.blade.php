@@ -81,7 +81,8 @@
                             <input type="password" placeholder="Contraseña" name="password" class="form-control my-1">
                         </div>
                         <div class="col-12 col-md-6">
-                            <input type="password" placeholder="Confirma la contraseña" name="passwordConfm" class="form-control my-1">
+                            <input type="password" placeholder="Confirma la contraseña" name="passwordConfm"
+                                   class="form-control my-1">
                         </div>
 
                     </div>
