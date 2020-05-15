@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class LoginController extends Controller
 {
+    protected const BASE_URL = 'http://52.91.0.226:8000';
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -41,5 +44,16 @@ class LoginController extends Controller
     public function showWelcome()
     {
         return view('user.login-register');
+    }
+
+    public function callApiLogin(Request $request)
+    {
+        $response = Http::post(self::BASE_URL.'/api/auth/login', [
+            'email' => 'admin@admin.com',
+            'password' => 'admin1234'
+        ]);
+        if ($response) {
+            dump($response);die();
+        }
     }
 }

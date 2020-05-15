@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         {{--        LOGIN PANEL--}}
         <div class="col-12 col-xs-7 col-md-6 " id="loginPanel">
-            <form action="" class="form-group form p-4">
+            <form action="{{url('callapi-login')}}" class="form-group form p-4" method="POST">
+                @csrf
                 <div class="row align-items-center justify-content-between form-title mb-2 ">
                     <h4>
                         Login
@@ -14,15 +15,12 @@
                          class="float-left border rounded-lg border-secondary" width="40" height="40">
                 </div>
                 <input
-                    type="text"
-                    placeholder="Write your name"
-                    class="form-control my-1"
-                />
-                <input
                     type="email"
                     placeholder="Write your email"
                     class="form-control my-1"
+                    name="email"
                 />
+                <input type="password" name="password" class="form-control my-1" placeholder="password">
                 <br/>
                 <div class="text-center">
                     <input
