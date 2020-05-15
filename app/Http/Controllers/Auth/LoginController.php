@@ -49,11 +49,12 @@ class LoginController extends Controller
     public function callApiLogin(Request $request)
     {
         $response = Http::post(self::BASE_URL.'/api/auth/login', [
-            'email' => 'admin@admin.com',
-            'password' => 'admin1234'
+            'email' => $request->input('email'),
+            'password' => $request->input('password')
         ]);
         if ($response) {
-            dump($response);die();
+            $token = $response->json();
+            dump($token);
         }
     }
 }
