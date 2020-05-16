@@ -55,12 +55,12 @@ i {
 
 }
 
-.form-control, .uneditable-input:focus{
+.form-control, .uneditable-input:focus {
     background-color: white !important;
     border: solid 1px $secondary !important;
 }
 
-.input-group-prepend{
+.input-group-prepend {
     border: solid 1px $secondary !important;
     border-radius: 2px;
 }
@@ -69,3 +69,24 @@ i {
 .modal-backdrop {
     z-index: 1040 !important;
 }
+
+.card {
+    -webkit-box-shadow: 0 8px 6px -6px $secondary;
+    -moz-box-shadow: 0 8px 6px -6px $secondary;
+    box-shadow: 4px 4px 2px -2px $primary;
+
+    &:hover {
+        -moz-box-shadow: 0 0 15px $secondary;
+        -webkit-box-shadow: 0 0 15px $secondary;
+        box-shadow: 0 0 15px $secondary;
+
+        //No funciona mask
+        //-webkit-mask-size: 120% 120%;
+        //mask-size: 120% 120%;
+        //-webkit-animation: mask-play 1s steps(20) forwards;
+        //animation: mask-play 1s steps(20) forwards;
+
+    }
+}
+
+

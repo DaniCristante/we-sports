@@ -22,9 +22,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $events = $this->callHandler->unauthorizedGetMethodHandler('/sports');
+        $events = $this->callHandler->unauthorizedGetMethodHandler('/events');
+
+        $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
         return view('homepage', [
-            'sports' => $events
+            'sports' => $sports,
+            'events' => $events
         ]);
     }
 
