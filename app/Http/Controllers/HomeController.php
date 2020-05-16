@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\ApiHandlers\CallHandler;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\Cast\Object_;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    private $callHandler;
+
+    public function __construct(CallHandler $callHandler)
     {
+        $this->callHandler = $callHandler;
     }
 
     /**
@@ -23,7 +22,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('homepage');
+        $events = $this->callHandler->unauthorizedGetMethodHandler('/sports');
+        return view('homepage', [
+            'events' => $events
+        ]);
     }
 
     public function test(Request $request)

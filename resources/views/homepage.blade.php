@@ -6,7 +6,9 @@
                 NO BORRAR PORFA
 -->
 <a href="{{url('test')}}">VER TOKEN</a>
-
+@foreach($events as $event)
+    <p>{{$event['name']}}</p><br>
+@endforeach
 @endsection
 
 @section('scripts')
