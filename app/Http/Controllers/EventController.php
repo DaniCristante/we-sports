@@ -45,9 +45,8 @@ class EventController extends Controller
     public function eventList()
     {
         $events = $this->callHandler->unauthorizedGetMethodHandler('/events');
-        $firstTenEvents = array_slice($events, 0, 9);
         return view('wesports.events.event-list', [
-            'events' => $firstTenEvents
+            'events' => $events
         ]);
     }
 }

@@ -1,4 +1,4 @@
-
+<div class="col-12 col-xs-9  col-md-5 m-1">
     <div class="card p-2">
         <div class="row p-1 justify-content-around">
             <div class="col-12 col-xs-3 col-lg-4 text-center">
@@ -26,3 +26,4 @@
                 eventos</a>
         </div>
     </div>
+</div>
