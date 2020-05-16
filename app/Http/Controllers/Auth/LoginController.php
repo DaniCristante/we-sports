@@ -60,16 +60,4 @@ class LoginController extends Controller
 
         return $this->sendFailedLoginResponse($request);
     }
-
-    public function getApiTokenAndSaveToSession(Request $request)
-    {
-        $response = Http::post(env('API_ENDPOINT').'/api/login', [
-            'email' => $request->input('email'),
-            'password' => $request->input('password')
-        ]);
-        if ($response->status() === 200) {
-            $token = $response->json();
-            $request->session()->put('api-key', $token['access_token']);
-        }
-    }
 }
