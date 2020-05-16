@@ -2,7 +2,8 @@
 
     <div class="col-12  col-md-8 m-auto">
 
-        <form action="" class="form-group form p-4 ">
+        <form action="{{url('events/create')}}" class="form-group form p-4" method="POST">
+            @csrf
             <div class="row align-items-center justify-content-between form-title mb-2 ">
                 <h4>
                     Crear evento
@@ -41,7 +42,7 @@
 
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-7">
-                        <input type="text" name="adress" placeholder="Dirección" required class="form-control my-1">
+                        <input type="text" name="address" placeholder="Dirección" required class="form-control my-1">
                     </div>
                     <div class="col-12 col-md-5">
                         <input type="text" name="city" placeholder="Ciudad" required class="form-control my-1">
@@ -55,7 +56,7 @@
 
                     <div class="col-10 col-md-6 my-2 ">
                         <span>Imagen</span>
-                        <input type="file" name="image" class="form-control" required>
+                        <input type="file" name="img" class="form-control">
                     </div>
 
 
@@ -67,7 +68,7 @@
             <div class="text-center">
                 <input
                     type="submit"
-                    value="Registrarse"
+                    value="Crear evento"
                     class="btn btn-success p-2 my-2  w-50"
                 />
             </div>

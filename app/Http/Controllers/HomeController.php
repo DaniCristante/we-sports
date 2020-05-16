@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function test(Request $request)
     {
-        $token = $request->session()->get('api-key');
+        $token = $request->session()->get('api_token');
         return view('test', [
             'apiKey' => $token
         ]);

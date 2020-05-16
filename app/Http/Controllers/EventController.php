@@ -33,8 +33,9 @@ class EventController extends Controller
 
     public function storeEvent(Request $request)
     {
-
-        //test
+        $token = $request->session()->get('api_token');
+        $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $request->all());
+        dump($response->status());die();
         return response()->json([
             'event' => $request->all(),
             'status' => 'Evento se ha creado.'
