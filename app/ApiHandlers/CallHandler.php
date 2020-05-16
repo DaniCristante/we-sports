@@ -12,7 +12,7 @@ class CallHandler
 
     public function callLogin(Request $request)
     {
-        return Http::post(env('API_ENDPOINT') . '/api/login', [
+        return Http::post(self::API_ENDPOINT . '/api/login', [
             'email' => $request->input('email'),
             'password' => $request->input('password')
         ]);
