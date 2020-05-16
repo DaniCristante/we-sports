@@ -50,9 +50,7 @@
         </form>
         <div class="p-2 m-2 text-center">
             <h4> ¿Aún no tienes una cuenta?
-                <form action="{{url('register')}}">
-                    <input type="submit" class="btn btn-secondary" value="Regístrate">
-                </form>
+                <button class="btn btn-secondary" onclick="window.location.replace('/register')">Regístrate</button>
             </h4>
         </div>
     </div>

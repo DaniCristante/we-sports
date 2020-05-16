@@ -66,6 +66,15 @@ class CallHandler
      */
     public function unauthorizedGetMethodHandler(string $url)
     {
-        return Http::withHeaders(self::HEADERS)->get(self::API_ENDPOINT.$url)->json();
+        return Http::withHeaders(self::HEADERS)
+            ->get(self::API_ENDPOINT.$url)
+            ->json();
+    }
+
+    public function authorizedPostMethodHandler(string $url, string $token, $data)
+    {
+        return Http::withToken($token)
+            ->withHeaders(self::HEADERS)
+            ->post(self::API_ENDPOINT.$url, $data);
     }
 }

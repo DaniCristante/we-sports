@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\ApiHandlers\CallHandler;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -13,37 +15,36 @@ class EventController extends Controller
         $this->callHandler = $callHandler;
     }
 
-    /***  RETURN VIEW AND CREATE EVENT   */
+
+    public function eventsList(){
+        return view ('wesports.events.events-list');
+    }
+
+
     public function createEvent()
     {
-        //TODO des de la api necessitari un get con todas las categorias y sus id's
-        $response = $this->callHandler->unauthorizedGetMethodHandler('/sports');
-        $sports = [];
+        $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
 
-        foreach ($response as $sport){
-            array_push($sports, [
+        $list = [];
+
+        foreach ($sports as $sport){
+            array_push($list, [
                 'id' => $sport['id'],
                 'name' => $sport['name']
             ]);
         }
-
-        return view('wesports.events.create', array('sports' => $sports));
+        return view('wesports.events.create', array('sports' => $list));
     }
-
 
     public function storeEvent(Request $request)
     {
-
-        //test
-        return response()->json([
-            'event' => $request->all(),
-            'status' => 'Evento se ha creado.'
-        ]);
-
-        //TODO backend logic
-
+        //TODO WORK IN PROGRESS
+        $token = $request->session()->get('api_token');
+        $eventData = $request->all();
+        unset($eventData['_token']);
+        $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
+        $eventData['img'] = '/test/test';
+        $response = $this->callHandler->authorizedPostMethodHandler('/events', 'fasdffasdfaf', $eventData);
+        dump($response);die();
     }
-
-
-    /*** END OF  RETURN VIEW AND CREATE EVENT   */
 }
