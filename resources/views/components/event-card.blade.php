@@ -7,8 +7,9 @@
             </div>
             <div class="col-12 col-xs-8 col-lg-7 ">
                 <div class="card-title"><h4>{{$event['title']}}</h4>
-                    <span class="fas fa-id-card"> by Nombre Autor</span>
+                    <span class="fas fa-id-card"> by {{$event['creator_id']}}</span>
                 </div>
+                <span class="fas fa-bicycle">{{$event['sport_id']}}</span><br>
                 <span class="fas fa-users"> {{$event['current_participants']}} / {{$event['max_participants']}} (progress bar) </span>
                 <span class="fas fa-users"> {{$event['datetime']}} </span>
             </div>
