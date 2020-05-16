@@ -15,12 +15,6 @@ class EventController extends Controller
         $this->callHandler = $callHandler;
     }
 
-
-    public function eventsList(){
-        return view ('wesports.events.events-list');
-    }
-
-
     public function createEvent()
     {
         $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
@@ -46,5 +40,14 @@ class EventController extends Controller
         $eventData['img'] = '/test/test';
         $response = $this->callHandler->authorizedPostMethodHandler('/events', 'fasdffasdfaf', $eventData);
         dump($response);die();
+    }
+
+    public function eventList()
+    {
+        $events = $this->callHandler->unauthorizedGetMethodHandler('/events');
+        $firstTenEvents = array_slice($events, 0, 9);
+        return view('wesports.events.event-list', [
+            'events' => $firstTenEvents
+        ]);
     }
 }
