@@ -3,7 +3,8 @@
 @section('content')
 <div class="row justify-content-center">
     <div id="registerPanel" class="col-12 col-xs-7 col-md-6">
-        <form action="" class="form-group form text-center p-4">
+        <form action="{{route('register')}}" class="form-group form text-center p-4" method="POST">
+            @csrf
             <div class="row align-items-center justify-content-between form-title mb-2 ">
                 <h4>
                     Crear cuenta
@@ -55,7 +56,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <input type="password" placeholder="Confirma la contraseña" name="password_confirmation"
-                               class="form-control my-1">
+                               class="form-control my-1" required>
                     </div>
                 </div>
             </div>
