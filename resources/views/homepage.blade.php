@@ -9,8 +9,8 @@
 <div class="">
     <h4>Deportes:</h4>
     <ul>
-        @foreach($events as $event)
-            <li>{{$event['name']}}</li>
+        @foreach($sports as $sport)
+            <li>{{$sport['name']}}</li>
         @endforeach
     </ul>
 </div>
