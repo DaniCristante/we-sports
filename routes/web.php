@@ -22,8 +22,8 @@ Route::get('test', 'HomeController@test');
 
 /**  <TEST FRONT END>     */
 
-Route::get('/events/create', 'HomeController@createEvent');
-Route::post('/events/create', 'HomeController@storeEvent')->name('events.store');
+Route::get('/events/create', 'EventController@createEvent');
+Route::post('/events/create', 'Eventcontroller@storeEvent')->name('events.store');
 
 
 

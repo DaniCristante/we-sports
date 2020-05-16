@@ -22,12 +22,12 @@
 
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-8">
-                        <span>Selecciona una categoria</span>
+                        <span>Selecciona un deporte</span>
                         <select name="sport_id" class="form-control" required>
-                            <option value="not_selected">Lista de categorias</option>
-                            @foreach($categorias as $categoria)
-                                <option value="{{$categoria['id']}}"
-                                        class="form-control">{{$categoria['name']}}</option>
+                            <option selected disabled hidden>Lista de deportes</option>
+                            @foreach($sports as $sport)
+                                <option value="{{$sport['id']}}"
+                                        class="form-control">{{$sport['name']}}</option>
                             @endforeach
                         </select>
                     </div>

@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\ApiHandlers\CallHandler;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\Cast\Object_;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    private $callHandler;
+
+    public function __construct(CallHandler $callHandler)
     {
+        $this->callHandler = $callHandler;
     }
 
     /**
@@ -23,7 +22,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('homepage');
+        $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
+        return view('homepage', [
+            'sports' => $sports
+        ]);
     }
 
     public function test(Request $request)
@@ -33,45 +35,4 @@ class HomeController extends Controller
             'apiKey' => $token
         ]);
     }
-
-
-    /***  RETURN VIEW AND CREATE EVENT   */
-    public function createEvent()
-    {
-
-        //TODO des de la api necessitari un get con todas las categorias y sus id's
-
-        //Test
-        $dep1 = [
-            'id' => 1,
-            'name' => 'Fútbol'
-        ];
-        $dep2 = [
-            'id' => 2,
-            'name' => 'Natación'
-        ];
-        $categorias = array($dep1, $dep2);
-
-
-        return view('wesports.events.create', array('categorias' => $categorias));
-    }
-
-
-    public function storeEvent(Request $request)
-    {
-
-        //test
-        return response()->json([
-            'event' => $request->all(),
-            'status' => 'Evento se ha creado.'
-        ]);
-
-        //TODO backend logic
-
-    }
-
-
-    /*** END OF  RETURN VIEW AND CREATE EVENT   */
-
-
 }

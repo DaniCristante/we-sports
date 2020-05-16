@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\ApiHandlers\CallHandler;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class LoginController extends Controller
@@ -32,14 +31,17 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    private $apiHandler;
+
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param CallHandler $callHandler
      */
-    public function __construct()
+    public function __construct(CallHandler $callHandler)
     {
         $this->middleware('guest')->except('logout');
+        $this->apiHandler = $callHandler;
     }
 
     public function login(Request $request)
@@ -47,24 +49,15 @@ class LoginController extends Controller
         $this->validateLogin($request);
 
         if ($this->attemptLogin($request)) {
-            $this->getApiTokenAndSaveToSession($request);
+            $token = $this->apiHandler->getToken($request);
+            if ($token){
+                $request->session()->put('api_token', $token);
+            }
             return $this->sendLoginResponse($request);
         }
 
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
-    }
-
-    public function getApiTokenAndSaveToSession(Request $request)
-    {
-        $response = Http::post(env('API_ENDPOINT').'/api/login', [
-            'email' => $request->input('email'),
-            'password' => $request->input('password')
-        ]);
-        if ($response->status() === 200) {
-            $token = $response->json();
-            $request->session()->put('api-key', $token['access_token']);
-        }
     }
 }

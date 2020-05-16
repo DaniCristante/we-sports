@@ -5,7 +5,15 @@
     TEST PARA VER SI TENEMOS EL TOKEN ASIGNADO
                 NO BORRAR PORFA
 -->
-<a href="{{url('test')}}">VER TOKEN</a>
+<a href="{{url('test')}}">TEST PARA VER TOKEN</a>
+<div class="">
+    <h4>Deportes:</h4>
+    <ul>
+        @foreach($sports as $sport)
+            <li>{{$sport['name']}}</li>
+        @endforeach
+    </ul>
+</div>
 
 @endsection
 
