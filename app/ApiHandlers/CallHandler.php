@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 /**
- * Clase para englobar todas las llamadas a la API
- * y que no se repita la lógica en los controladores.
- * Tiene clases para los distintos metodos GET, POST, etc. Así como
- * también para aquellas url que requieran de AUTH o no.
+ * Clase para englobar todas las llamadas a la API y que no se repita la lógica en los controladores.
+ * Tiene clases para los distintos metodos GET, POST, etc. Así como también para aquellas url que requieran
+ * de AUTH o no.
  * Class CallHandler
  * @package App\ApiHandlers
  */
