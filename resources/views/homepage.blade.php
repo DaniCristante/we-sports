@@ -17,6 +17,23 @@
     </ul>
 </div>
 
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+
+            <div id="eventsField" class="row justify-content-center"></div>
+
+        </div>
+        <div class="col-12 text-center">
+            <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{route('events.all')}}">Ver mas
+                eventos</a>
+        </div>
+    </div>
+</div>
+
+    
+
 @endsection
 
 @section('scripts')

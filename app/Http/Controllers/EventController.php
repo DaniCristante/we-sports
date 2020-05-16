@@ -14,6 +14,12 @@ class EventController extends Controller
         $this->callHandler = $callHandler;
     }
 
+
+    public function eventsList(){
+        return view ('wesports.events.events-list');
+    }
+
+
     public function createEvent()
     {
         $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
