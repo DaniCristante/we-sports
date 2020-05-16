@@ -71,9 +71,7 @@
         <hr>
         <div class="p-2 m-2 text-center">
             <h4> ¿Ya tienes una cuenta?
-                <form action="{{url('login')}}">
-                    <input type="submit" class="btn btn-secondary" value="Inicia Sesión">
-                </form>
+                <button class="btn btn-secondary" onclick="window.location.replace('/login')">Inicia sesión</button>
             </h4>
         </div>
     </div>

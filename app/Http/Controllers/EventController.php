@@ -41,8 +41,10 @@ class EventController extends Controller
         //TODO WORK IN PROGRESS
         $token = $request->session()->get('api_token');
         $eventData = $request->all();
+        unset($eventData['_token']);
         $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
-        $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $request->all());
-        dump($response->status());die();
+        $eventData['img'] = '/test/test';
+        $response = $this->callHandler->authorizedPostMethodHandler('/events', 'fasdffasdfaf', $eventData);
+        dump($response);die();
     }
 }
