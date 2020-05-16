@@ -26,13 +26,13 @@
 
         </div>
         <div class="col-12 text-center">
-            <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{route('events.all')}}">Ver mas
+            <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="">Ver mas
                 eventos</a>
         </div>
     </div>
 </div>
 
-    
+
 
 @endsection
 
