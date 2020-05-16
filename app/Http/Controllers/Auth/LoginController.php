@@ -47,7 +47,7 @@ class LoginController extends Controller
         $this->validateLogin($request);
 
         if ($this->attemptLogin($request)) {
-            $response = Http::post(env('API_ENDPOINT').'api/login', [
+            $response = Http::post(env('API_ENDPOINT').'/api/login', [
                 'email' => $request->input('email'),
                 'password' => $request->input('password')
             ]);
