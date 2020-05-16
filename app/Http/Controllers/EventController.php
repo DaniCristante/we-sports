@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ApiHandlers\CallHandler;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -33,6 +34,9 @@ class EventController extends Controller
     {
         //TODO WORK IN PROGRESS
         $token = $request->session()->get('api_token');
+        $eventData = $request->all();
+        $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
         $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $request->all());
+        dump($response->status());die();
     }
 }
