@@ -46,7 +46,6 @@ i {
     border-radius: 2px;
     background-color: white;
 
-
     .form-title {
         text-align: center;
         font-weight: bold;
@@ -54,8 +53,18 @@ i {
         padding: 10px;
     }
 
-
 }
+
+.form-control, .uneditable-input:focus{
+    background-color: white !important;
+    border: solid 1px $secondary !important;
+}
+
+.input-group-prepend{
+    border: solid 1px $secondary !important;
+    border-radius: 2px;
+}
+
 
 .modal-backdrop {
     z-index: 1040 !important;

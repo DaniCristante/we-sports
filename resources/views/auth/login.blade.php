@@ -6,6 +6,8 @@
         <div class="col-12 col-xs-7 col-md-6 " id="loginPanel">
             <form action="{{route('login')}}" class="form-group form p-4" method="POST">
                 @csrf
+
+
                 <div class="row align-items-center justify-content-between form-title mb-2 ">
                     <h4>
                         Login
@@ -13,22 +15,40 @@
                     <img src="{{asset('images/favicon.png')}}" alt="WeSports"
                          class="float-left border rounded-lg border-secondary" width="40" height="40">
                 </div>
-                <input type="email"
-                       placeholder="Write your email"
-                       class="form-control my-1"
-                       name="email"/>
-                <input type="password" name="password" class="form-control my-1" placeholder="password">
+
+
+                <div class="input-group my-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-secondary">
+                            <i class="fas fa-at fa text-white"></i>
+                        </span>
+                    </div>
+                    <input type="email" name="email" class="form-control py-4" required
+                           placeholder="Correo electrónico">
+                </div>
+
+
+                <div class="input-group my-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-secondary">
+                            <i class="fas fa-key text-white"></i>
+                        </span>
+                    </div>
+                    <input type="password" name="password" class="form-control py-4" required placeholder="Contraseña">
+                </div>
+
+
                 <br/>
+
                 <div class="text-center">
                     <input
                         type="submit"
                         value="Iniciar sesión"
-                        class="btn btn-success py-1  w-50"
+                        class="btn btn-success p-2  w-50"
                     />
                 </div>
             </form>
             <div class="p-2 m-2 text-center">
-
                 <h4> ¿Aún no tienes una cuenta?
                     <button id="registerBtn" class="btn btn-secondary"> Regístrate</button>
                 </h4>

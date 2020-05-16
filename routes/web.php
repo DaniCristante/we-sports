@@ -19,3 +19,13 @@ Auth::routes();
 
 Route::get('test', 'HomeController@test');
 
+
+/**  <TEST FRONT END>     */
+
+Route::get('/events/create', 'HomeController@createEvent');
+Route::post('/events/create', 'HomeController@storeEvent')->name('events.store');
+
+
+
+
+/**  </TEST FRONT END>     */
