@@ -6121,6 +6121,14 @@ i {
   z-index: 1040 !important;
 }
 
+.card {
+  box-shadow: 4px 4px 2px -2px #3d5a80;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px #ee6c4d;
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
