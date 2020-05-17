@@ -1,7 +1,5 @@
 <div>
     @foreach($events as $event)
-
-
         <div class="container-fluid">
             <div id="eventsField" class="row justify-content-center">
                 @foreach($events as $event)
@@ -37,7 +35,6 @@
                         </div>
 
                     </div>
-
                 @endforeach
             </div>
 
