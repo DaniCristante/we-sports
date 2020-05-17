@@ -44,12 +44,10 @@ class EventController extends Controller
 
     public function eventList()
     {
-        $events = $this->callHandler->unauthorizedGetMethodHandler('/events');
-        return view('wesports.events.event-list', [
+        $events = $this->callHandler->unauthorizedGetMethodHandler('/events/joined');
+        return view('wesports.events.events-page', [
             'events' => $events
         ]);
     }
-
-
 
 }
