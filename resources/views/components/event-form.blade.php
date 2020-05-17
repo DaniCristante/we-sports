@@ -54,10 +54,10 @@
                         <input type="datetime-local" name="datetime" class="form-control" required>
                     </div>
 
-                    <div class="col-10 col-md-6 my-2 ">
-                        <span>Imagen</span>
-                        <input type="file" name="img" class="form-control">
-                    </div>
+{{--                    <div class="col-10 col-md-6 my-2 ">--}}
+{{--                        <span>Imagen</span>--}}
+{{--                        <input type="file" name="img" class="form-control">--}}
+{{--                    </div>--}}
 
 
                 </div>
