@@ -16,20 +16,15 @@
     <a href="{{url('test')}}">TEST PARA VER TOKEN</a>
     <br>
     <a href="{{url('events/create')}}">CREAR EVENTO</a>
-    <div class="">
-        <h4>Deportes:</h4>
-        <ul>
-            @foreach($sports as $sport)
-                <li>{{$sport['name']}}</li>
-            @endforeach
-        </ul>
+
+    <div id="page-title">
+        <h1 class="text-center">Eventos más destacados</h1>
     </div>
 
-    {{--    Renderizar todos los eventos --}}
-    <x-render-events :events="$events"/>
+    @include('wesports.events.event-list')
 
     <div class="col-12 text-center">
-        <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="">Ver mas
+        <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events/all')}}">Ver mas
             eventos</a>
     </div>
 
