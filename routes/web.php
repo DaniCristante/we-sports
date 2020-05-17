@@ -17,13 +17,13 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('test', 'HomeController@test');
+Route::get('test', 'HomeController@test')->middleware('auth');
 
 
 /**  <TEST FRONT END>     */
 
-Route::get('/events/create', 'EventController@createEvent');
-Route::post('/events/create', 'EventController@storeEvent')->name('events.store');
+Route::get('/events/create', 'EventController@createEvent')->middleware('auth');
+Route::post('/events/create', 'EventController@storeEvent')->name('events.store')->middleware('auth');
 Route::get('/events/all', 'EventController@eventList');
 
 
