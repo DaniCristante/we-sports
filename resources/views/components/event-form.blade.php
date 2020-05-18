@@ -2,7 +2,7 @@
 
     <div class="col-12  col-md-8 m-auto">
 
-        <form action="{{url('events/create')}}" class="form-group form p-4" method="POST">
+        <form action="{{url('events/create')}}" class="form-group form p-4" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row align-items-center justify-content-between form-title mb-2 ">
                 <h4>
@@ -59,10 +59,10 @@
                         <span>Fecha</span>
                         <input type="datetime-local" name="datetime" class="form-control" required>
                     </div>
-{{--                    <div class="col-10 col-md-6 my-2 ">--}}
-{{--                        <span>Imagen</span>--}}
-{{--                        <input type="file" name="img" class="form-control">--}}
-{{--                    </div>--}}
+                    <div class="col-10 col-md-6 my-2 ">
+                        <span>Imagen</span>
+                        <input type="file" name="img" class="form-control">
+                    </div>
                 </div>
             </div>
 

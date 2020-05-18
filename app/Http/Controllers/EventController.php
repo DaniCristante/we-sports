@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ApiHandlers\CallHandler;
+use App\ImageManager\ImageManager;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,9 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class EventController extends Controller
 {
     private $callHandler;
-    public function __construct(CallHandler $callHandler)
+    private $imageManager;
+
+    public function __construct(CallHandler $callHandler, ImageManager $imageManager)
     {
         $this->callHandler = $callHandler;
+        $this->imageManager = $imageManager;
     }
 
     public function createEvent()
@@ -32,14 +36,19 @@ class EventController extends Controller
 
     public function storeEvent(Request $request)
     {
-        //TODO WORK IN PROGRESS
-        $token = $request->session()->get('api_token');
-        $eventData = $request->all();
-        unset($eventData['_token']);
-        $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
-        $eventData['img'] = '/test/test';
-        $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
-        dump($response);
+        dump($request['img']);
+
+        $imageRoute = $this->imageManager->moveEventImage($request['img']);
+        if ($imageRoute !== null){
+            $token = $request->session()->get('api_token');
+            $eventData = $request->all();
+            $eventData['img'] = $imageRoute;
+            $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
+            unset($eventData['_token']);
+            $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
+            dump($response);
+        }
+
     }
 
     public function eventList()
@@ -49,5 +58,4 @@ class EventController extends Controller
             'events' => $events
         ]);
     }
-
 }
