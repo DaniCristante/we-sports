@@ -9,14 +9,14 @@ use Symfony\Component\HttpFoundation\File\File;
 
 class ImageManager
 {
-    private const ROOT_DIR = 'images/';
-    private const EVENT_DIR = 'events/';
-    private const USER_DIR = 'images/';
+    protected const ROOT_DIR = 'images/';
+    protected const EVENT_DIR = 'events/';
+    protected const USER_DIR = 'profile/';
 
     public function moveEventImage(UploadedFile $image)
     {
         $imageName = $this->parseFileName($image->getClientOriginalName());
-        if ($image->move(self::ROOT_DIR.self::EVENT_DIR, $imageName)){
+        if ($image->move(self::ROOT_DIR.self::EVENT_DIR, $image->getClientOriginalName())){
             return $this->getFileRoute($imageName);
         }
         return null;
