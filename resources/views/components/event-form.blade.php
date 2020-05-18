@@ -20,7 +20,14 @@
                         <input type="text" name="title" class="form-control" required>
                     </div>
                 </div>
-
+                <div class="row my-2 justify-content-center align-items-center">
+                    <div class="col-12 col-md-2">
+                        <span>Descripción </span>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <textarea name="description" class="form-control" required></textarea>
+                    </div>
+                </div>
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-8">
                         <span>Selecciona un deporte</span>
@@ -48,21 +55,15 @@
                         <input type="text" name="city" placeholder="Ciudad" required class="form-control my-1">
 
                     </div>
-
                     <div class="col-10 col-md-6 my-2 ">
                         <span>Fecha</span>
                         <input type="datetime-local" name="datetime" class="form-control" required>
                     </div>
-
 {{--                    <div class="col-10 col-md-6 my-2 ">--}}
 {{--                        <span>Imagen</span>--}}
 {{--                        <input type="file" name="img" class="form-control">--}}
 {{--                    </div>--}}
-
-
                 </div>
-
-
             </div>
 
             <div class="text-center">

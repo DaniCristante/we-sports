@@ -39,7 +39,7 @@ class EventController extends Controller
         $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
         $eventData['img'] = '/test/test';
         $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
-        dump($response);die();
+        dump($response);
     }
 
     public function eventList()
