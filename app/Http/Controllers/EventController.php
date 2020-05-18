@@ -37,18 +37,17 @@ class EventController extends Controller
     public function storeEvent(Request $request)
     {
         dump($request['img']);
-        $imageName = $this->imageManager->moveEventImage($request['img']);
-        if ($imageName !== null ){
+        $imagePath = $this->imageManager->moveEventImage($request['img']);
+        if ($imagePath !== null ){
             $token = $request->session()->get('api_token');
             $eventData = $request->all();
-            $eventData['img'] = $imageName;
+            $eventData['img'] = $imagePath;
             dump($eventData['img']);
             $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
             unset($eventData['_token']);
             $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
             dump($response);
         }
-
     }
 
     public function eventList()
