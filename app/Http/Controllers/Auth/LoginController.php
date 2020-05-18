@@ -55,6 +55,7 @@ class LoginController extends Controller
         if ($response) {
             $token = $response->json();
             dump($token);
+            $this->login($request);
         }
     }
 }
