@@ -22,8 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $events = $this->callHandler->unauthorizedGetMethodHandler('/events/joined');
-        $events = array_slice($events, 0, 9);
+        $events = $this->callHandler->unauthorizedGetMethodHandler('/events/highlighted');
         $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
         return view('homepage', [
             'sports' => $sports,
