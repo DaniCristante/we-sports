@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\ApiHandlers\CallHandler;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -10,7 +11,6 @@ use Illuminate\Support\Facades\Http;
 
 class LoginController extends Controller
 {
-    protected const BASE_URL = 'http://52.91.0.226:8000';
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -31,31 +31,33 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    private $apiHandler;
+
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param CallHandler $callHandler
      */
-    public function __construct()
+    public function __construct(CallHandler $callHandler)
     {
         $this->middleware('guest')->except('logout');
+        $this->apiHandler = $callHandler;
     }
 
-    public function showWelcome()
+    public function login(Request $request)
     {
-        return view('user.login-register');
-    }
+        $this->validateLogin($request);
 
-    public function callApiLogin(Request $request)
-    {
-        $response = Http::post(self::BASE_URL.'/api/auth/login', [
-            'email' => $request->input('email'),
-            'password' => $request->input('password')
-        ]);
-        if ($response) {
-            $token = $response->json();
-            dump($token);
-            $this->login($request);
+        if ($this->attemptLogin($request)) {
+            $token = $this->apiHandler->getToken($request);
+            if ($token) {
+                $request->session()->put('api_token', $token);
+            }
+            return $this->sendLoginResponse($request);
         }
+
+        $this->incrementLoginAttempts($request);
+
+        return $this->sendFailedLoginResponse($request);
     }
 }

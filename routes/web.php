@@ -17,6 +17,14 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::post('callapi-login', 'Auth\LoginController@callApiLogin');
+Route::get('test', 'HomeController@test')->middleware('auth');
 
 
+/**  <TEST FRONT END>     */
+
+Route::get('/events/create', 'EventController@createEvent')->middleware('auth');
+Route::post('/events/create', 'EventController@storeEvent')->name('events.store')->middleware('auth');
+Route::get('/events/all', 'EventController@eventList');
+
+
+/**  </TEST FRONT END>     */
