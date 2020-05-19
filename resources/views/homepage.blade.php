@@ -2,11 +2,11 @@
 @section('content')
 
 
-    {{--    PORTADA--}}
 
-    <div id="coverImage">
 
-    </div>
+    <header id="homePageHeader">
+        <x-home-page-header/>
+    </header>
 
     <!--
     TEST PARA VER SI TENEMOS EL TOKEN ASIGNADO
@@ -21,17 +21,20 @@
         <h1 class="text-center">Eventos más destacados</h1>
     </div>
 
-    @include('wesports.events.event-list')
+    <div id="homePageContent">
+        @include('wesports.events.event-list')
 
-    <div class="col-12 text-center">
-        <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events/all')}}">Ver mas
-            eventos</a>
+        <div class="col-12 text-center">
+            <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events/all')}}">Ver mas
+                eventos</a>
+        </div>
     </div>
+
 
 
 @endsection
 
 @section('scripts')
-    {{--    <script src="{{asset('js/get-events.js')}}">--}}
-    {{--    </script>--}}
+    <script src="{{asset('js/homePageActions.js')}}">
+    </script>
 @endsection

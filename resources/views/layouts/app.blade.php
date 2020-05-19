@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-lg bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top" id="mainMenu">
         <div class="container">
             <a class="navbar-brand" href="{{url('/')}}">
                 <img class="border border-primary rounded-lg" src="{{asset('images/brand-logo.png')}}" alt="WeSports"
@@ -57,7 +57,7 @@
         </div>
     </nav>
 
-    <main class="py-4 container-fluid">
+    <main>
         @yield('content')
     </main>
 </div>
