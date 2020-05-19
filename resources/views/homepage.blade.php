@@ -6,7 +6,7 @@
 
         <div class="row">
             {{--Only homepage cover header--}}
-            <header id="homePageHeader" class="container-fluid  p-5">
+            <header id="homePageHeader" class="container-fluid  p-5 bg-dark">
                 <div class="col-12">
                     <h2 class="text-center">Bienvenido a WeSports</h2>
                     <h4 class="text-justify p-4">
