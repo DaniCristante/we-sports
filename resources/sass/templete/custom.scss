@@ -18,8 +18,11 @@ $danger: #ed6f6f;
 
 h1 {
     font-weight: 900;
+    padding: 0.1em;
     color: $primary;
-    letter-spacing: 0.2em;
+    border: solid 1px $primary;
+    letter-spacing: 0.1em;
+    margin: 10px 0px 0px 10px;
 }
 
 h2 {
@@ -91,30 +94,51 @@ i {
     }
 }
 
-#homePageHeader {
-    //background-image: url("https://wallpaperaccess.com/full/486709.jpg") !important;
-    background-image: url("https://i.pinimg.com/originals/52/2f/72/522f727ba9704734729513b9d7ccf499.jpg") !important;
-    height: 75vh !important;
-    //background-color: transparent !important;
+
+#homePageHeader{
+    height: 75vh;
+    background-color: $dark;
+    color: white !important;
 
 
-    nav span {
-        font-size: 48px;
-        color: $secondary;
-        padding: 40px;
-        font-family: 'Anton', sans-serif;
-        letter-spacing: 0.2em;
-
-
+    h2 {
+        font-size: 2.5em !important;
     }
-    p {
-        font-size: xx-large;
-        color: black;
-
+    h4{
+        font-size: 1.5em !important;
     }
 
 
 }
+
+
+//Scroll option
+//#homePageHeader {
+//    //background-image: url("https://wallpaperaccess.com/full/486709.jpg") !important;
+//    background-image: url("https://i.pinimg.com/originals/52/2f/72/522f727ba9704734729513b9d7ccf499.jpg") !important;
+//    height: 75vh !important;
+//    //background-color: transparent !important;
+//
+//
+//    nav span {
+//        font-size: 48px;
+//        color: $secondary;
+//        padding: 40px;
+//        font-family: 'Anton', sans-serif;
+//        letter-spacing: 0.2em;
+//
+//
+//    }
+//    p {
+//        font-size: xx-large;
+//        color: black;
+//
+//    }
+//
+//
+//}
+
+
 
 
 

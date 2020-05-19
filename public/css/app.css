@@ -6068,8 +6068,11 @@ readers do not read off random characters that represent icons */
 
 h1 {
   font-weight: 900;
+  padding: 0.1em;
   color: #3d5a80;
-  letter-spacing: 0.2em;
+  border: solid 1px #3d5a80;
+  letter-spacing: 0.1em;
+  margin: 10px 0px 0px 10px;
 }
 
 h2 {
@@ -6130,21 +6133,17 @@ i {
 }
 
 #homePageHeader {
-  background-image: url("https://i.pinimg.com/originals/52/2f/72/522f727ba9704734729513b9d7ccf499.jpg") !important;
-  height: 75vh !important;
+  height: 75vh;
+  background-color: #293241;
+  color: white !important;
 }
 
-#homePageHeader nav span {
-  font-size: 48px;
-  color: #ee6c4d;
-  padding: 40px;
-  font-family: "Anton", sans-serif;
-  letter-spacing: 0.2em;
+#homePageHeader h2 {
+  font-size: 2.5em !important;
 }
 
-#homePageHeader p {
-  font-size: xx-large;
-  color: black;
+#homePageHeader h4 {
+  font-size: 1.5em !important;
 }
 
 /*!
