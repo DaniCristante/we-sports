@@ -57,4 +57,13 @@ class EventController extends Controller
             'events' => $events
         ]);
     }
+
+    public function filterEvents(Request $request)
+    {
+        $events = $this->callHandler->unauthorizedGetMethodHandler('/events/' . $request);
+        return view('wesports.events.events-page', [
+            'events' => $events
+        ]);
+
+    }
 }
