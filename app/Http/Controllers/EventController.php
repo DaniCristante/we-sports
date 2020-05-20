@@ -54,7 +54,6 @@ class EventController extends Controller
         if ($request->get('sport')) {
             $requestUrl = $requestUrl . 'sport=' . $request->get('sport');
         }
-        dump($requestUrl);
         $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
         $events = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
         return view('wesports.events.events-page', [
@@ -67,6 +66,5 @@ class EventController extends Controller
     {
         $requestUrl = '/events/'.$request->get('id');
         $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
-        dump($event);
     }
 }
