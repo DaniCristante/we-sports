@@ -27,4 +27,5 @@ Route::post('/events/create', 'EventController@storeEvent')->name('events.store'
 Route::get('/events/all', 'EventController@eventList');
 Route::post('/events/all', 'EventController@eventList');
 
+Route::get('event', 'EventController@eventDetail');
 /**  </TEST FRONT END>     */
