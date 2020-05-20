@@ -2,7 +2,8 @@
 @section('content')
     <div>
         <!--form sidebar-->
-        <form method="get" action="">
+        <form method="post" action="">
+            @csrf
             <select name="sport">
                 @foreach($sports as $sport)
                     <option value="{{$sport['id']}}">{{$sport['name']}}</option>

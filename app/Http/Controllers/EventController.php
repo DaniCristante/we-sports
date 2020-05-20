@@ -33,7 +33,6 @@ class EventController extends Controller
         }
         return view('wesports.events.create', array('sports' => $list));
     }
-
     public function storeEvent(Request $request)
     {
         dump($request['img']);
@@ -49,12 +48,15 @@ class EventController extends Controller
             dump($response);
         }
     }
-
     public function eventList(Request $request)
     {
         $requestUrl = '/events?';
         if ($request->get('sport')) {
-            $requestUrl = $requestUrl . 'sport=' . $request->get('sport');
+            $requestUrl .= 'sport=' . $request->get('sport') . '&';
+        }
+        if ($request->get('city')) {
+            $cityParsed = $request->get('city');
+            $requestUrl .= 'city=' . $this->callHandler->parseURL($cityParsed) . '&';
         }
         dump($requestUrl);
         $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
