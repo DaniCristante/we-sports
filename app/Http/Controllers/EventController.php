@@ -48,21 +48,19 @@ class EventController extends Controller
         }
     }
 
-    public function eventList()
+    public function eventList(Request $request)
     {
-        $events = $this->callHandler->unauthorizedGetMethodHandler('/events/joined');
+        $requestUrl = '/events?';
+        if ($request->get('sport')) {
+            $requestUrl = $requestUrl . 'sport=' . $request->get('sport');
+        }
+        dump($requestUrl);
+        $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
+        $events = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
         return view('wesports.events.events-page', [
-            'events' => $events
+            'events' => $events,
+            'sports' => $sports
         ]);
-    }
-
-    public function filterEvents(Request $request)
-    {
-        $events = $this->callHandler->unauthorizedGetMethodHandler('/events/' . $request);
-        return view('wesports.events.events-page', [
-            'events' => $events
-        ]);
-
     }
 
     public function eventDetail(Request $request)
