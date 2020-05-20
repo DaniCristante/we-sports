@@ -60,7 +60,8 @@ class EventController extends Controller
 
     public function filterEvents(Request $request)
     {
-        $events = $this->callHandler->unauthorizedGetMethodHandler('/events/' . $request);
+
+        $events = $this->callHandler->unauthorizedGetMethodHandler('/events' );
         return view('wesports.events.events-page', [
             'events' => $events
         ]);
