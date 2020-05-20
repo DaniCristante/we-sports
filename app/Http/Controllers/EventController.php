@@ -25,7 +25,7 @@ class EventController extends Controller
 
         $list = [];
 
-        foreach ($sports as $sport){
+        foreach ($sports as $sport) {
             array_push($list, [
                 'id' => $sport['id'],
                 'name' => $sport['name']
@@ -38,7 +38,7 @@ class EventController extends Controller
     {
         dump($request['img']);
         $imagePath = $this->imageManager->moveEventImage($request['img']);
-        if ($imagePath !== null ){
+        if ($imagePath !== null) {
             $token = $request->session()->get('api_token');
             $eventData = $request->all();
             $eventData['img'] = $imagePath;

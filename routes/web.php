@@ -26,5 +26,4 @@ Route::get('/events/create', 'EventController@createEvent')->middleware('auth');
 Route::post('/events/create', 'EventController@storeEvent')->name('events.store')->middleware('auth');
 Route::get('/events/all', 'EventController@eventList');
 
-
 /**  </TEST FRONT END>     */
