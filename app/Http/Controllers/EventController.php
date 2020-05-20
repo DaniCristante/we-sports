@@ -60,9 +60,11 @@ class EventController extends Controller
             $cityParsed = $request->get('city');
             $requestUrl .= 'city=' . $this->callHandler->parseURL($cityParsed) . '&';
         }
-        if ($request->get('datetime')) {
-            $requestUrl -= 'datetime=' . $request->get('date') . '&';
+
+        if ($request->get('date')) {
+            $requestUrl .= 'datetime=' . $request->get('date') . '&';
         }
+        dump($requestUrl);die();
         $events = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
         return view('wesports.events.events-page', [
             'events' => $events,
