@@ -36,7 +36,6 @@ class EventController extends Controller
 
     public function storeEvent(Request $request)
     {
-        dump($request['img']);
         $imagePath = $this->imageManager->moveEventImage($request['img']);
         if ($imagePath !== null) {
             $token = $request->session()->get('api_token');
@@ -46,7 +45,6 @@ class EventController extends Controller
             $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
             unset($eventData['_token']);
             $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
-            dump($response);
         }
     }
 
@@ -65,5 +63,12 @@ class EventController extends Controller
             'events' => $events
         ]);
 
+    }
+
+    public function eventDetail(Request $request)
+    {
+        $requestUrl = '/events/'.$request->get('id');
+        $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
+        dump($event);
     }
 }

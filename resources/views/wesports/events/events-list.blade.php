@@ -4,11 +4,6 @@
 
     <h3>Home events
         <br>
-
         TODOS LOS EVENTOS + SIDEBAR CON FILTRO
     </h3>
-
-
-
-
 @endsection
