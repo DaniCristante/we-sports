@@ -33,6 +33,7 @@ class EventController extends Controller
         }
         return view('wesports.events.create', array('sports' => $list));
     }
+
     public function storeEvent(Request $request)
     {
         $imagePath = $this->imageManager->moveEventImage($request['img']);
@@ -46,6 +47,7 @@ class EventController extends Controller
             $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
         }
     }
+
     public function eventList(Request $request)
     {
         $requestUrl = '/events?';
@@ -66,7 +68,7 @@ class EventController extends Controller
 
     public function eventDetail(Request $request)
     {
-        $requestUrl = '/events/'.$request->get('id');
+        $requestUrl = '/events/' . $request->get('id');
         $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
     }
 }
