@@ -9,6 +9,8 @@
                     <option value="{{$sport['id']}}">{{$sport['name']}}</option>
                 @endforeach
             </select>
+            <input type="text" name="city">
+            <input type="date">
             <input type="submit">
         </form>
         <div class="">

@@ -50,6 +50,8 @@ class EventController extends Controller
 
     public function eventList(Request $request)
     {
+        $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
+
         $requestUrl = '/events?';
         if ($request->get('sport')) {
             $requestUrl .= 'sport=' . $request->get('sport') . '&';
@@ -58,7 +60,9 @@ class EventController extends Controller
             $cityParsed = $request->get('city');
             $requestUrl .= 'city=' . $this->callHandler->parseURL($cityParsed) . '&';
         }
-        $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
+        if ($request->get('datetime')) {
+            $requestUrl -= 'datetime=' . $request->get('date') . '&';
+        }
         $events = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
         return view('wesports.events.events-page', [
             'events' => $events,
