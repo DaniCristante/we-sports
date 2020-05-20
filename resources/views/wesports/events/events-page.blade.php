@@ -1,7 +1,10 @@
 @extends('layouts.app')
 @section('content')
     <div>
-        <a>holaa</a>
+        <!--form sidebar-->
+        <form>
+
+        </form>
         <div class="">
             <h2 class="text-center">Eventos disponibles</h2>
         </div>
