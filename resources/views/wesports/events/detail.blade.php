@@ -19,17 +19,30 @@
     <script>
         let listParent = document.getElementById('list-parent');
         let eventId = {!! json_encode($event['id']) !!};
-        let url = 'http://52.91.0.226:8000/api/events/' + eventId + '/participants';
+        let userId = {!! json_encode($loggedUserId) !!};
+        let token = {!! json_encode($token) !!};
+        let postUrl = 'http://52.91.0.226:8000/api/participants';
+        let getUrl = 'http://52.91.0.226:8000/api/events/' + eventId + '/participants';
         $('#participate-button').click(function () {
             $.ajax
             ({
-                xhrFields: {cors: false},
-                accepts: "application/json",
-                url: url,
-                type: "GET",
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                },
+                data: {
+                    'user_id': userId,
+                    'event_id': eventId,
+                },
+                url: postUrl,
+                type: "POST",
                 success: function (result) {
-                    $("#result").innerText = JSON.stringify(result);
-                    console.log(result);
+                    $.ajax({
+                        Accept: "application/json",
+                        url: getUrl,
+                        type: "GET",
+                        success: function (result) {
+                        }
+                    })
                 }
             })
         })
