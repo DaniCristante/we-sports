@@ -7,7 +7,11 @@
         @include('components.participant-list')
         <p id="result"></p>
         @if ($loggedUserId != null)
-        <button id="participate-button" class="btn btn-primary">Participar</button>
+            @if($isParticipating === 0)
+                <button id="participate-button" class="btn btn-primary">Participar</button>
+            @else
+                <button id="delete-button" class="btn btn-primary">Desapuntarse</button>
+            @endif
         @else
             <a href="{{url('login')}}">Inicia sesión para participar</a>
         @endif
@@ -20,7 +24,7 @@
         let listParent = document.getElementById('list-parent');
         let eventId = {!! json_encode($event['id']) !!};
         let userId = {!! json_encode($loggedUserId) !!};
-        let token = {!! json_encode($token) !!};
+        let token = {!! json_encode($token ?? '') !!};
         let postUrl = 'http://52.91.0.226:8000/api/participants';
         let userUrl = 'http://52.91.0.226:8000/api/users/';
         $('#participate-button').click(function () {

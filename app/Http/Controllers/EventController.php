@@ -76,6 +76,7 @@ class EventController extends Controller
         $pos_id = strrpos($url, "/", 0);
         $id = substr($url, $pos_id + 1, strlen($url));
         $requestUrl = '/events/' . $id;
+
         $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
         if (empty($event)) {
             return redirect('/events');
@@ -83,11 +84,14 @@ class EventController extends Controller
         $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl . '/participants');
 
         $loggedUserId = null;
-        if (Auth::user()){
+        $isParticipating = null;
+        if (Auth::user()) {
             $token = $request->session()->get('api_token');
             $loggedUserId = Auth::user()->getAuthIdentifier();
+            $urlParticipating = '/participating?user_id=' . $loggedUserId . '&event_id=' . $id;
+            $isParticipating = $this->callHandler->unauthorizedGetMethodHandler($urlParticipating);
         }
-        return view('wesports.events.detail', compact('event', 'participants', 'loggedUserId', 'token'));
+        return view('wesports.events.detail', compact('event','participants', 'loggedUserId', 'token', 'isParticipating'));
 
     }
 }
