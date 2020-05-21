@@ -1,3 +1,6 @@
+
+{{--{{dd($event)}}--}}
+
 <div class="col-10 col-xs-9 col-md-5 m-1 card p-2">
     <div class="row p-1 justify-content-around align-items-center">
         <div class="col-12 col-xs-3 col-lg-4 text-center">

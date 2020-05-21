@@ -6068,11 +6068,10 @@ readers do not read off random characters that represent icons */
 
 h1 {
   font-weight: 900;
-  padding: 0.1em;
+  text-align: center;
+  font-size: 2em !important;
   color: #3d5a80;
-  border: solid 1px #3d5a80;
-  letter-spacing: 0.1em;
-  margin: 10px 0px 0px 10px;
+  padding: 2px;
 }
 
 h2 {
@@ -6139,11 +6138,11 @@ i {
 }
 
 #homePageHeader h2 {
-  font-size: 2.5em !important;
+  font-size: 3em !important;
 }
 
 #homePageHeader h4 {
-  font-size: 1.5em !important;
+  font-size: 1.6em !important;
 }
 
 /*!

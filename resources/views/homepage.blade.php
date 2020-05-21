@@ -2,14 +2,12 @@
 @section('content')
 
     <div class="container-fluid">
-
-
-        <div class="row">
+        <div class="row align-items-center">
             {{--Only homepage cover header--}}
-            <header id="homePageHeader" class="container-fluid  p-5 bg-dark">
+            <header id="homePageHeader" class="container-fluid  p-2 bg-dark">
                 <div class="col-12">
                     <h2 class="text-center">Bienvenido a WeSports</h2>
-                    <h4 class="text-justify p-4">
+                    <h4 class="p-2">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias dolorem eligendi error
                         eum
                         harum ipsam libero, modi molestias obcaecati odit pariatur perferendis quidem rem sit, soluta
