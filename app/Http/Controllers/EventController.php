@@ -81,8 +81,15 @@ class EventController extends Controller
         if (empty($event)) {
             return redirect('/events');
         }
-        $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl . '/participants');
 
+        $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl . '/participants');
+        $eventSportId = $event['sport_id'];
+        $relatedEventsRequestUrl = '/events?sport='.$eventSportId;
+        $relatedEvents = $this->callHandler->unauthorizedGetMethodHandler($relatedEventsRequestUrl);
+        if (count($relatedEvents) > 4){
+            shuffle($relatedEvents);
+            array_splice($relatedEvents, 0, 3);
+        }
         $loggedUserId = null;
         $isParticipating = null;
         $token = null;
@@ -92,7 +99,14 @@ class EventController extends Controller
             $urlParticipating = '/participating?user_id=' . $loggedUserId . '&event_id=' . $id;
             $isParticipating = $this->callHandler->unauthorizedGetMethodHandler($urlParticipating);
         }
-        return view('wesports.events.detail', compact('event','participants', 'loggedUserId', 'token', 'isParticipating'));
 
+        return view('wesports.events.detail', [
+            'event' => $event,
+            'participants' => $participants,
+            'loggedUserId' => $loggedUserId,
+            'token' => $token,
+            'isParticipating' => $isParticipating,
+            'relatedEvents' => $relatedEvents
+        ]);
     }
 }
