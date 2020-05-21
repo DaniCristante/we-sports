@@ -70,11 +70,23 @@ class EventController extends Controller
         ]);
     }
 
-    public function eventDetail(Request $request)
+    public function eventDetail()
     {
-        $requestUrl = '/events/' . $request->get('id');
+        $url = url()->current();
+        $pos_id = strrpos($url, "/", 0);
+        $id = substr($url, $pos_id + 1, strlen($url));
+        $requestUrl = '/events/' . $id;
         $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
-        $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl.'/participants');
-        return view('wesports.events.detail', compact('event', 'participants'));
+        if (empty($event)) {
+            return redirect('/events');
+        }
+        $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl . '/participants');
+
+        $loggedUserId = null;
+        if (Auth::user()){
+            $loggedUserId = Auth::user()->getAuthIdentifier();
+        }
+        return view('wesports.events.detail', compact('event', 'participants', 'loggedUserId'));
+
     }
 }
