@@ -72,7 +72,6 @@ class EventController extends Controller
 
     public function eventDetail()
     {
-
         $url = url()->current();
         $pos_id = strrpos($url, "/", 0);
         $id = substr($url, $pos_id + 1, strlen($url));
@@ -83,7 +82,7 @@ class EventController extends Controller
             return redirect('/events');
         }
         $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl . '/participants');
-        
+
         return view('wesports.events.detail', compact('event', 'participants'));
 
     }
