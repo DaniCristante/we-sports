@@ -29,3 +29,8 @@ Route::post('/events/create', 'EventController@storeEvent')->name('events.store'
 
 Route::get('event', 'EventController@eventDetail');
 /**  </TEST FRONT END>     */
+
+/** ROUTE FOR TEST TEMPLETE */
+Route::get('/demo',function (){
+   return view ('user.panel');
+});
