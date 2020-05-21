@@ -22,10 +22,10 @@ Route::get('test', 'HomeController@test')->middleware('auth');
 
 /**  <TEST FRONT END>     */
 
+Route::get('/events', 'EventController@eventList');
+Route::post('/events', 'EventController@eventList');
 Route::get('/events/create', 'EventController@createEvent')->middleware('auth');
 Route::post('/events/create', 'EventController@storeEvent')->name('events.store')->middleware('auth');
-Route::get('/events/all', 'EventController@eventList');
-Route::post('/events/all', 'EventController@eventList');
 
 Route::get('event', 'EventController@eventDetail');
 /**  </TEST FRONT END>     */
