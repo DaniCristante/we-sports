@@ -72,15 +72,19 @@ class EventController extends Controller
 
     public function eventDetail()
     {
+
         $url = url()->current();
         $pos_id = strrpos($url, "/", 0);
         $id = substr($url, $pos_id + 1, strlen($url));
 
         $requestUrl = '/events/' . $id;
         $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
-        if (empty($event)){
+        if (empty($event)) {
             return redirect('/events');
         }
-        return view('wesports.events.detail', compact('event', 'id'));
+        $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl . '/participants');
+        
+        return view('wesports.events.detail', compact('event', 'participants'));
+
     }
 }

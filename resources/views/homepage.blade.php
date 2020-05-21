@@ -53,7 +53,7 @@
         @include('wesports.events.event-list')
 
         <div class="col-12 text-center my-2">
-            <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events/all')}}">Ver mas
+            <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events')}}">Ver mas
                 eventos</a>
         </div>
     </div>
