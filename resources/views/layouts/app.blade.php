@@ -60,7 +60,10 @@
     <main>
         @yield('content')
     </main>
-    @include('components.footer')
+
+    <footer>
+        @include('components.footer')
+    </footer>
 </div>
 @yield('scripts')
 

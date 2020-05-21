@@ -1,20 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="">
-        <h1>{{$event['title']}}</h1>
-        <h3>{{$event['id']}}</h3>
-        @include('components.participant-list')
-        <p id="result"></p>
-        @if ($loggedUserId != null)
-            @if($isParticipating === 0)
-                <button id="participate-button" class="btn btn-primary">Participar</button>
-            @else
-                <button id="delete-button" class="btn btn-primary">Desapuntarse</button>
-            @endif
-        @else
-            <a href="{{url('login')}}">Inicia sesión para participar</a>
-        @endif
+    <div id="detail-container" class="container mb-2 mt-2">
+        <div class="title text-center">
+            <h1>{{$event['title']}}</h1>
+        </div>
+        <div id="image">
+            <!--TODO pasar imagen desde la api-->
+            <div id="detail-image-container" class="media-container embed-responsive embed-responsive-16by9 col-5">
+                <img id="detail-image" class="embed-responsive-item" src="{{asset('images/events/cycling.jpg')}}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                @include('components.participant-list')
+            </div>
+            <div class="col">
+                <p>{{$event['description']}}</p>
+                <h5> {{$event['current_participants']}} de {{$event['max_participants']}} participantes</h5>
+            </div>
+        </div>
     </div>
 @endsection
 
