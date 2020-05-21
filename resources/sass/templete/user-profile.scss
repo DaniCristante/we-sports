@@ -1,0 +1,9 @@
+#userPerfiList{
+    li:hover{
+        background-color:$secondary;
+        cursor: pointer;
+        color: white;
+        font-weight: bolder;
+        transition: all 1s;
+    }
+}

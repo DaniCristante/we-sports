@@ -81,6 +81,7 @@ class EventController extends Controller
             return redirect('/events');
         }
         $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl . '/participants');
+
         $loggedUserId = null;
         if (Auth::user()){
             $token = $request->session()->get('api_token');

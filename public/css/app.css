@@ -6145,6 +6145,14 @@ i {
   font-size: 1.6em !important;
 }
 
+#userPerfiList li:hover {
+  background-color: #ee6c4d;
+  cursor: pointer;
+  color: white;
+  font-weight: bolder;
+  transition: all 1s;
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
