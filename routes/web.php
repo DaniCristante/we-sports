@@ -27,5 +27,6 @@ Route::post('/events', 'EventController@eventList');
 Route::get('/events/create', 'EventController@createEvent')->middleware('auth');
 Route::post('/events/create', 'EventController@storeEvent')->name('events.store')->middleware('auth');
 
-Route::get('event', 'EventController@eventDetail');
+
+Route::get('events/{id?}', 'EventController@eventDetail');
 /**  </TEST FRONT END>     */
