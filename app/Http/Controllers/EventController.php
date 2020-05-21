@@ -90,6 +90,7 @@ class EventController extends Controller
             shuffle($relatedEvents);
             array_splice($relatedEvents, 0, 3);
         }
+        
         $loggedUserId = null;
         $isParticipating = null;
         $token = null;
