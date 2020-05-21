@@ -85,6 +85,7 @@ class EventController extends Controller
 
         $loggedUserId = null;
         $isParticipating = null;
+        $token = null;
         if (Auth::user()) {
             $token = $request->session()->get('api_token');
             $loggedUserId = Auth::user()->getAuthIdentifier();
