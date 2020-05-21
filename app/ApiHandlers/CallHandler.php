@@ -49,7 +49,8 @@ class CallHandler
      * @param Request $request
      * @return mixed|null
      */
-    public function getToken(Request $request){
+    public function getToken(Request $request)
+    {
         $response = $this->callLogin($request);
         if ($response->status() === 200) {
             $jsonResponse = $response->json();
@@ -67,7 +68,7 @@ class CallHandler
     public function unauthorizedGetMethodHandler(string $url)
     {
         return Http::withHeaders(self::HEADERS)
-            ->get(self::API_ENDPOINT.$url)
+            ->get(self::API_ENDPOINT . $url)
             ->json();
     }
 
@@ -75,6 +76,11 @@ class CallHandler
     {
         return Http::withToken($token)
             ->withHeaders(self::HEADERS)
-            ->post(self::API_ENDPOINT.$url, $data);
+            ->post(self::API_ENDPOINT . $url, $data);
+    }
+
+    public function parseURL(string $string)
+    {
+        return str_replace(' ', '_', $string);
     }
 }

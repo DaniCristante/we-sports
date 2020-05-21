@@ -25,7 +25,7 @@ class EventController extends Controller
 
         $list = [];
 
-        foreach ($sports as $sport){
+        foreach ($sports as $sport) {
             array_push($list, [
                 'id' => $sport['id'],
                 'name' => $sport['name']
@@ -36,9 +36,8 @@ class EventController extends Controller
 
     public function storeEvent(Request $request)
     {
-        dump($request['img']);
         $imagePath = $this->imageManager->moveEventImage($request['img']);
-        if ($imagePath !== null ){
+        if ($imagePath !== null) {
             $token = $request->session()->get('api_token');
             $eventData = $request->all();
             $eventData['img'] = $imagePath;
@@ -46,15 +45,34 @@ class EventController extends Controller
             $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
             unset($eventData['_token']);
             $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
-            dump($response);
         }
     }
 
-    public function eventList()
+    public function eventList(Request $request)
     {
-        $events = $this->callHandler->unauthorizedGetMethodHandler('/events/joined');
+        $sports = $this->callHandler->unauthorizedGetMethodHandler('/sports');
+
+        $requestUrl = '/events?';
+        if ($request->get('sport')) {
+            $requestUrl .= 'sport=' . $request->get('sport') . '&';
+        }
+        if ($request->get('city')) {
+            $cityParsed = $request->get('city');
+            $requestUrl .= 'city=' . $this->callHandler->parseURL($cityParsed) . '&';
+        }
+        if ($request->get('date')) {
+            $requestUrl .= 'datetime=' . $request->get('date') . '&';
+        }
+        $events = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
         return view('wesports.events.events-page', [
-            'events' => $events
+            'events' => $events,
+            'sports' => $sports
         ]);
+    }
+
+    public function eventDetail(Request $request)
+    {
+        $requestUrl = '/events/' . $request->get('id');
+        $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
     }
 }
