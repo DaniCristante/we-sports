@@ -20,7 +20,7 @@
         let listParent = document.getElementById('list-parent');
         let eventId = {!! json_encode($event['id']) !!};
         let userId = {!! json_encode($loggedUserId) !!};
-        let token = {!! json_encode($token) !!};
+        let token = {!! json_encode($token ?? '') !!};
         let postUrl = 'http://52.91.0.226:8000/api/participants';
         let userUrl = 'http://52.91.0.226:8000/api/users/';
         $('#participate-button').click(function () {
@@ -53,6 +53,5 @@
                 }
             })
         })
-
     </script>
 @endsection
