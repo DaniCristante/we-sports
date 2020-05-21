@@ -22,7 +22,7 @@
         let userId = {!! json_encode($loggedUserId) !!};
         let token = {!! json_encode($token) !!};
         let postUrl = 'http://52.91.0.226:8000/api/participants';
-        let getUrl = 'http://52.91.0.226:8000/api/events/' + eventId + '/participants';
+        let userUrl = 'http://52.91.0.226:8000/api/users/';
         $('#participate-button').click(function () {
             $.ajax
             ({
@@ -36,15 +36,23 @@
                 url: postUrl,
                 type: "POST",
                 success: function (result) {
-                    $.ajax({
-                        Accept: "application/json",
-                        url: getUrl,
-                        type: "GET",
+                    $.ajax
+                    ({
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-type': 'application/json',
+                        },
+                        url: userUrl + result.user_id,
+                        method: "GET",
                         success: function (result) {
+                            let participantElement = document.createElement('li');
+                            participantElement.innerText = result.nickname;
+                            listParent.appendChild(participantElement);
                         }
                     })
                 }
             })
         })
+
     </script>
 @endsection
