@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{--    {{dd($event)}}--}}
+    {{--    {{dd($event)}}--}}
     <div class="container" id="detail-container">
         <div class="jumbotron my-1 bg-primary">
             <h1 class="display-4 text-secondary">{{$event['title']}}</h1>
@@ -43,7 +43,6 @@
                     </p>
 
 
-
                 </div>
 
 
@@ -51,18 +50,13 @@
                     <hr class="bg-secondary">
                     <div id="button-container">
                         @if ($loggedUserId != null)
-                            @if($isParticipating === 0)
-                                <button id="participate-button" class="btn btn-success">Participar</button>
-                            @else
-                                <button id="delete-button" class="btn btn-warning">Desapuntarse</button>
-                            @endif
+                            <button id="participate-button" class="btn btn-success">Participar</button>
+                            <button id="delete-button" class="btn btn-warning">Desapuntarse</button>
                         @else
                             <a href="{{url('login')}}" class="btn btn-success">Inicia sesión para participar</a>
                         @endif
                     </div>
                 </div>
-
-
 
 
             </div>
@@ -125,8 +119,17 @@
         let eventId = {!! json_encode($event['id']) !!};
         let userId = {!! json_encode($loggedUserId) !!};
         let token = {!! json_encode($token) !!};
+        let isParticipating = {!! json_encode($isParticipating) !!};
         let postUrl = 'http://52.91.0.226:8000/api/participants';
         let userUrl = 'http://52.91.0.226:8000/api/users/';
+        let participantsUrl = 'http://52.91.0.226:8000/api/events/' + eventId + '/participants';
+        if (isParticipating === 1) {
+            $('#delete-button').show();
+            $('#participate-button').hide();
+        } else {
+            $('#delete-button').hide();
+            $('#participate-button').show();
+        }
         $('#participate-button').click(function () {
             $.ajax
             ({
@@ -152,6 +155,45 @@
                             let participantElement = document.createElement('li');
                             participantElement.innerText = result.nickname;
                             listParent.appendChild(participantElement);
+                            $('#participate-button').hide();
+                            $('#delete-button').show();
+                        }
+                    })
+                }
+            })
+        })
+        $('#delete-button').click(function () {
+            $('#participate-button').show();
+            $('#delete-button').hide();
+            $.ajax
+            ({
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                },
+                data: {
+                    'user_id': userId,
+                    'event_id': eventId,
+                },
+                url: postUrl,
+                type: "DELETE",
+                success: function (result) {
+                    $.ajax
+                    ({
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-type': 'application/json',
+                        },
+                        url: participantsUrl,
+                        method: "GET",
+                        success: function (result) {
+                            $('#list-parent').empty();
+                            $.each(result[0], function () {
+                                let participantElement = document.createElement('li');
+                                participantElement.innerText = this;
+                                listParent.appendChild(participantElement);
+                            });
+                            $('#participate-button').show();
+                            $('#delete-button').hide();
                         }
                     })
                 }
