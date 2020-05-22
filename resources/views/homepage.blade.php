@@ -27,7 +27,7 @@
                 <input type="text" class="form-control text-center" name="sport" placeholder="¿qué quieres jugar ?">
             </div>
             <div class=" col-10 col-md-4 m-1">
-                <input type="password" class="form-control text-center " name="city"
+                <input type="text" class="form-control text-center " name="city"
                        placeholder="¿dónde quieres jugar ? ">
             </div>
             <button type="submit" class="btn btn-outline-success">Ver eventos disponibles</button>

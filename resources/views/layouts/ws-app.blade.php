@@ -17,9 +17,12 @@
 </head>
 <body>
 
+<div class="container">
+
+</div>
 
 <x-header></x-header>
-<div class="container-fluid mt-2">
+<div class="container-fluid">
     @yield('content')
 
 </div>

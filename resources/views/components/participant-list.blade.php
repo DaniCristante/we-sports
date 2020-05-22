@@ -1,19 +1,11 @@
-<div id="list-container" class="">
-    <h4>Participantes</h4>
-    <ul id="list-parent">
+<div id="list-container" class="text-center">
+    <a class="btn btn-light my-1  collapsed border border-secondary  text-uppercase" data-toggle="collapse" data-target="#list-parent">
+       Lista de participantes
+    </a>
+    <ul id="list-parent" class="list-group collapse " >
+
         @foreach($participants as $participant)
-            <li>{{$participant['nickname']}}</li>
+            <li class="my-1 participant-list text-uppercase">{{$participant['nickname']}}</li>
         @endforeach
     </ul>
-    <div id="button-container" class="">
-        @if ($loggedUserId != null)
-            @if($isParticipating === 0)
-                <button id="participate-button" class="btn btn-primary">Participar</button>
-            @else
-                <button id="delete-button" class="btn btn-primary">Desapuntarse</button>
-            @endif
-        @else
-            <a href="{{url('login')}}">Inicia sesión para participar</a>
-        @endif
-    </div>
 </div>

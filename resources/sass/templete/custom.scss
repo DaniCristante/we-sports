@@ -11,6 +11,12 @@ $warning: #f4cc84;
 $success: #229422;
 $danger: #ed6f6f;
 
+//No Horizontal scroll
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 * {
     font-family: Roboto;
     font-size: medium;
@@ -79,7 +85,7 @@ i {
     -moz-box-shadow: 0 8px 6px -6px $secondary;
     box-shadow: 4px 4px 2px -2px $primary;
 
-    &:hover {
+    &:active , &:hover , &:focus {
         -moz-box-shadow: 0 0 15px $secondary;
         -webkit-box-shadow: 0 0 15px $secondary;
         box-shadow: 0 0 15px $secondary;

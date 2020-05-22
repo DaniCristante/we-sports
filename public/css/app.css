@@ -6061,6 +6061,12 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 * {
   font-family: Roboto;
   font-size: medium;
@@ -6127,7 +6133,9 @@ i {
   box-shadow: 4px 4px 2px -2px #3d5a80;
 }
 
-.card:hover {
+.card:active,
+.card:hover,
+.card:focus {
   box-shadow: 0 0 15px #ee6c4d;
 }
 
@@ -6143,6 +6151,28 @@ i {
 
 #homePageHeader h4 {
   font-size: 1.6em !important;
+}
+
+.detalled-image:hover {
+  width: 110%;
+  box-shadow: 0 0 10px #98c1d9;
+  transition: all 1s;
+}
+
+.participant-list {
+  list-style-type: none;
+  color: white;
+  padding: 2px;
+  border: solid 1px #ee6c4d;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.participant-list:hover {
+  background-color: #ee6c4d;
+  color: white;
+  padding: 3px;
+  transition: all 0.2s;
 }
 
 #userPerfiList li:hover {

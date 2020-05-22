@@ -1,4 +1,4 @@
-<div class="col-12 bg-dark p-2">
+<div class="bg-dark p-2">
     <div class="row justify-content-center text-white align-items-center p-2 mt-3">
         <div class="col-12 col-md-6 text-center px-2">
             <ul class="list-unstyled">
@@ -36,7 +36,10 @@
             </div>
         </div>
     </div>
+
 </div>
+
+
 <div class="col-12 bg-primary p-1 text-info">
     <div class="row justify-content-center align-content-center ">
         <div class="col-12 col-md-5 text-center">
@@ -58,4 +61,6 @@
         </div>
     </div>
 </div>
+
+
 

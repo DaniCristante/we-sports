@@ -1,0 +1,29 @@
+.detalled-image {
+
+    &:hover{
+        width: 110%;
+        -moz-box-shadow: 0 0 10px $secondary;
+        -webkit-box-shadow: 0 0 10px $secondary;
+        box-shadow: 0 0 10px $info;
+        transition: all 1s;
+
+    }
+}
+
+.participant-list{
+    list-style-type: none;
+    color: white;
+    padding: 2px;
+    border: solid 1px $secondary;
+    border-radius: 20px;
+    text-align: center;
+
+    &:hover{
+        background-color: $secondary;
+        color: white;
+        padding: 3px;
+        transition: all 0.2s;
+    }
+
+
+}
