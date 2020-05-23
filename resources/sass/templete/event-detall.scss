@@ -1,6 +1,6 @@
 .detalled-image {
 
-    &:hover{
+    &:hover {
         width: 110%;
         -moz-box-shadow: 0 0 10px $secondary;
         -webkit-box-shadow: 0 0 10px $secondary;
@@ -10,7 +10,7 @@
     }
 }
 
-.participant-list{
+.participant-list {
     list-style-type: none;
     color: white;
     padding: 2px;
@@ -18,7 +18,7 @@
     border-radius: 20px;
     text-align: center;
 
-    &:hover{
+    &:hover {
         background-color: $secondary;
         color: white;
         padding: 3px;
@@ -26,4 +26,29 @@
     }
 
 
+}
+
+.carousel-control-prev-icon .carousel-control-next-icon {
+
+    background-color: lightcoral !important;
+    padding: 10px;
+    font-weight: bolder;
+
+    &:hover {
+
+        background-color: red !important;
+
+
+    }
+}
+
+.releted-event-img {
+    &:hover {
+        width: 110% !important;
+        transition: all 1s;
+        -moz-box-shadow: 0 0 30px $secondary;
+        -webkit-box-shadow: 0 0 30px $secondary;
+        box-shadow: 0 0 30px $info;
+
+    }
 }

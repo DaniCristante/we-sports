@@ -2,7 +2,6 @@
 
 @section('content')
 
-    {{--    {{dd($event)}}--}}
     <div class="container" id="detail-container">
         <div class="jumbotron my-1 bg-primary">
             <h1 class="display-4 text-secondary">{{$event['title']}}</h1>
@@ -63,7 +62,13 @@
 
         </div>
 
+
+        @include('components.eventos-relacionados')
+
+
+
     </div>
+
 
     {{--    <div id="detail-container" class="container mb-2 mt-2">--}}
     {{--        <div class="row justify-content-center">--}}

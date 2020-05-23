@@ -6175,6 +6175,22 @@ i {
   transition: all 0.2s;
 }
 
+.carousel-control-prev-icon .carousel-control-next-icon {
+  background-color: lightcoral !important;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+.carousel-control-prev-icon .carousel-control-next-icon:hover {
+  background-color: red !important;
+}
+
+.releted-event-img:hover {
+  width: 110% !important;
+  transition: all 1s;
+  box-shadow: 0 0 30px #98c1d9;
+}
+
 #userPerfiList li:hover {
   background-color: #ee6c4d;
   cursor: pointer;
