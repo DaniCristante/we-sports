@@ -27,6 +27,11 @@
                     <div class="col-12 col-md-10">
                         <textarea name="description" class="form-control" required></textarea>
                     </div>
+                    @error('description')
+                    <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
                 </div>
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-8">
@@ -61,7 +66,12 @@
                     </div>
                     <div class="col-10 col-md-6 my-2 ">
                         <span>Imagen</span>
-                        <input type="file" name="img" class="form-control">
+                        <input type="file" name="img" class="form-control @error('img') is-invalid @enderror">
+                        @error('img')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
             </div>
