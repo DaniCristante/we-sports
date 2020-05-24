@@ -24,7 +24,7 @@
                                 Organizado por {{$event['nickname']}}
                             </span> </i>
                     </p>
-                    <h5 class="text-uppercase"> {{$event['current_participants']}} de {{$event['max_participants']}}
+                    <h5 class="text-uppercase" id="participant-list"> <span class="h5" id="current-participants">{{$event['current_participants']}}</span> de {{$event['max_participants']}}
                         participantes</h5>
 
                     @include('components.participant-list')
@@ -125,7 +125,8 @@
         let userId = {!! json_encode($loggedUserId) !!};
         let token = {!! json_encode($token) !!};
         let isParticipating = {!! json_encode($isParticipating) !!};
-        let postUrl = 'http://52.91.0.226:8000/api/participants';
+        let numberOfParticipants = {!! json_encode($event['current_participants']) !!};
+        let postParticipantUrl = 'http://52.91.0.226:8000/api/participants';
         let userUrl = 'http://52.91.0.226:8000/api/users/';
         let participantsUrl = 'http://52.91.0.226:8000/api/events/' + eventId + '/participants';
         if (isParticipating === 1) {
@@ -145,7 +146,7 @@
                     'user_id': userId,
                     'event_id': eventId,
                 },
-                url: postUrl,
+                url: postParticipantUrl,
                 type: "POST",
                 success: function (result) {
                     let successElement = document.createElement('p');
@@ -167,6 +168,7 @@
                             participantElement.innerText = result.nickname;
                             participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
                             listParent.appendChild(participantElement);
+                            document.getElementById('current-participants').innerText = numberOfParticipants + 1;
                             $('#participate-button').hide();
                             $('#delete-button').show().prop("disabled", true);
                             successElement.innerHTML = 'Lista actualizada ¡Gracias por participar!';
@@ -189,7 +191,7 @@
                     'user_id': userId,
                     'event_id': eventId,
                 },
-                url: postUrl,
+                url: postParticipantUrl,
                 type: "DELETE",
                 success: function (result) {
                     let successElement = document.createElement('p');
