@@ -45,7 +45,7 @@ class EventController extends Controller
             'img' => 'required'
         ]);
 
-        if ($request->get('img')){
+        if ($request->file('img')){
             $imagePath = $this->imageManager->moveEventImage($request['img']);
             if ($imagePath !== null) {
                 $token = $request->session()->get('api_token');
