@@ -11,7 +11,7 @@
         <div class="col-12 col-xs-8 col-lg-7 ">
             <h4> {{$event['title']}}</h4>
             <span class="fas fa-user">Organizador: {{$event['nickname']}}</span><br>
-            <span class="fas fa-football-ball">Categoria: {{$event['name']}}</span><br>
+            <span class="fas {{$event['logo']}}">Categoria: {{$event['name']}}</span><br>
             <span class="fas fa-users">  {{$event['current_participants']}} of {{$event['max_participants']}} (progress bar) </span>
             <span
                 class="fas fa-calendar-alt"> {{$event['datetime']}}   (calendario js plugin) </span>
