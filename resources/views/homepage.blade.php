@@ -34,15 +34,6 @@
         </form>
 
     </div>
-
-
-    <!--
-    TEST PARA VER SI TENEMOS EL TOKEN ASIGNADO
-                NO BORRAR PORFA
--->
-
-    <a href="{{url('test')}}">TEST PARA VER TOKEN</a>
-    <br>
     <a href="{{url('events/create')}}">CREAR EVENTO</a>
 
 
