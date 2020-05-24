@@ -169,6 +169,7 @@
                             participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
                             listParent.appendChild(participantElement);
                             document.getElementById('current-participants').innerText = numberOfParticipants + 1;
+                            numberOfParticipants += 1;
                             $('#participate-button').hide();
                             $('#delete-button').show().prop("disabled", true);
                             successElement.innerHTML = 'Lista actualizada ¡Gracias por participar!';
@@ -217,6 +218,8 @@
                             });
                             $('#participate-button').show().prop("disabled", true);
                             $('#delete-button').hide();
+                            document.getElementById('current-participants').innerText = numberOfParticipants - 1;
+                            numberOfParticipants -= 1;
                             successElement.innerHTML = 'Lista actualizada, esperamos verte en otros eventos :)';
                             setTimeout(function () {
                                 $('#successfull-action-message').remove();
