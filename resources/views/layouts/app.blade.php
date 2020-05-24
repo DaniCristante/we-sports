@@ -23,6 +23,12 @@
                      width="180" height="40">
             </a>
 
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/events')}}">Ver todos los eventos</a>
+                </li>
+            </ul>
+
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -45,6 +51,8 @@
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
+                            <a class="dropdown-item" href="{{url('/events/create')}}">Crear evento</a>
+                            <a class="dropdown-item" href="{{url('/profile/')}}">Mi perfil</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                   style="display: none;">
@@ -60,6 +68,11 @@
     <main>
         @yield('content')
     </main>
+    @if(Auth::check() and Request::url() !== env('CREATE_EVENT_FORM_URL'))
+        <a href="{{url('/events/create')}}" class="float">
+            <i class="fa fa-plus my-float fa-2x"></i>
+        </a>
+    @endif
 
     <footer>
         @include('components.footer')

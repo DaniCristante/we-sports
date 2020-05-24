@@ -117,6 +117,22 @@ i {
 
 }
 
+.float{
+    position:fixed;
+    width:80px;
+    height:80px;
+    bottom:70px;
+    right:2.5rem;
+    background-color: blue;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+    margin-top:25px;
+}
 
 //Scroll option
 //#homePageHeader {

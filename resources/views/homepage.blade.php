@@ -7,36 +7,33 @@
             <header id="homePageHeader" class="container-fluid  p-2 bg-dark">
                 <div class="col-12">
                     <h2 class="text-center">Bienvenido a WeSports</h2>
-                    <h4 class="p-2">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias dolorem eligendi error
-                        eum
-                        harum ipsam libero, modi molestias obcaecati odit pariatur perferendis quidem rem sit, soluta
-                        totam.
-                        Beatae, officiis.
-                    </h4>
+                    <div id="web-abstract">
+                        <h4 class="p-2">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias dolorem eligendi error
+                            eum
+                            harum ipsam libero, modi molestias obcaecati odit pariatur perferendis quidem rem sit, soluta
+                            totam.
+                            Beatae, officiis.
+                        </h4>
+                    </div>
                 </div>
             </header>
         </div>
-
-        {{--   Home page filter  --}}
-
-
-        <form class="form-group my-2 row col-12 justify-content-center">
-            @csrf
-            <div class=" col-10 col-md-4 m-1">
-                <input type="text" class="form-control text-center" name="sport" placeholder="¿qué quieres jugar ?">
-            </div>
-            <div class=" col-10 col-md-4 m-1">
-                <input type="text" class="form-control text-center " name="city"
-                       placeholder="¿dónde quieres jugar ? ">
-            </div>
-            <button type="submit" class="btn btn-outline-success">Ver eventos disponibles</button>
-        </form>
-
     </div>
-    <a href="{{url('events/create')}}">CREAR EVENTO</a>
+{{--        --}}{{--   Home page filter  --}}
 
 
+{{--        <form class="form-group my-2 row col-12 justify-content-center">--}}
+{{--            @csrf--}}
+{{--            <div class=" col-10 col-md-4 m-1">--}}
+{{--                <input type="text" class="form-control text-center" name="sport" placeholder="¿qué quieres jugar ?">--}}
+{{--            </div>--}}
+{{--            <div class=" col-10 col-md-4 m-1">--}}
+{{--                <input type="text" class="form-control text-center " name="city"--}}
+{{--                       placeholder="¿dónde quieres jugar ? ">--}}
+{{--            </div>--}}
+{{--            <button type="submit" class="btn btn-outline-success">Ver eventos disponibles</button>--}}
+{{--        </form>--}}
     <div id="homePageContent">
         <div id="page-title">
             <h1 class="text-center">Eventos con más participantes</h1>
@@ -47,7 +44,6 @@
             <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events')}}">Ver mas
                 eventos</a>
         </div>
-    </div>
     </div>
 
 
