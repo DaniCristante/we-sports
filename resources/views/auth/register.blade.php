@@ -16,7 +16,7 @@
             <div>
                 <div class="row">
                     <div class="col-12 col-md-5">
-                        <input type="text" placeholder="Nombre" name="name" class="form-control my-1 @error('name') is-invalid @enderror">
+                        <input type="text" placeholder="Nombre" name="uname" class="form-control my-1 @error('uname') is-invalid @enderror">
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

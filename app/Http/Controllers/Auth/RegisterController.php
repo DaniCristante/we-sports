@@ -57,7 +57,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'uname' => ['required', 'string', 'max:255'],
             'surnames' => ['required', 'string', 'max:300'],
             'nickname' => ['required', 'string', 'unique:users', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -74,7 +74,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'uname' => $data['uname'],
             'email' => $data['email'],
             'nickname' => $data['nickname'],
             'surnames' => $data['surnames'],
@@ -89,7 +89,6 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         $this->guard()->login($user);
-//        $token = $this->callHandler->unauthorizedGetMethodHandler('')
 
         if ($response = $this->registered($request, $user)) {
             return $response;
