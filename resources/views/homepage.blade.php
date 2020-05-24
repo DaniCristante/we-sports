@@ -39,7 +39,7 @@
 
     <div id="homePageContent">
         <div id="page-title">
-            <h1 class="text-center">Eventos recientemente creados </h1>
+            <h1 class="text-center">Eventos con más participantes</h1>
         </div>
         @include('wesports.events.event-list')
 
