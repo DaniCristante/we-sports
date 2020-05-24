@@ -21,7 +21,7 @@
                 <div class="col-12 col-md-4 text-center">
                     <p class="text-success">
                         <i class="fas fa-user-check"> <span class="mx-1">
-                                {{$event['creator_id']}}
+                                Organizado por {{$event['nickname']}}
                             </span> </i>
                     </p>
                     <h5 class="text-uppercase"> {{$event['current_participants']}} de {{$event['max_participants']}}
@@ -159,6 +159,7 @@
                         success: function (result) {
                             let participantElement = document.createElement('li');
                             participantElement.innerText = result.nickname;
+                            participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
                             listParent.appendChild(participantElement);
                             $('#participate-button').hide();
                             $('#delete-button').show();
@@ -194,6 +195,7 @@
                             $('#list-parent').empty();
                             $.each(result[0], function () {
                                 let participantElement = document.createElement('li');
+                                participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
                                 participantElement.innerText = this;
                                 listParent.appendChild(participantElement);
                             });

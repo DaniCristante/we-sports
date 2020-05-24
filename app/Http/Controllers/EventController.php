@@ -78,6 +78,7 @@ class EventController extends Controller
         $requestUrl = '/events/' . $id;
 
         $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
+        $event = \reset($event);
         if (empty($event)) {
             return redirect('/events');
         }
@@ -90,7 +91,7 @@ class EventController extends Controller
             shuffle($relatedEvents);
             array_splice($relatedEvents, 0, 3);
         }
-        
+
         $loggedUserId = null;
         $isParticipating = null;
         $token = null;
