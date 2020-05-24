@@ -23,8 +23,7 @@
             {{$event['description']}}
         </p>
     </div>
-    <div class="card-footer bg-white">
+    <div class="card-footer bg-white mr-auto ml-auto">
         <a href="{{url('events/'.$event['id'])}}" class="float-left btn btn-info ">Ver evento</a>
-        <a href="" class="float-right btn btn-success">Participar</a>
     </div>
 </div>
