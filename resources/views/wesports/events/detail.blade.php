@@ -148,6 +148,11 @@
                 url: postUrl,
                 type: "POST",
                 success: function (result) {
+                    let successElement = document.createElement('p');
+                    successElement.innerText = 'Actualizando lista...';
+                    successElement.setAttribute('id', 'successfull-action-message');
+                    successElement.setAttribute('class', 'alert alert-success mt-2');
+                    $('#button-container').append(successElement);
                     $.ajax
                     ({
                         headers: {
@@ -157,20 +162,24 @@
                         url: userUrl + result.user_id,
                         method: "GET",
                         success: function (result) {
+                            $('#button-container').append(successElement);
                             let participantElement = document.createElement('li');
                             participantElement.innerText = result.nickname;
                             participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
                             listParent.appendChild(participantElement);
                             $('#participate-button').hide();
-                            $('#delete-button').show();
+                            $('#delete-button').show().prop("disabled", true);
+                            successElement.innerHTML = 'Lista actualizada ¡Gracias por participar!';
+                            setTimeout(function () {
+                                $('#successfull-action-message').remove();
+                                $('#delete-button').prop("disabled", false);
+                            }, 2500)
                         }
                     })
                 }
             })
         })
         $('#delete-button').click(function () {
-            $('#participate-button').show();
-            $('#delete-button').hide();
             $.ajax
             ({
                 headers: {
@@ -183,6 +192,11 @@
                 url: postUrl,
                 type: "DELETE",
                 success: function (result) {
+                    let successElement = document.createElement('p');
+                    successElement.innerText = 'Actualizando lista...';
+                    successElement.setAttribute('id', 'successfull-action-message');
+                    successElement.setAttribute('class', 'alert alert-warning mt-2');
+                    $('#button-container').append(successElement);
                     $.ajax
                     ({
                         headers: {
@@ -199,8 +213,13 @@
                                 participantElement.innerText = this;
                                 listParent.appendChild(participantElement);
                             });
-                            $('#participate-button').show();
+                            $('#participate-button').show().prop("disabled", true);
                             $('#delete-button').hide();
+                            successElement.innerHTML = 'Lista actualizada, esperamos verte en otros eventos :)';
+                            setTimeout(function () {
+                                $('#successfull-action-message').remove();
+                                $('#participate-button').show().prop("disabled", false);
+                            }, 2500)
                         }
                     })
                 }
