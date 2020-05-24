@@ -51,20 +51,9 @@
             </header>
         </div>
     </div>
-{{--        --}}{{--   Home page filter  --}}
-
-
-{{--        <form class="form-group my-2 row col-12 justify-content-center">--}}
-{{--            @csrf--}}
-{{--            <div class=" col-10 col-md-4 m-1">--}}
-{{--                <input type="text" class="form-control text-center" name="sport" placeholder="¿qué quieres jugar ?">--}}
-{{--            </div>--}}
-{{--            <div class=" col-10 col-md-4 m-1">--}}
-{{--                <input type="text" class="form-control text-center " name="city"--}}
-{{--                       placeholder="¿dónde quieres jugar ? ">--}}
-{{--            </div>--}}
-{{--            <button type="submit" class="btn btn-outline-success">Ver eventos disponibles</button>--}}
-{{--        </form>--}}
+    @if ($message = Session::get('created-event'))
+        <h3 class="alert alert-success">{{$message}}</h3>
+    @endif
     <div id="homePageContent">
         <div id="page-title">
             <h1 class="text-center">Eventos con más participantes</h1>

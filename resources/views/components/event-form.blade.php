@@ -75,7 +75,9 @@
                     </div>
                 </div>
             </div>
-
+            @if ($message = Session::get('event-failed'))
+                <h5 class="alert alert-warning">{{$message}}</h5>
+            @endif
             <div class="text-center">
                 <input
                     type="submit"

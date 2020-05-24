@@ -40,7 +40,7 @@ class EventController extends Controller
             'title' => 'required',
             'description' => 'required',
             'sport_id' => 'required',
-            'max_participants' => 'required|integer|size:11',
+            'max_participants' => 'required',
             'datetime' => 'required',
             'img' => 'required'
         ]);
@@ -54,6 +54,11 @@ class EventController extends Controller
                 $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
                 unset($eventData['_token']);
                 $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
+                if ($response->status() === 200){
+                    return redirect('/')->with('created-event', 'Evento creado correctamente');
+                } else {
+                    return redirect('/events/create')->with('event-failed', 'No se ha podido crear el evento');
+                }
             }
         }
     }
