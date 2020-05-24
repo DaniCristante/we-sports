@@ -17,6 +17,37 @@
                         </h4>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="">
+                        <h4 class="text-center">Filtra por ciudad, fecha o deporte</h4>
+                    </div>
+                    <form action="{{url('events')}}" method="post" novalidate="novalidate">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <input type="text" name="city" class="form-control search-slt" placeholder="Ciudad">
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <input type="date" name="date" class="form-control search-slt" placeholder="Fecha">
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <select class="form-control search-slt" name="sport" id="sportsList">
+                                            <option value="none" disabled hidden selected>- Selecciona un deporte -</option>
+                                            @foreach($sports as $sport)
+                                                <option value="{{$sport['id']}}">{{$sport['name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <input type="submit" name="submit" class="btn btn-secondary wrn-btn" value="Buscar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </header>
         </div>
     </div>
