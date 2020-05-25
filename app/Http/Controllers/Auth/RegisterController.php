@@ -89,7 +89,9 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         //TODO if login get token (LoginController login ejemplo)
-        $this->guard()->login($user);
+        /*if($this->guard()->login($user)){
+            $this->callHandler->getToken($request);
+        }*/
 
         if ($response = $this->registered($request, $user)) {
             return $response;
@@ -97,6 +99,6 @@ class RegisterController extends Controller
 
         return $request->wantsJson()
             ? new Response('', 201)
-            : redirect($this->redirectPath());
+            : redirect($this->redirectPath())->with('status', 'Registro completado!');
     }
 }
