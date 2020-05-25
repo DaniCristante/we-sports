@@ -19,9 +19,9 @@ class AdminController extends Controller
     {
         $token = $request->session()->get('api_token');
         $response = $this->callHandler->authorizedGetMethodHandler('/user', $token);
-        if ($response->status() === 200){
+        if ($response->status() === 200) {
             $userData = $response->json()['user'];
-            return view('manager.panel',[
+            return view('manager.panel', [
                 'data' => $userData
             ]);
         } //TODO Else
