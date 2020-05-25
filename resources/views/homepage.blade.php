@@ -34,11 +34,11 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0 my-1">
                                             <input type="text" name="city" class="form-control search-slt"
                                                    placeholder="Ciudad">
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0 my-1">
                                             <input type="date" name="date" class="form-control search-slt"
                                                    placeholder="Fecha">
                                         </div>
@@ -71,7 +71,14 @@
         <div id="page-title">
             <h2 class="text-center h1 text-dark">Eventos con más participantes</h2>
         </div>
-        @include('wesports.events.event-list')
+        {{--        @include('wesports.events.event-list')--}}
+        <div id="eventsField" class="row justify-content-center">
+            @foreach($events as $event)
+                {{--        <x-event-card-v2 :event="$event"/>--}}
+                @include('components.event-card')
+            @endforeach
+        </div>
+
 
         <div class="col-12 text-center my-2">
             <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events')}}">Ver mas

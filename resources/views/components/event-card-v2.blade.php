@@ -1,6 +1,5 @@
-{{--{{dd($event)}}--}}
-
-<div class="col-11  col-md-5 m-1 card p-2">
+{{--<div {{ $attributes->merge(['class' => 'col-1 col-md-5 m-1 card p-2']) }}>--}}
+<div class="col-11  col-md-12 m-1 card p-2">
     <div class="row p-1 justify-content-around align-items-center">
         <div class="col-12 col-xs-3 col-lg-4 text-center">
             <img class="border rounded-lg bg-info" src="../images/favicon.png"

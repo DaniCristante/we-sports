@@ -25,7 +25,7 @@
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/events')}}">Ver todos los eventos</a>
+                    <a class="nav-link text-white" href="{{url('/events')}}">Eventos</a>
                 </li>
             </ul>
 
