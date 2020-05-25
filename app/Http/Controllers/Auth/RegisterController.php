@@ -88,11 +88,6 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
-        //TODO if login get token (LoginController login ejemplo)
-        /*if($this->guard()->login($user)){
-            $this->callHandler->getToken($request);
-        }*/
-
         if ($response = $this->registered($request, $user)) {
             return $response;
         }

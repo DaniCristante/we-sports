@@ -17,7 +17,7 @@
                         <span>Título </span>
                     </div>
                     <div class="col-12 col-md-10">
-                        <input type="text" name="title" class="form-control" required>
+                        <input type="text" name="title" class="form-control" value="{{old('title')}}" required>
                     </div>
                 </div>
                 <div class="row my-2 justify-content-center align-items-center">
@@ -25,7 +25,7 @@
                         <span>Descripción </span>
                     </div>
                     <div class="col-12 col-md-10">
-                        <textarea name="description" class="form-control" required></textarea>
+                        <textarea name="description" class="form-control" required>{{old('description')}}</textarea>
                     </div>
                     @error('description')
                     <span class="invalid-feedback" role="alert">
@@ -46,7 +46,8 @@
                     </div>
                     <div class="col-12 col-md-4 ">
                         <span>Participantes</span>
-                        <input type="number" name="max_participants" class="form-control" min="1" required>
+                        <input type="number" name="max_participants" class="form-control" min="1"
+                               value="{{old('max_participants')}}" required>
                     </div>
                 </div>
 
@@ -54,15 +55,18 @@
 
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-7">
-                        <input type="text" name="address" placeholder="Dirección" required class="form-control my-1">
+                        <input type="text" name="address" placeholder="Dirección" value="{{old('address')}}" required
+                               class="form-control my-1">
                     </div>
                     <div class="col-12 col-md-5">
-                        <input type="text" name="city" placeholder="Ciudad" required class="form-control my-1">
+                        <input type="text" name="city" placeholder="Ciudad" value="{{old('city')}}" required
+                               class="form-control my-1">
 
                     </div>
                     <div class="col-10 col-md-6 my-2 ">
                         <span>Fecha</span>
-                        <input type="datetime-local" name="datetime" class="form-control" required>
+                        <input type="datetime-local" name="datetime" value="{{old('datetime')}}" class="form-control"
+                               required>
                     </div>
                     <div class="col-10 col-md-6 my-2 ">
                         <span>Imagen</span>
