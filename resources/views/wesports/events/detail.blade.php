@@ -10,7 +10,7 @@
                 <div id="detail-image-container"
                      class="media-container embed-responsive embed-responsive-16by9 col-10 col-md-7">
                     <img id="detail-image" class="embed-responsive-item detalled-image"
-                         src="{{$event['img']}}">
+                         src="/{{$event['img']}}">
                 </div>
             </div>
             <hr class="bg-secondary">
