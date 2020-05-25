@@ -83,4 +83,11 @@ class CallHandler
     {
         return str_replace(' ', '_', $string);
     }
+
+    public function authorizedGetMethodHandler(string $url, string $token)
+    {
+        return Http::withToken($token)
+            ->withHeaders(self::HEADERS)
+            ->get(self::API_ENDPOINT.$url);
+    }
 }
