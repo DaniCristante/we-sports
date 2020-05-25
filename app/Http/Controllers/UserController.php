@@ -20,10 +20,10 @@ class UserController extends Controller
         $url = url()->current();
         $pos_nickname = strrpos($url, "/", 0);
         $nickname = substr($url, $pos_nickname + 1, strlen($url));
-        $requestUrl = '/profile/' . $nickname;
-
-        dump($requestUrl);
-        die();
+        $requestUrl = '/users?nickname=' . $nickname;
+        $user = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
+        $user = \reset($user);
+        dump($user);die();
     }
 
 }
