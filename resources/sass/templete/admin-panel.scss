@@ -1,0 +1,46 @@
+@function rem($value) {
+    @return unquote(($value/1px)/16+'rem');
+}
+
+
+$margin-top: 54px;
+
+
+.wrapper {
+    margin-top: rem($margin-top);
+    .sideMenu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin: rem($margin-top) auto auto;
+        left: 0;
+        width: rem(200px);
+        transition: all ease 1s;
+        transform: translateX(-100%);
+        z-index: 2000;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: rem(0px);
+        transition: all ease 1s;
+    }
+
+    &.active {
+        .sideMenu {
+            transform: translateX(0);
+        }
+    }
+}
+
+
+@media (min-width: 992px) {
+    .wrapper {
+        .sideMenu {
+            transform: translateX(0);
+        }
+        .content {
+            margin-left: rem(200px);
+        }
+    }
+}

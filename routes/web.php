@@ -32,6 +32,7 @@ Route::get('events/{id?}', 'EventController@eventDetail');
 /**  </TEST FRONT END>     */
 
 /** ROUTE FOR TEST TEMPLETE */
-Route::get('/demo',function (){
-   return view ('user.panel');
+Route::get('/demo', function () {
+//    return view('user.panel');
+    return view('manager.panel');
 });

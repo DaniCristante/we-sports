@@ -2,13 +2,21 @@
 
 @section('content')
 
-    <div class="container">
-        <div class="row justify-content-center my-5 p-2">
-            <div class="card col-10 col-md-4 mr-2" style="width: 18rem;">
+    <div class="container-fluid">
+        <div class="row justify-content-center my-3  p-1">
+            <div class="card col-10 col-md-3 mr-2 p-2" style="width: 18rem;">
                 <img class="card-img-top border rounded-circle my-1"
                      src="https://spoiler.bolavip.com/__export/1578319752701/sites/bolavip/img/2020/01/06/peaky_blinders_sexta_temporada_crop1578318169058.jpg_1005196607.jpg"
                      alt="Card image cap">
                 <div class="card-body">
+                    <div class="text-center">
+                        <i class="fas fa-star 2x"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+
+                    </div>
                     <h6>UserName</h6>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi aspernatur at deleniti
                     distinctio eligendi esse eveniet itaque natus nesciunt nihil, officiis porro quaerat, repellat sunt
@@ -31,35 +39,172 @@
 
             </div>
 
-            <div class="col-12 col-md-7 bg-light ml-2 row">
-                <div class="col-12 ">
-                    <ul class="list-group list-group-horizontal-md" id="userPerfiList">
+            <div class="col-12 col-md-9 bg-light ml-md-1  row align-content-start justify-content-center">
+                <div class="col-12 my-2 text-center">
+                    <ul class="list-group list-group-horizontal-md text-center" id="userPerfiList">
                         <li class="list-group-item collapsed" data-toggle="collapse" data-target="#eventosUsuario">
-                            Eventos creados
+                            <i class="far fa-calendar-plus"></i>   Eventos creados
                         </li>
-                        <li class="list-group-item">Eventos participados</li>
-                        <li class="list-group-item">Amigos</li>
+                        <li class="list-group-item collapsed" data-toggle="collapse" data-target="#eventosParticipados">
+                            <i class="far fa-calendar-check"></i> Eventos participados</li>
+                        <li class="list-group-item collapsed" data-toggle="collapse" data-target="#followers">
+                            <i class="fas fa-user-friends mx-2"></i>Seguidores</li>
                     </ul>
                 </div>
-                <div class="col-12 collapse" id="eventosUsuario">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias deserunt doloribus eligendi esse
-                        ex exercitationem fugit hic impedit incidunt ipsam maxime modi molestiae numquam, optio quidem
-                        ratione saepe vel voluptates?
-                    </p>
-                    <i>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores delectus
-                        dignissimos dolor dolorem ex iste iure laborum placeat, praesentium recusandae repellat ullam
-                        voluptas? Inventore magnam necessitatibus nemo similique tenetur.
-                    </i>
-                    <br>
-                    <strong class="text-black-50">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cumque deleniti ducimus facere
-                        nam nisi sunt? Aut, doloribus esse ex explicabo illum in iure modi mollitia, non repellat rerum
-                        saepe!
-                    </strong>
+                <div class="col-12 collapse row" id="eventosUsuario">
+                    <h3> Eventos del @nickname</h3>
+                    <table class="table table-responsive table-hover">
+                        <thead class="thead-dark ">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Participantes</th>
+                            <th scope="col ">Puntuación</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>Futbol club amigos</td>
+                            <td>Fútbol</td>
+                            <td>10/09/20 20:00</td>
+                            <td>Calle Marina 120, Barcelona</td>
+                            <td>12 de 20</td>
+                            <td>
+                                <div class="text-center">
+
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Futbol club amigos</td>
+                            <td>Fútbol</td>
+                            <td>10/09/20 20:00</td>
+                            <td>Calle Marina 120, Barcelona</td>
+                            <td>12 de 20</td>
+                            <td>
+                                <div class="text-center">
+
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Futbol club amigos</td>
+                            <td>Fútbol</td>
+                            <td>10/09/20 20:00</td>
+                            <td>Calle Marina 120, Barcelona</td>
+                            <td>12 de 20</td>
+                            <td>
+                                <div class="text-center">
+
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
 
                 </div>
+                <div class="col-12 collapse row" id="eventosParticipados">
+                    <h3>Eventos participados</h3>
+                    <table class="table table-responsive table-hover">
+                        <thead class="thead-dark ">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Participantes</th>
+                            <th scope="col ">Puntuación</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>Futbol club amigos</td>
+                            <td>Fútbol</td>
+                            <td>10/09/20 20:00</td>
+                            <td>Calle Marina 120, Barcelona</td>
+                            <td>12 de 20</td>
+                            <td>
+                                <div class="text-center">
+
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Futbol club amigos</td>
+                            <td>Fútbol</td>
+                            <td>10/09/20 20:00</td>
+                            <td>Calle Marina 120, Barcelona</td>
+                            <td>12 de 20</td>
+                            <td>
+                                <div class="text-center">
+
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Futbol club amigos</td>
+                            <td>Fútbol</td>
+                            <td>10/09/20 20:00</td>
+                            <td>Calle Marina 120, Barcelona</td>
+                            <td>12 de 20</td>
+                            <td>
+                                <div class="text-center">
+
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="col-12 collapse row" id="followers">
+                    <h3>Seguidores</h3>
+                </div>
+
             </div>
 
 
