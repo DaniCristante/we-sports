@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
-
+    @if (session('status'))
+        <div id="alert_register" class="alert alert-success mb-0 text-center">
+            {{ session('status') }}
+        </div>
+    @endif
     <div class="container-fluid">
         <div class="row align-items-center">
             {{--Only homepage cover header--}}
@@ -9,9 +13,11 @@
                     <h2 class="text-center">Bienvenido a WeSports</h2>
                     <div id="web-abstract">
                         <h4 class="p-2">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias dolorem eligendi error
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias dolorem eligendi
+                            error
                             eum
-                            harum ipsam libero, modi molestias obcaecati odit pariatur perferendis quidem rem sit, soluta
+                            harum ipsam libero, modi molestias obcaecati odit pariatur perferendis quidem rem sit,
+                            soluta
                             totam.
                             Beatae, officiis.
                         </h4>
@@ -27,21 +33,25 @@
                             <div class="col-lg-12">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                        <input type="text" name="city" class="form-control search-slt" placeholder="Ciudad">
+                                        <input type="text" name="city" class="form-control search-slt"
+                                               placeholder="Ciudad">
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                        <input type="date" name="date" class="form-control search-slt" placeholder="Fecha">
+                                        <input type="date" name="date" class="form-control search-slt"
+                                               placeholder="Fecha">
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                                         <select class="form-control search-slt" name="sport" id="sportsList">
-                                            <option value="none" disabled hidden selected>- Selecciona un deporte -</option>
+                                            <option value="none" disabled hidden selected>- Selecciona un deporte -
+                                            </option>
                                             @foreach($sports as $sport)
                                                 <option value="{{$sport['id']}}">{{$sport['name']}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                        <input type="submit" name="submit" class="btn btn-secondary wrn-btn" value="Buscar">
+                                        <input type="submit" name="submit" class="btn btn-secondary wrn-btn"
+                                               value="Buscar">
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +80,6 @@
 @endsection
 
 @section('scripts')
-    {{--    Scroll Header Option --}}
-    {{--    <script src="{{asset('js/homePageActions.js')}}">--}}
-    {{--    </script>--}}
+    <script src="{{asset('js/register_alert.js')}}">
+    </script>
 @endsection
