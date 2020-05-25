@@ -10,7 +10,7 @@
                 <div id="detail-image-container"
                      class="media-container embed-responsive embed-responsive-16by9 col-10 col-md-7">
                     <img id="detail-image" class="embed-responsive-item detalled-image"
-                         src="{{asset('images/events/cycling.jpg')}}">
+                         src="/{{$event['img']}}">
                 </div>
             </div>
             <hr class="bg-secondary">
@@ -56,65 +56,10 @@
                         @endif
                     </div>
                 </div>
-
-
             </div>
-
         </div>
-
-
         @include('components.eventos-relacionados')
-
-
-
     </div>
-
-
-    {{--    <div id="detail-container" class="container mb-2 mt-2">--}}
-    {{--        <div class="row justify-content-center">--}}
-    {{--            <div class="jumbotron-fluid">--}}
-    {{--                <h1 class="display-4">{{$event['title']}}</h1>--}}
-
-    {{--                <div id="image" class="col-4 justify-content-center">--}}
-    {{--                    <!--TODO pasar imagen desde la api-->--}}
-    {{--                    <div id="detail-image-container"--}}
-    {{--                         class="media-container embed-responsive embed-responsive-16by9 col-5">--}}
-    {{--                        <img id="detail-image" class="embed-responsive-item detalled-image"--}}
-    {{--                             src="{{asset('images/events/cycling.jpg')}}">--}}
-    {{--                    </div>--}}
-    {{--                </div>--}}
-
-    {{--                <div class="col-7">--}}
-    {{--                    <div class="col-12">--}}
-    {{--                        @include('components.participant-list')--}}
-
-    {{--                    </div>--}}
-
-    {{--                </div>--}}
-
-    {{--            </div>--}}
-
-
-    {{--            <div id="image">--}}
-    {{--                <!--TODO pasar imagen desde la api-->--}}
-    {{--                <div id="detail-image-container"--}}
-    {{--                     class="media-container embed-responsive embed-responsive-16by9 col-5">--}}
-    {{--                    <img id="detail-image" class="embed-responsive-item"--}}
-    {{--                         src="{{asset('images/events/cycling.jpg')}}">--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-    {{--            <div class="row">--}}
-    {{--                <div class="col">--}}
-    {{--                    @include('components.participant-list')--}}
-    {{--                </div>--}}
-    {{--                <div class="col">--}}
-    {{--                    <p>{{$event['description']}}</p>--}}
-    {{--                    <h5> {{$event['current_participants']}} de {{$event['max_participants']}} participantes</h5>--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-    {{--            @include('wesports.events.related')--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
 @endsection
 
 
