@@ -17,13 +17,8 @@
                         <i class="far fa-star"></i>
 
                     </div>
-                    <h6>UserName</h6>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi aspernatur at deleniti
-                    distinctio eligendi esse eveniet itaque natus nesciunt nihil, officiis porro quaerat, repellat sunt
-                    ullam veritatis voluptas voluptate?
-
+                    <h6>{{$user['uname']}} {{$user['surnames']}}</h6>
                 </div>
-
                 <div class="card-footer p-2 my-2">
                     <i class="d-block fab fa-facebook">
                         <span class="mx-1">Tommy Shelbby</span>
@@ -32,7 +27,7 @@
                         <span class="mx-1">@tomy</span>
                     </i>
                     <i class="d-block fas fa-mobile-alt">
-                        <span class="mx-1">07 0456 9872</span>
+                        <span class="mx-1">{{$user['phone']}}</span>
                     </i>
 
                 </div>
@@ -52,7 +47,7 @@
                     </ul>
                 </div>
                 <div class="col-12 collapse row" id="eventosUsuario">
-                    <h3> Eventos del @nickname</h3>
+                    <h3> Eventos de {{$user['nickname']}}</h3>
                     <table class="table table-responsive table-hover">
                         <thead class="thead-dark ">
                         <tr>
@@ -61,70 +56,21 @@
                             <th scope="col">Fecha</th>
                             <th scope="col">Lugar</th>
                             <th scope="col">Participantes</th>
-                            <th scope="col ">Puntuación</th>
+                            <th scope="col">Puntuación</th>
                         </tr>
                         </thead>
-
                         <tbody>
-                        <tr>
-                            <td>Futbol club amigos</td>
-                            <td>Fútbol</td>
-                            <td>10/09/20 20:00</td>
-                            <td>Calle Marina 120, Barcelona</td>
-                            <td>12 de 20</td>
-                            <td>
-                                <div class="text-center">
-
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Futbol club amigos</td>
-                            <td>Fútbol</td>
-                            <td>10/09/20 20:00</td>
-                            <td>Calle Marina 120, Barcelona</td>
-                            <td>12 de 20</td>
-                            <td>
-                                <div class="text-center">
-
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Futbol club amigos</td>
-                            <td>Fútbol</td>
-                            <td>10/09/20 20:00</td>
-                            <td>Calle Marina 120, Barcelona</td>
-                            <td>12 de 20</td>
-                            <td>
-                                <div class="text-center">
-
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-
-                                </div>
-                            </td>
-                        </tr>
-
+                        @foreach($createdEvents as $event)
+                            <tr>
+                                <td>{{$event['title']}}</td>
+                                <td>{{$event['name']}}</td>
+                                <td>{{$event['datetime']}}</td>
+                                <td>{{$event['address']}}, {{$event['city']}}</td>
+                                <td>{{$event['current_participants']}} de {{$event['max_participants']}}</td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
-
                 </div>
                 <div class="col-12 collapse row" id="eventosParticipados">
                     <h3>Eventos participados</h3>
@@ -136,10 +82,9 @@
                             <th scope="col">Fecha</th>
                             <th scope="col">Lugar</th>
                             <th scope="col">Participantes</th>
-                            <th scope="col ">Puntuación</th>
+                            <th scope="col">Puntuación</th>
                         </tr>
                         </thead>
-
                         <tbody>
                         <tr>
                             <td>Futbol club amigos</td>
@@ -149,26 +94,6 @@
                             <td>12 de 20</td>
                             <td>
                                 <div class="text-center">
-
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Futbol club amigos</td>
-                            <td>Fútbol</td>
-                            <td>10/09/20 20:00</td>
-                            <td>Calle Marina 120, Barcelona</td>
-                            <td>12 de 20</td>
-                            <td>
-                                <div class="text-center">
-
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -192,22 +117,32 @@
                                     <i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                     <i class="far fa-star"></i>
-
                                 </div>
                             </td>
                         </tr>
-
+                        <tr>
+                            <td>Futbol club amigos</td>
+                            <td>Fútbol</td>
+                            <td>10/09/20 20:00</td>
+                            <td>Calle Marina 120, Barcelona</td>
+                            <td>12 de 20</td>
+                            <td>
+                                <div class="text-center">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
-
                 </div>
                 <div class="col-12 collapse row" id="followers">
                     <h3>Seguidores</h3>
                 </div>
-
             </div>
-
-
         </div>
     </div>
 

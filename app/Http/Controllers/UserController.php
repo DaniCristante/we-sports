@@ -23,7 +23,18 @@ class UserController extends Controller
         $requestUrl = '/users?nickname=' . $nickname;
         $user = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
         $user = \reset($user);
-        dump($user);die();
+        $userId = $user['id'];
+        $events = $this->getUserEvents($userId);
+        return view('user.profile', [
+            'user' => $user,
+            'createdEvents' => $events
+        ]);
+    }
+
+    public function getUserEvents(int $userId)
+    {
+        $requestUrl = '/users-events/'.$userId;
+        return $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
     }
 
 }
