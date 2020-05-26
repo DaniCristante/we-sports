@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+@if(!isset($user))
+    <div class="text-center">
+        <h3 class="alert alert-danger">Usuario no encontrado</h3>
+        <a href="{{'/'}}">Volver al home</a>
+    </div>
 
+@else
     <div class="container-fluid">
         <div class="row justify-content-center my-3  p-1">
             <div class="card col-10 col-md-3 mr-2 p-2" style="width: 18rem;">
@@ -60,16 +66,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($createdEvents as $event)
-                            <tr>
-                                <td>{{$event['title']}}</td>
-                                <td>{{$event['name']}}</td>
-                                <td>{{$event['datetime']}}</td>
-                                <td>{{$event['address']}}, {{$event['city']}}</td>
-                                <td>{{$event['current_participants']}} de {{$event['max_participants']}}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
+                        @if ($createdEvents)
+                            @foreach($createdEvents as $event)
+                                <tr>
+                                    <td>{{$event['title']}}</td>
+                                    <td>{{$event['name']}}</td>
+                                    <td>{{$event['datetime']}}</td>
+                                    <td>{{$event['address']}}, {{$event['city']}}</td>
+                                    <td>{{$event['current_participants']}} de {{$event['max_participants']}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        @endif
                     </table>
                 </div>
                 <div class="col-12 collapse row" id="eventosParticipados">
@@ -145,5 +153,5 @@
             </div>
         </div>
     </div>
-
+@endif
 @endsection

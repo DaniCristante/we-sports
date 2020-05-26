@@ -30,7 +30,7 @@ class UserController extends Controller
                 'user' => $user,
                 'createdEvents' => $events
             ]);
-        } dump('TODO si no existe el usuario, si usuario existe pero no tiene eventos que mostrar');
+        } return view('user.profile');
     }
 
     public function getUserEvents(int $userId)
