@@ -65,8 +65,14 @@
                     </div>
                     <div class="col-10 col-md-6 my-2 ">
                         <span>Fecha</span>
-                        <input type="datetime-local" name="datetime" value="{{old('datetime')}}" class="form-control"
+                        <input type="datetime-local" name="datetime" value="{{old('datetime')}}"
+                               class="form-control @error('datetime') is-invalid @enderror"
                                required>
+                        @error('datetime')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="col-10 col-md-6 my-2 ">
                         <span>Imagen</span>
