@@ -1,12 +1,12 @@
-
 <div id="userUpdateForm">
     <form action="{{url('dashboard/update')}}" class="form-group form  col-12 my-2 mx-1 p-4" method="POST">
         @csrf
         <h3 class="form-title">Actualizar perfil</h3>
 
-        <div class="form-group">
+        <div class="form-group" id="imgInput">
             <label>Imagen perfil</label>
-            <input type="file" class="form-control" name="uimg" value="@if($data['uimg']) {{$data['uimg'] }} @endif">
+            <input type="file" class="form-control" name="uimg" id="uimg"
+                   value="@if($data['uimg']) {{$data['uimg'] }} @endif">
         </div>
 
         <div class="form-group">
@@ -23,31 +23,31 @@
 
         <hr class="bg-secondary">
 
-        <div class="form-group">
+        <div class="form-group" id="nameInput">
             <label>Nombre</label>
-            <input type="text" class="form-control" name="uname" value="{{$data['uname']}}">
+            <input type="text" class="form-control" name="uname" id="uname" value="{{$data['uname']}}">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" id="inputSurnames">
             <label>Apellidos</label>
-            <input type="text" class="form-control" name="surnames"
+            <input type="text" class="form-control" name="surnames" id="surnames"
                    value="@if($data['surnames']){{$data['surnames'] }}@endif">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" id="phoneInput">
             <label>Número de telefono</label>
-            <input type="number" class="form-control" name="phone"
+            <input type="tel" class="form-control" name="phone" id="phone"
                    value="@if($data['phone']){{$data['phone'] }}@endif">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" id="cityInput">
             <label>Ciudad</label>
-            <input type="text" class="form-control" name="city"
+            <input type="text" class="form-control" name="city" id="city"
                    value="@if($data['city']){{$data['city'] }}@endif">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="addressInput">
             <label>Dirección</label>
-            <input type="text" class="form-control" name="address"
+            <input type="text" class="form-control" name="address" id="address"
                    value="@if($data['address']){{$data['address'] }}@endif">
         </div>
 

@@ -48,7 +48,14 @@ $(document).ready(function () {
     }
 
 
-});
+    /***
+     * Form validation only JavaScript
+     */
+
+    updateUserFormValidate();
+
+})
+;
 
 
 /***
@@ -60,6 +67,84 @@ function addTogglerButton() {
     $('footer').remove();
     $('#createEventButton').remove()
 }
+
+function updateUserFormValidate() {
+
+    //Image 2mb validation
+    $('#uimg').change(function () {
+        if (this.files[0].size > 2097152) {
+            $('#imgInput').append(' <small class="alert-danger text-center">Imagen debe ser inferior a 2MB</small>');
+            this.value = "";
+        }
+    })
+
+    $('#uname').change(function () {
+            if ($(this).val().length >= 74) {
+                //Condicion para que no esciba varias veces el mensaje de error
+                if (!$('#nameInput').children('small').length > 0) {
+                    $('#nameInput').append('<small class="alert-danger text-center">Nombre puede tener un máximo de 74 caracteres</small>');
+                }
+                this.value = "";
+            }
+        }
+    );
+
+    $('#surnames').change(function () {
+            if ($(this).val().length >= 150) {
+                //Condicion para que no esciba varias veces el mensaje de error
+                if (!$('#inputSurnames').children('small').length > 0) {
+                    $('#inputSurnames').append('<small class="alert-danger text-center">Apellidos puede tener un máximo de 150 caracteres</small>');
+                }
+                this.value = "";
+            }
+        }
+    );
+
+    $('#city').change(function () {
+            if ($(this).val().length >= 100) {
+                //Condicion para que no esciba varias veces el mensaje de error
+                if (!$('#cityInput').children('small').length > 0) {
+                    $('#cityInput').append('<small class="alert-danger text-center">Ciudad puede tener un máximo de 100 caracteres</small>');
+                }
+                this.value = "";
+            }
+        }
+    );
+
+
+    $('#address').change(function () {
+            if ($(this).val().length >= 200) {
+                //Condicion para que no esciba varias veces el mensaje de error
+                if (!$('#addressInput').children('small').length > 0) {
+                    $('#addressInput').append('<small class="alert-danger text-center">Dirección puede tener un máximo de 200 caracteres</small>');
+                }
+                this.value = "";
+            }
+        }
+    );
+
+    $('#phone').change(function () {
+
+
+            let spanishNumber = /^[679]{1}[0-9]{8}$/;
+
+            let userPhoneEntry = $('#phone').val();
+
+
+            if (userPhoneEntry.length < 9 || userPhoneEntry.length > 9) {
+                //Condicion para que no esciba varias veces el mensaje de error
+                if (!$('#phoneInput').children('small').length > 0) {
+                    $('#phoneInput').append('<small class="alert-danger text-center">Número de telefono invalido [ XXX XXX XXX ]  </small>');
+                }
+                this.value = "";
+            }
+        }
+    );
+
+
+}
+
+
 
 
 

@@ -12,8 +12,10 @@
 
     <div class="wrapper d-flex ">
 
-        {{--Static no data--}}
-        <x-admin-side-menu :data="$data"/>
+
+        {{--        <x-admin-side-menu :data="$data"/>--}}
+
+        @include('components.admin-side-menu')
 
         {{--Dynamic--}}
         @include('components.admin-content')

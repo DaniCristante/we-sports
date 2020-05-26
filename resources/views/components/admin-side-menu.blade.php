@@ -3,21 +3,43 @@
         <ul class="navbar-nav my-3 p-1 ">
 
             <li class="nav-item">
-                <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventsBtn">
-                    <i class="far fa-calendar-plus text-white mx-2"></i>
-                    <span class="text-white">Eventos creados</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventosParticipadosBtn">
-                    <i class="fas fa-user-edit text-white mx-2"></i>
-                    <span class="text-white">Eventos participados</span>
+                <a href="{{url('/profile/'.$data['nickname'])}}" class="nav-link px-1 btn-outline-secondary">
+                    <i class="fas fa-user text-white mx-2"></i>
+                    <span class="text-white">Mi perfil</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="profileBtn">
                     <i class="fas fa-user-edit text-white mx-2"></i>
                     <span class="text-white">Actualizar perfil</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/events" class="nav-link px-1 btn-outline-secondary">
+                    <i class="fas fa-calendar-alt text-white mx-2"></i>
+                    <span class="text-white">Eventos </span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventsBtn">
+                    <i class="far fa-calendar-plus text-white mx-2"></i>
+                    <span class="text-white">Mis eventos </span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventosParticipadosBtn">
+                    <i class="far fa-calendar-check text-white mx-2"></i>
+                    <span class="text-white">Eventos participados</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="events/create" class="nav-link px-1 btn-outline-secondary">
+                    <i class="fas fa-plus text-white mx-2"></i>
+                    <span class="text-white">Nuevo evento</span>
                 </a>
             </li>
             <li class="nav-item">
