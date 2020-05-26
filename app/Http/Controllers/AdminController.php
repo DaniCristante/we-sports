@@ -22,10 +22,13 @@ class AdminController extends Controller
     {
         $token = $request->session()->get('api_token');
         $response = $this->callHandler->authorizedGetMethodHandler('/user', $token);
+        $userId = Auth::user()->getAuthIdentifier();
         if ($response->status() === 200) {
             $userData = $response->json()['user'];
+            $userEvents = $this->getUserEvents($userId);
             return view('manager.panel', [
-                'data' => $userData
+                'data' => $userData,
+                'userEvents' => $userEvents
             ]);
         } //TODO Else
     }
@@ -54,5 +57,11 @@ class AdminController extends Controller
             'surnames' => ['string', 'max:150'],
             'phone' => ['integer', 'size:9']
         ]);
+    }
+
+    public function getUserEvents($userId)
+    {
+        $requestUrl = '/users-events/'.$userId;
+        return $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
     }
 }

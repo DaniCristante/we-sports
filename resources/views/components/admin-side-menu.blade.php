@@ -5,19 +5,19 @@
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventsBtn">
                     <i class="far fa-calendar-plus text-white mx-2"></i>
-                    <span class="text-white">Eventos</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link px-1 btn-outline-secondary" id="profileBtn">
-                    <i class="fas fa-user-edit text-white mx-2"></i>
-                    <span class="text-white">Actualizar perfil</span>
+                    <span class="text-white">Eventos creados</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventosParticipadosBtn">
                     <i class="fas fa-user-edit text-white mx-2"></i>
                     <span class="text-white">Eventos participados</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-1 btn-outline-secondary" id="profileBtn">
+                    <i class="fas fa-user-edit text-white mx-2"></i>
+                    <span class="text-white">Actualizar perfil</span>
                 </a>
             </li>
             <li class="nav-item">
