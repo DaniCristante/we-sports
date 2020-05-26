@@ -54,7 +54,7 @@ class EventController extends Controller
                 }
             }
         }
-        return redirect('/')->with('created-event', 'Evento creado correctamente');
+        return redirect('/')->with('status', 'Evento creado correctamente');
     }
 
     public function eventList(Request $request)
