@@ -38,15 +38,6 @@ class EventController extends Controller
 
     public function storeEvent(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|max:100',
-            'description' => 'required',
-            'sport_id' => 'required',
-            'max_participants' => 'required',
-            'datetime' => 'required',
-            'img' => 'required'
-        ]);
-
         $this->validator($request->all())->validate();
 
         if ($request->file('img')) {
