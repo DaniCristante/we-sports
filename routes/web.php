@@ -17,22 +17,18 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('test', 'HomeController@test')->middleware('auth');
-
-
-/**  <TEST FRONT END>     */
-
 Route::get('/events', 'EventController@eventList');
 Route::post('/events', 'EventController@eventList');
 Route::get('/events/create', 'EventController@createEvent')->middleware('auth');
 Route::post('/events/create', 'EventController@storeEvent')->name('events.store')->middleware('auth');
+Route::post('/events/delete', 'EventController@deleteEvent')->middleware('auth');
 Route::get('/profile/{nickname?}', 'UserController@getProfile');
 
 Route::get('events/{id?}', 'EventController@eventDetail');
-/**  </TEST FRONT END>     */
 
 Route::get('dashboard', 'AdminController@showAdminPanel');
 Route::post('dashboard/update', 'AdminController@updateUser');
+
 /** ROUTE FOR TEST TEMPLETE */
 Route::get('/demo', function () {
 

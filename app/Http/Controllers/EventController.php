@@ -132,4 +132,9 @@ class EventController extends Controller
             'img' => ['required'],
         ]);
     }
+
+    public function deleteEvent(Request $request)
+    {
+
+    }
 }
