@@ -6114,6 +6114,14 @@ i {
   padding: 10px;
 }
 
+input:-moz-read-only {
+  background-color: #f0dace !important;
+}
+
+input:read-only {
+  background-color: #f0dace !important;
+}
+
 .form-control,
 .uneditable-input:focus {
   background-color: white !important;

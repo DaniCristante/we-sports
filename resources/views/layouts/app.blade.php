@@ -69,7 +69,7 @@
         @yield('content')
     </main>
     @if(Auth::check() and Request::url() !== env('CREATE_EVENT_FORM_URL'))
-        <a href="{{url('/events/create')}}" class="float">
+        <a href="{{url('/events/create')}}" class="float" id="createEventButton">
             <i class="fa fa-plus my-float fa-2x"></i>
         </a>
     @endif

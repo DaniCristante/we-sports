@@ -34,6 +34,6 @@ Route::get('events/{id?}', 'EventController@eventDetail');
 Route::get('admin-panel', 'AdminController@showAdminPanel');
 /** ROUTE FOR TEST TEMPLETE */
 Route::get('/demo', function () {
-//    return view('user.panel');
-    return view('manager.panel');
+
+    return view('user.profile');
 });

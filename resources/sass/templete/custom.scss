@@ -63,6 +63,12 @@ i {
         padding: 10px;
     }
 
+
+}
+
+ input:read-only {
+    background-color: #f0dace !important;
+
 }
 
 .form-control, .uneditable-input:focus {
@@ -85,7 +91,7 @@ i {
     -moz-box-shadow: 0 8px 6px -6px $secondary;
     box-shadow: 4px 4px 2px -2px $primary;
 
-    &:active , &:hover , &:focus {
+    &:active, &:hover, &:focus {
         -moz-box-shadow: 0 0 15px $secondary;
         -webkit-box-shadow: 0 0 15px $secondary;
         box-shadow: 0 0 15px $secondary;
@@ -111,25 +117,25 @@ i {
     h4 {
         font-size: 1.6em !important;
     }
-    
+
 
 }
 
-.float{
-    position:fixed;
-    width:80px;
-    height:80px;
-    bottom:70px;
-    right:2.5rem;
+.float {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    bottom: 70px;
+    right: 2.5rem;
     background-color: blue;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
     box-shadow: 2px 2px 3px #999;
 }
 
-.my-float{
-    margin-top:25px;
+.my-float {
+    margin-top: 25px;
 }
 
 //Scroll option
@@ -157,10 +163,11 @@ i {
 //
 //
 //}
-.search-sec{
+.search-sec {
     padding: 2rem;
 }
-.search-slt{
+
+.search-slt {
     display: block;
     width: 100%;
     font-size: 0.875rem;
@@ -170,8 +177,9 @@ i {
     background-image: none;
     border: 1px solid #ccc;
     height: calc(3rem + 2px) !important;
-    border-radius:0;
+    border-radius: 0;
 }
+
 .wrn-btn {
     width: 100%;
     font-size: 16px;
