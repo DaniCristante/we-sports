@@ -32,6 +32,7 @@ Route::get('events/{id?}', 'EventController@eventDetail');
 /**  </TEST FRONT END>     */
 
 Route::get('dashboard', 'AdminController@showAdminPanel');
+Route::post('dashboard/update', 'AdminController@updateUser');
 /** ROUTE FOR TEST TEMPLETE */
 Route::get('/demo', function () {
 
