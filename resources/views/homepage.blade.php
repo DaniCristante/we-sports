@@ -1,10 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    @if (session('status'))
-        <div id="alert_register" class="alert alert-success mb-0 text-center">
-            {{ session('status') }}
-        </div>
-    @endif
     <div class="container-fluid">
         <div class="row align-items-center">
             {{--Only homepage cover header--}}
@@ -26,6 +21,11 @@
                         </div>
                     </div>
                     <div class="container">
+                        @if (session('status'))
+                            <div id="alert_register" class="alert alert-success mb-0 text-center">
+                                <p class="text-center">{{ session('status') }}</p>
+                            </div>
+                        @endif
                         <div class="">
                             <h4 class="text-center">Filtra por ciudad, fecha o deporte</h4>
                         </div>
