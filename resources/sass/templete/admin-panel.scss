@@ -8,13 +8,14 @@ $margin-top: 54px;
 
 .wrapper {
     margin-top: rem($margin-top);
+
     .sideMenu {
         position: fixed;
         top: 0;
         bottom: 0;
         margin: rem($margin-top) auto auto;
         left: 0;
-        width: rem(200px);
+        width: rem(250px);
         transition: all ease 1s;
         transform: translateX(-100%);
         z-index: 2000;
@@ -39,8 +40,20 @@ $margin-top: 54px;
         .sideMenu {
             transform: translateX(0);
         }
+
         .content {
-            margin-left: rem(200px);
+            margin-left: rem(250px);
         }
+    }
+}
+
+.admin-event-card {
+
+    &:hover {
+        -moz-box-shadow: 0 0 5px $secondary;
+        -webkit-box-shadow: 0 0 5px $secondary;
+        box-shadow: 0 0 5px red;
+        transition: all 1s;
+
     }
 }

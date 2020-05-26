@@ -9,26 +9,42 @@ $(document).ready(function () {
 
     });
 
-    let adminContentField = $('#adminWelcome');
+    let adminWelcome = $('#adminWelcome');
     let userUpdateForm = $('#userUpdateForm');
+
+    let editBtn = $('#editEvent');
 
 
     /***
      * Operaciones iniciales
      * */
 
-    userUpdateForm.hide();
+    ocultContent();
+    adminWelcome.show();
+
 
     $('#profileBtn').on('click', function () {
-        showUserUpdateForm();
+        ocultContent();
+        userUpdateForm.show();
     });
 
+    $('#eventsBtn').on('click', function () {
 
-    function showUserUpdateForm() {
+        ocultContent();
+        adminWelcome.show();
 
-        adminContentField.hide();
-        userUpdateForm.show();
+    })
 
+
+    function ocultContent() {
+        $('#adminContent').children().hide();
+
+    }
+
+
+    function eventUpdateForm(e) {
+        e.preventDefault();
+        console.log('loged')
     }
 
 

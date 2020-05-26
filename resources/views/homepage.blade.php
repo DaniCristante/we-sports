@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row align-items-center">
             {{--Only homepage cover header--}}
-            @if (session('status'))
-                <div id="alerts" class="alert alert-success text-center">
-                    {{ session('status') }}
-                </div>
-            @endif
             <header id="homePageHeader" class="container-fluid  p-2 bg-dark">
+                @if (session('status'))
+                    <div id="alerts" class="alert alert-success text-center">
+                        {{session('status')}}
+                    </div>
+                @endif
                 <div class="container my-4">
                     <div class="col-12">
                         <h2 class="text-center">Bienvenido a WeSports</h2>
