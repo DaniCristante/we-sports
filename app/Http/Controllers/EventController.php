@@ -49,13 +49,12 @@ class EventController extends Controller
                 $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
                 unset($eventData['_token']);
                 $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
-                if ($response->status() === 200) {
-                    return redirect('/')->with('created-event', 'Evento creado correctamente');
-                } else {
+                if ($response->status() !== 201) {
                     return redirect('/events/create')->with('event-failed', 'No se ha podido crear el evento');
                 }
             }
         }
+        return redirect('/')->with('created-event', 'Evento creado correctamente');
     }
 
     public function eventList(Request $request)
