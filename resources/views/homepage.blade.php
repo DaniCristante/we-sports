@@ -42,7 +42,7 @@
                                             <input type="date" name="date" class="form-control search-slt"
                                                    placeholder="Fecha">
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0 my-1">
                                             <select class="form-control search-slt" name="sport" id="sportsList">
                                                 <option value="none" disabled hidden selected>- Selecciona un deporte -
                                                 </option>
@@ -51,7 +51,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0 my-1">
                                             <input type="submit" name="submit" class="btn btn-secondary wrn-btn"
                                                    value="Buscar">
                                         </div>
