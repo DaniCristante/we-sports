@@ -24,7 +24,9 @@
                                 Organizado por {{$event['nickname']}}
                             </span> </i>
                     </p>
-                    <h5 class="text-uppercase" id="participant-list"> <span class="h5" id="current-participants">{{$event['current_participants']}}</span> de {{$event['max_participants']}}
+                    <h5 class="text-uppercase" id="participant-list"><span class="h5"
+                                                                           id="current-participants">{{$event['current_participants']}}</span>
+                        de {{$event['max_participants']}}
                         participantes</h5>
 
                     @include('components.participant-list')
@@ -155,12 +157,12 @@
                         method: "GET",
                         success: function (result) {
                             $('#list-parent').empty();
-                            $.each(result[0], function () {
+                            for (var i = 0; i < result.length; i++) {
                                 let participantElement = document.createElement('li');
                                 participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
-                                participantElement.innerText = this;
+                                participantElement.innerText = result[i].nickname;
                                 listParent.appendChild(participantElement);
-                            });
+                            }
                             $('#participate-button').show().prop("disabled", true);
                             $('#delete-button').hide();
                             document.getElementById('current-participants').innerText = numberOfParticipants - 1;
