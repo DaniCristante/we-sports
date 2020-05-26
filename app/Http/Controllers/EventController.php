@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\ApiHandlers\CallHandler;
 use App\ImageManager\ImageManager;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class EventController extends Controller
 {
@@ -36,16 +38,9 @@ class EventController extends Controller
 
     public function storeEvent(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'sport_id' => 'required',
-            'max_participants' => 'required',
-            'datetime' => 'required',
-            'img' => 'required'
-        ]);
+        $this->validator($request->all())->validate();
 
-        if ($request->file('img')){
+        if ($request->file('img')) {
             $imagePath = $this->imageManager->moveEventImage($request['img']);
             if ($imagePath !== null) {
                 $token = $request->session()->get('api_token');
@@ -54,7 +49,7 @@ class EventController extends Controller
                 $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
                 unset($eventData['_token']);
                 $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
-                if ($response->status() === 200){
+                if ($response->status() === 200) {
                     return redirect('/')->with('created-event', 'Evento creado correctamente');
                 } else {
                     return redirect('/events/create')->with('event-failed', 'No se ha podido crear el evento');
@@ -100,9 +95,9 @@ class EventController extends Controller
 
         $participants = $this->callHandler->unauthorizedGetMethodHandler($requestUrl . '/participants');
         $eventSportId = $event['sport_id'];
-        $relatedEventsRequestUrl = '/events?sport='.$eventSportId;
+        $relatedEventsRequestUrl = '/events?sport=' . $eventSportId;
         $relatedEvents = $this->callHandler->unauthorizedGetMethodHandler($relatedEventsRequestUrl);
-        if (count($relatedEvents) > 4){
+        if (count($relatedEvents) > 4) {
             shuffle($relatedEvents);
             array_splice($relatedEvents, 0, 3);
         }
@@ -125,5 +120,18 @@ class EventController extends Controller
             'isParticipating' => $isParticipating,
             'relatedEvents' => $relatedEvents
         ]);
+    }
+
+    public function validator(array $data)
+    {
+        return Validator::make($data, [
+            'title' => ['required', 'string', 'max:100'],
+            'description' => ['required'],
+            'sport_id' => ['required'],
+            'max_participants' => ['required'],
+            'datetime' => ['required', 'after_or_equal:' . Carbon::now('Europe/Madrid')],
+            'img' => ['required'],
+        ]);
+
     }
 }
