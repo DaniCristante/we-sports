@@ -14,9 +14,10 @@
 
         <div class="col-12 col-md-3 m-0 p-0 ">
             <div class="row justify-content-center">
-                <a href="" class="mx-2 btn btn-outline-warning text-danger">
+                <button href="" class="mx-2 btn btn-outline-warning text-danger" id="editEvent"
+                        onclick="eventUpdateForm()">
                     <i class="far fa-edit"></i>
-                </a>
+                </button>
 
                 <a href="" class="mx-2 btn btn-outline-warning text-danger">
                     <i class="fas fa-trash-alt"></i>
@@ -27,3 +28,11 @@
     </div>
 
 </div>
+
+<script !src="">
+
+    function eventUpdateForm(e) {
+
+
+    }
+</script>
