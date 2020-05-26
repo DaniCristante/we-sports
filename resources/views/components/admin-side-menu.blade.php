@@ -14,8 +14,12 @@
                     <span class="text-white">Actualizar perfil</span>
                 </a>
             </li>
-
-
+            <li class="nav-item">
+                <a href="{{route('logout')}}" class="nav-link px-2 btn-outline-secondary" id="logoutBtn">
+                    <i class="fas fa-door-closed text-white mx-2"></i>
+                    <span class="text-white">Cerrar sesión</span>
+                </a>
+            </li>
             <li class="nav-item  fixed-bottom text-center">
                 <a class="navbar-brand" href="{{url('/')}}">
                     <img class="border border-primary rounded-lg" src="{{asset('images/brand-logo.png')}}"
@@ -23,8 +27,6 @@
                          width="180" height="40">
                 </a>
             </li>
-
-
         </ul>
     </div>
 </div>

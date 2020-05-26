@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="{{url('/admin-panel')}}">WeSports<span class="text-danger">Admin</span></a>
-        <a href="" class="btn btn-danger float-right"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{{url('/')}}" class="btn btn-danger float-right"><i class="fas fa-sign-out-alt"></i></a>
     </nav>
 
     <div class="wrapper d-flex ">

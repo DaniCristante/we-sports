@@ -1,5 +1,4 @@
 <div class="content">
-    <main>
         <div class="container-fluid">
             @include('components.user-update-form')
             <div id="adminWelcome">
@@ -39,7 +38,5 @@
                 </div>
             </div>
         </div>
-
-</div>
-</main>
+    </div>
 </div>

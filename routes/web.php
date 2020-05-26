@@ -31,7 +31,7 @@ Route::get('/profile/{nickname}', 'UserController@getProfile');
 Route::get('events/{id?}', 'EventController@eventDetail');
 /**  </TEST FRONT END>     */
 
-Route::get('admin-panel', 'AdminController@showAdminPanel');
+Route::get('dashboard', 'AdminController@showAdminPanel');
 /** ROUTE FOR TEST TEMPLETE */
 Route::get('/demo', function () {
 

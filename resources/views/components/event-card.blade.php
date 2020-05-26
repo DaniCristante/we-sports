@@ -9,7 +9,7 @@
         </div>
         <div class="col-12 col-xs-8 col-lg-7 ">
             <h4> {{$event['title']}}</h4>
-            <span class="fas fa-user">Organizador: {{$event['nickname']}}</span><br>
+            <p><i class="fas fa-user"></i><span>Organizador:</span><a href="{{url('/profile/'.$event['nickname'])}}">{{$event['nickname']}}</a></p>
             <span class="fas {{$event['logo']}}">Categoria: {{$event['name']}}</span><br>
             <span class="fas fa-users">  {{$event['current_participants']}} of {{$event['max_participants']}} (progress bar) </span>
             <span

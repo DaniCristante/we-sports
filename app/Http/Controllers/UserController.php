@@ -21,14 +21,16 @@ class UserController extends Controller
         $pos_nickname = strrpos($url, "/", 0);
         $nickname = substr($url, $pos_nickname + 1, strlen($url));
         $requestUrl = '/users?nickname=' . $nickname;
-        $user = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
+        $user = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);;
         $user = \reset($user);
-        $userId = $user['id'];
-        $events = $this->getUserEvents($userId);
-        return view('user.profile', [
-            'user' => $user,
-            'createdEvents' => $events
-        ]);
+        if (!empty($user)){
+            $userId = $user['id'];
+            $events = $this->getUserEvents($userId);
+            return view('user.profile', [
+                'user' => $user,
+                'createdEvents' => $events
+            ]);
+        } dump('TODO si no existe el usuario, si usuario existe pero no tiene eventos que mostrar');
     }
 
     public function getUserEvents(int $userId)

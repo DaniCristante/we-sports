@@ -49,10 +49,11 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                Cerrar sesión
                             </a>
                             <a class="dropdown-item" href="{{url('/events/create')}}">Crear evento</a>
-                            <a class="dropdown-item" href="{{url('/profile/')}}">Mi perfil</a>
+                            <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}">Ver mi perfil</a>
+                            <a class="dropdown-item" href="{{url('/dashboard')}}">Configuración de cuenta</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                   style="display: none;">
