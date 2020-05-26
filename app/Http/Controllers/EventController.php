@@ -131,6 +131,5 @@ class EventController extends Controller
             'datetime' => ['required', 'after_or_equal:' . Carbon::now('Europe/Madrid')],
             'img' => ['required'],
         ]);
-
     }
 }
