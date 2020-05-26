@@ -49,7 +49,7 @@ class EventController extends Controller
                 $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
                 unset($eventData['_token']);
                 $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
-                if ($response->status() === 200) {
+                if ($response->status() === 201) {
                     return redirect('/')->with('created-event', 'Evento creado correctamente');
                 } else {
                     return redirect('/events/create')->with('event-failed', 'No se ha podido crear el evento');
@@ -132,6 +132,5 @@ class EventController extends Controller
             'datetime' => ['required', 'after_or_equal:' . Carbon::now('Europe/Madrid')],
             'img' => ['required'],
         ]);
-
     }
 }
