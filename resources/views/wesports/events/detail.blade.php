@@ -2,63 +2,36 @@
 
 @section('content')
 
-    <div class="container" id="detail-container">
-        <div class="jumbotron my-1 bg-primary">
-            <h1 class="display-4 text-secondary">{{$event['title']}}</h1>
-            <div id="image" class="row justify-content-center">
-                <!--TODO pasar imagen desde la api-->
-                <div id="detail-image-container"
-                     class="media-container embed-responsive embed-responsive-16by9 col-10 col-md-7">
-                    <img id="detail-image" class="embed-responsive-item detalled-image"
-                         src="/{{$event['img']}}">
+    <div id="detail-container">
+        <div class="row">
+            <div class="jumbotron my-1 mx-2 bg-primary col-8">
+                <h1 class="display-4 text-secondary">{{$event['title']}}</h1>
+                <div id="image" class="row justify-content-center">
+                    <div id="detail-image-container"
+                         class="media-container embed-responsive embed-responsive-16by9 col-10 col-md-7">
+                        <img id="detail-image" class="embed-responsive-item detalled-image"
+                             src="/{{$event['img']}}">
+                    </div>
                 </div>
-            </div>
-            <hr class="bg-secondary">
-            <div class="row  justify-content-around">
-                <div class="col-12 col-md-4">
-                    <p class="text-white-50">{{$event['description']}}</p>
-                </div>
-                <div class="col-12 col-md-4 text-center">
-                    <p class="text-success">
-                        <i class="fas fa-user-check"> <span class="mx-1">
-                                Organizado por {{$event['nickname']}}
-                            </span> </i>
-                    </p>
-                    <h5 class="text-uppercase" id="participant-list"><span class="h5"
-                                                                           id="current-participants">{{$event['current_participants']}}</span>
-                        de {{$event['max_participants']}}
-                        participantes</h5>
-
-                    @include('components.participant-list')
-                </div>
-                <div class="col-12 col-md-4 text-white text-uppercase">
-
-                    <p>
-                        <i class="fas fa-map"> <span class="mx-1"> {{$event['address']}}</span></i>
-                    </p>
-                    <p>
-                        <i class="fas fa-city"> <span class="mx-1"> {{$event['city']}}</span></i>
-                    </p>
-                    <p>
-                        <i class="fas fa-calendar"> <span class="mx-1"> {{$event['datetime']}}</span></i>
-                    </p>
-
-
-                </div>
-
-
-                <div class="col-12 text-center text-uppercase">
-                    <hr class="bg-secondary">
-                    <div id="button-container">
-                        @if ($loggedUserId != null)
-                            <button id="participate-button" class="btn btn-success">Participar</button>
-                            <button id="delete-button" class="btn btn-warning">Desapuntarse</button>
-                        @else
-                            <a href="{{url('login')}}" class="btn btn-success">Inicia sesión para participar</a>
-                        @endif
+                <hr class="bg-secondary">
+                <div class="row  justify-content-around">
+                    <div class="col-12 col-md-5 text-white text-uppercase">
+                        <p>
+                            <i class="fas fa-map"> <span class="mx-1"> {{$event['address']}}</span></i>
+                        </p>
+                        <p>
+                            <i class="fas fa-city"> <span class="mx-1"> {{$event['city']}}</span></i>
+                        </p>
+                        <p>
+                            <i class="fas fa-calendar"> <span class="mx-1"> {{$event['datetime']}}</span></i>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <p class="text-white-50">{{$event['description']}}</p>
                     </div>
                 </div>
             </div>
+            @include('components.participant-list')
         </div>
         @include('components.eventos-relacionados')
     </div>
