@@ -1,11 +1,11 @@
-<div class="col-11  col-md-5 m-1 card p-2">
-    <div class="row p-1 justify-content-around align-items-center">
-        <div class="col-12 col-xs-3 col-lg-4 text-center">
-            <img class="border rounded-lg bg-info" src="{{$event['img']}}"
+<div class="col-10  col-md-5 m-1 card p-2">
+    <div class="row p-1 justify-content-between align-items-center">
+        <div class="col-12  col-lg-3  text-center">
+            <img class=" img-fluid border rounded-lg bg-info" src="{{$event['img']}}"
                  alt="  {{$event['title']}} "
-                 width="270"/>
+                 style="min-width: 240px"/>
         </div>
-        <div class="col-12 col-xs-8 col-lg-7 ">
+        <div class="col-12  col-lg-6 ">
             <h4> {{$event['title']}}</h4>
             <i class="fas fa-user"></i><span>Organizador:</span><a class="text-decoration-none"
                                                                    href="{{url('/profile/'.$event['nickname'])}}">{{$event['nickname']}}</a><br>

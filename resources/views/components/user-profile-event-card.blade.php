@@ -1,26 +1,31 @@
 <div class="row justify-content-center">
 
     @foreach($events as $event)
-        <div class="col-12 col-md-5 m-2 row justify-content-center">
-            <div class="card" style="width: 22rem;">
-                <img class="card-img-top" src="../images/favicon.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{$event['title']}}</h5>
+        <div class="col-10 col-md-4 my-1 ">
+            <a class="text-decoration-none" href="{{url('events/'.$event['id'])}}">
+                <div class="card w-100">
+                    <img class="card-img-top" src="/{{$event['img']}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h6 class="card-title">{{$event['title']}}</h6>
+                        <p>
+                            <i class="fas {{$event['logo']}}"></i>
+                            <span class="mx-2">{{$event['name']}}</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="mx-2">{{substr($event['datetime'],'0','10')}}</span>
+                        </p>
 
-                    <i class="fas fa-user"></i><span>Organizador:</span><a class="text-decoration-none"
-                                                                           href="{{url('/profile/'.$event['nickname'])}}">{{$event['nickname']}}</a><br>
-                    <span class="fas {{$event['logo']}}">Categoria: {{$event['name']}}</span><br>
+                        <p>
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span class="mx-2">{{$event['city']}} </span>
+                        </p>
 
-                    <div class="card-text">
-                        <x-progress-bar :event="$event"/>
+
                     </div>
-                    <span
-                        class="fas fa-calendar-alt"> {{$event['datetime']}}  </span> <br>
-                    <span class="fas fa-compass"> {{$event['address']}}    </span>
-                    <br>
-                    <a href="#" class="btn btn-outline-success my-2 w-100">Ver evento</a>
                 </div>
-            </div>
+            </a>
+
         </div>
     @endforeach
 </div>
