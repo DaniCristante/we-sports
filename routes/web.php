@@ -21,14 +21,14 @@ Route::get('/events', 'EventController@eventList');
 Route::post('/events', 'EventController@eventList');
 Route::get('/events/create', 'EventController@createEvent')->middleware('auth');
 Route::post('/events/create', 'EventController@storeEvent')->name('events.store')->middleware('auth');
-Route::post('/events/delete', 'EventController@deleteEvent')->middleware('auth');
+Route::get('/events/delete', 'EventController@deleteEvent')->middleware('auth');
 Route::get('/profile/{nickname?}', 'UserController@getProfile');
 
 Route::get('events/{id?}', 'EventController@eventDetail');
 
 Route::get('dashboard', 'AdminController@showAdminPanel');
 Route::post('dashboard/update', 'AdminController@updateUser');
-Route::get('dashboard/delete', 'AdminController@deleteEvent');
+Route::get('dashboard/delete', 'Eventcontroller@deleteEvent');
 
 /** ROUTE FOR TEST TEMPLETE */
 Route::get('/demo', function () {

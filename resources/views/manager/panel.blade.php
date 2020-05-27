@@ -11,18 +11,12 @@
     </nav>
 
     <div class="wrapper d-flex ">
-
-
-        {{--        <x-admin-side-menu :data="$data"/>--}}
-
         @include('components.admin-side-menu')
-
-        {{--Dynamic--}}
         @include('components.admin-content')
     </div>
 
     @error('phone')
-    <span class="invalid-feedback" role="alert">
+        <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
     @enderror
@@ -30,7 +24,6 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('js/admin-panel.js')}}">
-
-    </script>
+    <script src="{{asset('js/admin-panel.js')}}"></script>
+    <script src="{{asset('js/alerts.js')}}"></script>
 @endsection

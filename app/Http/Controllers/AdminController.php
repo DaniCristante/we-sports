@@ -64,16 +64,4 @@ class AdminController extends Controller
         $requestUrl = '/users-events/'.$userId;
         return $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
     }
-
-    public function deleteEvent(Request $request)
-    {
-        $eventId = $request->get('eid');
-        $userToken = $request->session()->get('api_token');
-        $requestUrl = '/events/'.$eventId;
-        $response = $this->callHandler->authorizedDeleteMethodHandler($requestUrl, $userToken);
-        if ($response->status() !== 204){
-
-        }
-        return  redirect()->back()->with('deleted-event', 'Evento eliminado correctamente');
-    }
 }

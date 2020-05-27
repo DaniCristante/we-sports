@@ -1,8 +1,12 @@
 <div id="adminWelcome" class="my-3 pt-4 mx-1">
+    @if(session('event-status'))
+        <div id="alerts" class="alert alert-success text-center">
+            {{session('event-status')}}
+        </div>
+    @endif
     <h3 class="form-title">Mis eventos</h3>
     @foreach($userEvents as $userEvent)
         <div class="row  justify-content-around border border-primary m-0 my-2 p-3  admin-event-card">
-
             <div class="col-5 col-md-4">
                 Titulo:
                 <strong>
@@ -31,11 +35,3 @@
         </div>
     @endforeach
 </div>
-
-<script !src="">
-
-    function eventUpdateForm(e) {
-
-
-    }
-</script>
