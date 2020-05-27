@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Listado de eventos')
 @section('content')
     <div class="row justify-content-around align-items-start">
         <h1 class="col-12">Eventos disponibles</h1>
@@ -18,7 +19,6 @@
                 <input type="submit" class="btn btn-success my-2 w-75 offset-1">
             </form>
         </div>
-
 
         <div class="col-12 col-md-7">
             @include('wesports.events.event-list')

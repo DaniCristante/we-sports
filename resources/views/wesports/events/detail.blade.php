@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', $event['title'])
 @section('content')
 
     <div id="detail-container">

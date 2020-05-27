@@ -3,26 +3,6 @@
         <ul class="navbar-nav my-3 p-1 ">
 
             <li class="nav-item">
-                <a href="{{url('/profile/'.$data['nickname'])}}" class="nav-link px-1 btn-outline-secondary">
-                    <i class="fas fa-user text-white mx-2"></i>
-                    <span class="text-white">Mi perfil</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link px-1 btn-outline-secondary" id="profileBtn">
-                    <i class="fas fa-user-edit text-white mx-2"></i>
-                    <span class="text-white">Actualizar perfil</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="/events" class="nav-link px-1 btn-outline-secondary">
-                    <i class="fas fa-calendar-alt text-white mx-2"></i>
-                    <span class="text-white">Eventos </span>
-                </a>
-            </li>
-
-            <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventsBtn">
                     <i class="far fa-calendar-plus text-white mx-2"></i>
                     <span class="text-white">Mis eventos </span>
@@ -42,6 +22,27 @@
                     <span class="text-white">Nuevo evento</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a href="{{url('/profile/'.$data['nickname'])}}" class="nav-link px-1 btn-outline-secondary">
+                    <i class="fas fa-user text-white mx-2"></i>
+                    <span class="text-white">Ver mi perfil</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-1 btn-outline-secondary" id="profileBtn">
+                    <i class="fas fa-user-edit text-white mx-2"></i>
+                    <span class="text-white">Actualizar mis datos personales</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/events" class="nav-link px-1 btn-outline-secondary">
+                    <i class="fas fa-calendar-alt text-white mx-2"></i>
+                    <span class="text-white">Eventos </span>
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a href="{{route('logout')}}" class="nav-link px-2 btn-outline-danger my-2" id="logoutBtn"
                    onclick="event.preventDefault();

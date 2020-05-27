@@ -1,5 +1,3 @@
-{{--{{dd($event)}}--}}
-
 <div class="col-11  col-md-5 m-1 card p-2">
     <div class="row p-1 justify-content-around align-items-center">
         <div class="col-12 col-xs-3 col-lg-4 text-center">
@@ -12,9 +10,9 @@
             <i class="fas fa-user"></i><span>Organizador:</span><a class="text-decoration-none"
                                                                    href="{{url('/profile/'.$event['nickname'])}}">{{$event['nickname']}}</a><br>
             <span class="fas {{$event['logo']}}">Categoria: {{$event['name']}}</span><br>
-            <span class="fas fa-users">  {{$event['current_participants']}} of {{$event['max_participants']}} (progress bar) </span>
+            <span class="fas fa-users">  {{$event['current_participants']}} of {{$event['max_participants']}} </span>
             <span
-                class="fas fa-calendar-alt"> {{$event['datetime']}}   (calendario js plugin) </span>
+                class="fas fa-calendar-alt"> {{$event['datetime']}} </span>
             <span class="fas fa-compass"> {{$event['address']}}    </span>
         </div>
     </div>
