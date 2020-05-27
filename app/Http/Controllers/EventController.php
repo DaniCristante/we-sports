@@ -40,19 +40,20 @@ class EventController extends Controller
     {
         $this->validator($request->all())->validate();
 
+        $token = $request->session()->get('api_token');
+        $eventData = $request->all();
+        $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
+        unset($eventData['_token']);
         if ($request->file('img')) {
             $imagePath = $this->imageManager->moveEventImage($request['img']);
             if ($imagePath !== null) {
-                $token = $request->session()->get('api_token');
-                $eventData = $request->all();
                 $eventData['img'] = $imagePath;
-                $eventData['creator_id'] = Auth::user()->getAuthIdentifier();
-                unset($eventData['_token']);
-                $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
-                if ($response->status() !== 201) {
-                    return redirect('/events/create')->with('event-failed', 'No se ha podido crear el evento');
-                }
             }
+        }
+
+        $response = $this->callHandler->authorizedPostMethodHandler('/events', $token, $eventData);
+        if ($response->status() !== 201) {
+            return redirect('/events/create')->with('event-failed', 'No se ha podido crear el evento');
         }
         return redirect('/')->with('status', 'Evento creado correctamente');
     }
@@ -128,13 +129,22 @@ class EventController extends Controller
             'description' => ['required'],
             'sport_id' => ['required'],
             'max_participants' => ['required'],
-            'datetime' => ['required', 'after_or_equal:' . Carbon::now('Europe/Madrid')],
-            'img' => ['required'],
+            'datetime' => ['required', 'after_or_equal:' . Carbon::now('Europe/Madrid')]
         ]);
     }
 
     public function deleteEvent(Request $request)
     {
+        $eventId = $request->get('eid');
 
+        $userToken = $request->session()->get('api_token');
+        $requestUrl = '/events/'.$eventId;
+        $response = $this->callHandler->authorizedDeleteMethodHandler($requestUrl, $userToken);
+
+        $responseMessage = 'Evento creado correctamente';
+        if ($response->status() !== 204){
+            $responseMessage = '¡Ups! Algo ha fallado en la petición';
+        }
+        return  redirect()->back()->with('event-status', $responseMessage);
     }
 }

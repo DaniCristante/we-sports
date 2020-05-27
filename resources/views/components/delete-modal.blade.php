@@ -6,7 +6,7 @@
                 <h5 class="modal-title text-center">¿Seguro que deseas eliminar el evento?</h5>
             </div>
             <div class="modal-body">
-                <a href="{{url('dashboard/delete?eid='.$userEvent['id'])}}" class="btn btn-primary">Si</a>
+                <a href="{{url('events/delete?eid='.$userEvent['id'])}}" class="btn btn-primary">Si</a>
                 <button class="btn-primary btn" data-dismiss="modal">No</button>
             </div>
         </div>
