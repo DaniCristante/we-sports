@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     {{--    Styles--}}
+    <link rel="shortcut icon" type="image/png" href="{{asset('images/favicon.png')}}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -52,7 +53,8 @@
                                 Cerrar sesión
                             </a>
                             <a class="dropdown-item" href="{{url('/events/create')}}">Crear evento</a>
-                            <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}">Ver mi perfil</a>
+                            <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}">Ver mi
+                                perfil</a>
                             <a class="dropdown-item" href="{{url('/dashboard')}}">Configuración de cuenta</a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
