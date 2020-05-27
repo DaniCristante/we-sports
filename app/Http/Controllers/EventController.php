@@ -147,4 +147,12 @@ class EventController extends Controller
         }
         return  redirect()->back()->with('event-status', $responseMessage);
     }
+
+    public function updateEvent(Request $request)
+    {
+        $event = $request->get('event');
+        return view('wesports.events.edit', [
+            'event' => $event
+        ]);
+    }
 }
