@@ -70,11 +70,23 @@ function addTogglerButton() {
 
 function updateUserFormValidate() {
 
+
+    let submitbBtn = $('#userUpdateForm form  input[type="submit"]');
+
+
+    submitbBtn.prop('disabled', true);
+
+
     //Image 2mb validation
     $('#uimg').change(function () {
         if (this.files[0].size > 2097152) {
             $('#imgInput').append(' <small class="alert-danger text-center">Imagen debe ser inferior a 2MB</small>');
-            this.value = "";
+
+        }else{
+
+            $('#imgInput').append('<small class="alert-success text-center  border rounded-lg w-100"> <i class="fas fa-check-circle mr-4"></i>El campo es valido</small> ');
+
+
         }
     })
 
@@ -84,8 +96,13 @@ function updateUserFormValidate() {
                 if (!$('#nameInput').children('small').length > 0) {
                     $('#nameInput').append('<small class="alert-danger text-center">Nombre puede tener un máximo de 74 caracteres</small>');
                 }
-                this.value = "";
-            }
+
+            }else{
+
+            $('#nameInput').append('<small class="alert-success text-center  border rounded-lg w-100"> <i class="fas fa-check-circle mr-4"></i>El campo es valido</small> ');
+
+
+        }
         }
     );
 
@@ -95,8 +112,12 @@ function updateUserFormValidate() {
                 if (!$('#inputSurnames').children('small').length > 0) {
                     $('#inputSurnames').append('<small class="alert-danger text-center">Apellidos puede tener un máximo de 150 caracteres</small>');
                 }
-                this.value = "";
-            }
+            }{
+
+            $('#inputSurnames').append('<small class="alert-success text-center  border rounded-lg w-100"> <i class="fas fa-check-circle mr-4"></i>El campo es valido</small> ');
+
+
+        }
         }
     );
 
@@ -106,7 +127,12 @@ function updateUserFormValidate() {
                 if (!$('#cityInput').children('small').length > 0) {
                     $('#cityInput').append('<small class="alert-danger text-center">Ciudad puede tener un máximo de 100 caracteres</small>');
                 }
-                this.value = "";
+
+            }else {
+
+                $('#cityInput').append('<small class="alert-success text-center  border rounded-lg w-100"> <i class="fas fa-check-circle mr-4"></i>El campo es valido</small> ');
+
+
             }
         }
     );
@@ -118,7 +144,6 @@ function updateUserFormValidate() {
                 if (!$('#addressInput').children('small').length > 0) {
                     $('#addressInput').append('<small class="alert-danger text-center">Dirección puede tener un máximo de 200 caracteres</small>');
                 }
-                this.value = "";
             }
         }
     );
@@ -136,11 +161,16 @@ function updateUserFormValidate() {
                 if (!$('#phoneInput').children('small').length > 0) {
                     $('#phoneInput').append('<small class="alert-danger text-center">Número de telefono invalido [ XXX XXX XXX ]  </small>');
                 }
-                this.value = "";
+
             }
         }
     );
 
+
+    $('#userUpdateForm form').change(function () {
+        submitbBtn.prop('disabled', false);
+
+    })
 
 }
 

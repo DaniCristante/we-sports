@@ -7,7 +7,7 @@
     <h3 class="form-title">Mis eventos</h3>
     @foreach($userEvents as $userEvent)
         <div class="row  justify-content-around border border-primary m-0 my-2 p-3  admin-event-card">
-            <div class="col-5 col-md-4">
+            <div class="col-7 col-md-5">
                 Titulo:
                 <strong>
                     {{$userEvent['title']}}
