@@ -6166,8 +6166,8 @@ input:read-only {
   height: 80px;
   bottom: 70px;
   right: 2.5rem;
-  background-color: blue;
-  color: #FFF;
+  background-color: #ee6c4d;
+  color: #293241;
   border-radius: 50px;
   text-align: center;
   box-shadow: 2px 2px 3px #999;
@@ -6238,6 +6238,10 @@ input:read-only {
   width: 110% !important;
   transition: all 1s;
   box-shadow: 0 0 30px #98c1d9;
+}
+
+#jumbotron-event {
+  background-color: #98c1d9;
 }
 
 .wrapper {

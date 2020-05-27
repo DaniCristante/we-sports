@@ -56,8 +56,8 @@
                     </div>
                     <div id="userContentField">
                         <div class="col-12" id="usersEvents">
-                           
-                            <x-user-profile-event-card :events="$createdEvents"/>
+
+                            <x-user-profile-event-card :events="$createdEvents"/>-
 
                         </div>
                         <div class="col-12 p-2 " id="usersEventsParticipate">

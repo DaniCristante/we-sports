@@ -80,7 +80,9 @@
     <footer>
         @include('components.footer')
     </footer>
+
 </div>
+
 @yield('scripts')
 
 </body>

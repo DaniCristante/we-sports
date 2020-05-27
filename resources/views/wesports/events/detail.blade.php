@@ -3,8 +3,8 @@
 @section('content')
 
     <div id="detail-container">
-        <div class="row">
-            <div class="jumbotron my-1 mx-2 bg-primary col-8">
+        <div class="row justify-content-center">
+            <div id="jumbotron-event" class="jumbotron my-1 mx-2 col-8">
                 <h1 class="display-4 text-secondary">{{$event['title']}}</h1>
                 <div id="image" class="row justify-content-center">
                     <div id="detail-image-container"
@@ -15,7 +15,7 @@
                 </div>
                 <hr class="bg-secondary">
                 <div class="row  justify-content-around">
-                    <div class="col-12 col-md-5 text-white text-uppercase">
+                    <div class="col-12 col-md-5 text-dark text-uppercase">
                         <p>
                             <i class="fas fa-map"> <span class="mx-1"> {{$event['address']}}</span></i>
                         </p>
@@ -27,7 +27,7 @@
                         </p>
                     </div>
                     <div class="col-12 col-md-5">
-                        <p class="text-white-50">{{$event['description']}}</p>
+                        <p class="text-dark-50">{{$event['description']}}</p>
                     </div>
                 </div>
             </div>
@@ -85,9 +85,11 @@
                         success: function (result) {
                             $('#button-container').append(successElement);
                             let participantElement = document.createElement('li');
+                            console.log('hola');
                             participantElement.innerText = result.nickname;
                             participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
                             listParent.appendChild(participantElement);
+                            console.log('adios');
                             document.getElementById('current-participants').innerText = numberOfParticipants + 1;
                             numberOfParticipants += 1;
                             $('#participate-button').hide();
