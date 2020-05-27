@@ -3,9 +3,9 @@
 <div class="col-11  col-md-5 m-1 card p-2">
     <div class="row p-1 justify-content-around align-items-center">
         <div class="col-12 col-xs-3 col-lg-4 text-center">
-            <img class="border rounded-lg bg-info" src="../images/favicon.png"
+            <img class="border rounded-lg bg-info" src="{{$event['img']}}"
                  alt="  {{$event['title']}} "
-                 width="145"/>
+                 width="270"/>
         </div>
         <div class="col-12 col-xs-8 col-lg-7 ">
             <h4> {{$event['title']}}</h4>

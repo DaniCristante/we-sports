@@ -90,4 +90,11 @@ class CallHandler
             ->withHeaders(self::HEADERS)
             ->get(self::API_ENDPOINT.$url);
     }
+
+    public function authorizedDeleteMethodHandler(string $url, string $token)
+    {
+        return Http::withToken($token)
+            ->withHeaders(self::HEADERS)
+            ->delete(self::API_ENDPOINT.$url);
+    }
 }

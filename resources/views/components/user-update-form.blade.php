@@ -1,7 +1,6 @@
 <div id="userUpdateForm">
     <form action="{{url('dashboard/update')}}" class="form-group form  col-12 my-2 mx-1 p-4" method="POST">
         @csrf
-        <h3 class="form-title">Actualizar perfil</h3>
 
         <div class="form-group" id="imgInput">
             <label>Imagen perfil</label>

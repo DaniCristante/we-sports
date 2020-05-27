@@ -1,4 +1,5 @@
 <div id="adminWelcome" class="my-3 pt-4 mx-1">
+    <h3 class="form-title">Mis eventos</h3>
     @foreach($userEvents as $userEvent)
         <div class="row  justify-content-around border border-primary m-0 my-2 p-3  admin-event-card">
 
@@ -21,10 +22,10 @@
                             onclick="eventUpdateForm()">
                         <i class="far fa-edit"></i>
                     </button>
-
-                    <a href="" class="mx-2 btn btn-outline-warning text-danger">
+                    @include('components.delete-modal')
+                    <button class="mx-2 btn btn-outline-warning text-danger" data-toggle="modal" data-target="#modalDelete">
                         <i class="fas fa-trash-alt"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

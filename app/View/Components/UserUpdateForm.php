@@ -15,9 +15,7 @@ class UserUpdateForm extends Component
     public  $data;
     public function __construct($data)
     {
-        $this->data;
-
-
+       $this->data;
     }
 
     /**
