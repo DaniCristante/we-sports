@@ -100,7 +100,7 @@ class EventController extends Controller
         $relatedEvents = $this->callHandler->unauthorizedGetMethodHandler($relatedEventsRequestUrl);
         if (count($relatedEvents) > 4) {
             shuffle($relatedEvents);
-            array_splice($relatedEvents, 0, 3);
+            array_splice($relatedEvents, 0, 4);
         }
 
         $loggedUserId = null;
