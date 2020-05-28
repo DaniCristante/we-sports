@@ -22,10 +22,9 @@
 
             <div class="col-12 col-md-3 m-0 p-0">
                 <div class="row justify-content-center">
-                    <button href="" class="mx-2 btn btn-outline-warning text-danger" id="editEvent"
-                            onclick="eventUpdateForm()">
+                    <a href="{{'/events/update?eid='.$userEvent['id']}}" class="mx-2 btn btn-outline-warning text-danger" id="editEvent">
                         <i class="far fa-edit"></i>
-                    </button>
+                    </a>
                     @include('components.delete-modal')
                     <button class="mx-2 btn btn-outline-warning text-danger" data-toggle="modal" data-target="#modalDelete">
                         <i class="fas fa-trash-alt"></i>

@@ -7,7 +7,7 @@
                 <h4 class="mr-2"> Editar evento </h4>
                 <img src="{{asset('images/favicon.png')}}" alt="WeSports"
                      class="float-left border rounded-lg border-secondary" width="40" height="40">
-                @include('components.event-form')
+                @include('components.edit-event-form')
             </div>
         </div>
     </div>
