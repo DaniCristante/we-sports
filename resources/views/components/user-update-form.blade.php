@@ -1,5 +1,5 @@
 <div id="userUpdateForm">
-    <form action="{{url('dashboard/update')}}" class="form-group form  col-12 my-2 mx-1 p-4" method="POST">
+    <form action="{{url('dashboard/update')}}" class="form-group form  col-12 my-2 mx-1 p-4" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group" id="imgInput">
@@ -53,7 +53,6 @@
 
         <div class="text-center">
             <input
-
                 type="submit"
                 value="Actualizar"
                 class="btn btn-outline-success p-2 my-2  w-50"

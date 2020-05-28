@@ -81,12 +81,8 @@ function updateUserFormValidate() {
     $('#uimg').change(function () {
         if (this.files[0].size > 16777216) {
             $('#imgInput').append(' <small class="alert-danger text-center">Imagen debe ser inferior a 16MB</small>');
-
         }else{
-
             $('#imgInput').append('<small class="alert-success text-center  border rounded-lg w-100"> <i class="fas fa-check-circle mr-4"></i>El campo es valido</small> ');
-
-
         }
     })
 
@@ -169,7 +165,6 @@ function updateUserFormValidate() {
 
     $('#userUpdateForm form').change(function () {
         submitbBtn.prop('disabled', false);
-
     })
 
 }

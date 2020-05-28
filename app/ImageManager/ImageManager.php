@@ -17,8 +17,10 @@ class ImageManager
     {
         $imageName = $this->parseFileName($image->getClientOriginalName());
         $imageName = $this->randomNum($imageName);
+
+        $fileRoute = self::ROOT_DIR . self::EVENT_DIR . $imageName;
         if ($image->move(self::ROOT_DIR . self::EVENT_DIR, $imageName)) {
-            return $this->getFileRoute($imageName);
+            return $fileRoute;
         }
         return null;
     }
@@ -27,8 +29,10 @@ class ImageManager
     {
         $imageName = $this->parseFileName($image->getClientOriginalName());
         $imageName = $this->randomNum($imageName);
+
+        $fileRoute = self::ROOT_DIR . self::USER_DIR . $imageName;
         if ($image->move(self::ROOT_DIR . self::USER_DIR, $imageName)) {
-            return $this->getFileRoute($imageName);
+            return $fileRoute;
         }
         return null;
     }
@@ -36,11 +40,6 @@ class ImageManager
     private function parseFileName(string $fileName)
     {
         return str_replace(' ', '_', $fileName);
-    }
-
-    private function getFileRoute(string $imageName)
-    {
-        return self::ROOT_DIR . self::EVENT_DIR . $imageName;
     }
 
     private function randomNum(string $image)

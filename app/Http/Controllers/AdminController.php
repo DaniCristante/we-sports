@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ApiHandlers\CallHandler;
+use App\ImageManager\ImageManager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use function GuzzleHttp\Promise\all;
@@ -10,11 +11,13 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
+    private $imageManager;
     private $callHandler;
 
-    public function __construct(CallHandler $callHandler)
+    public function __construct(ImageManager $imageManager, CallHandler $callHandler)
     {
         $this->middleware('auth');
+        $this->imageManager = $imageManager;
         $this->callHandler = $callHandler;
     }
 
@@ -35,28 +38,26 @@ class AdminController extends Controller
 
     public function updateUser(Request $request)
     {
-        $this->validator($request->all())->validate();
-
+        dump($request->all());
         $userId = Auth::user()->getAuthIdentifier();
         $userToken = $request->session()->get('api_token');
         $userData = $request->all();
         unset($userData['_token']);
         $userData['id'] = $userId;
+
+        if ($request->file('uimg')){
+            $imagePath = $this->imageManager->moveProfileImage($request['uimg']);
+            if ($imagePath !== null){
+                $userData['uimg'] = $imagePath;
+            }
+        }
+
         $response = $this->callHandler->authorizedPostMethodHandler('/users/update',  $userToken, $userData);
         if ($response->status() !== 200){
 
         }
 
         return redirect()->back()->with('updated-user', 'Usuario actualizado correctamente');
-    }
-
-    public function validator(array $data)
-    {
-        return Validator::make($data, [
-            'uname' => ['string', 'max:75'],
-            'surnames' => ['string', 'max:150'],
-            'phone' => ['integer', 'size:9']
-        ]);
     }
 
     public function getUserEvents($userId)
