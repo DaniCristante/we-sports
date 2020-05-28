@@ -11,6 +11,7 @@ $(document).ready(function () {
 
     let adminWelcome = $('#adminWelcome');
     let userUpdateForm = $('#userUpdateForm');
+    let participationRecord = $('#participation-record');
 
     let editBtn = $('#editEvent');
 
@@ -35,6 +36,10 @@ $(document).ready(function () {
 
     })
 
+    $('#participation-record-button').on('click', function () {
+        ocultContent();
+        participationRecord.show();
+    })
 
     function ocultContent() {
         $('#adminContent').children().hide();

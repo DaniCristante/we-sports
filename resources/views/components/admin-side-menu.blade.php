@@ -10,7 +10,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventosParticipadosBtn">
+                <a href="#" class="nav-link px-1 btn-outline-secondary" id="participation-record-button">
                     <i class="far fa-calendar-check text-white mx-2"></i>
                     <span class="text-white">Historial eventos participados</span>
                 </a>

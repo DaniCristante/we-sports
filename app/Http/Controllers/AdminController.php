@@ -29,9 +29,11 @@ class AdminController extends Controller
         if ($response->status() === 200) {
             $userData = $response->json()['user'];
             $userEvents = $this->getUserEvents($userId);
+            $eventParticipations = $this->getUserParticipations($userId);
             return view('manager.panel', [
                 'data' => $userData,
-                'userEvents' => $userEvents
+                'userEvents' => $userEvents,
+                'eventParticipations' => $eventParticipations
             ]);
         } //TODO Else
     }
@@ -63,6 +65,13 @@ class AdminController extends Controller
     public function getUserEvents($userId)
     {
         $requestUrl = '/users-events/'.$userId;
+        return $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
+    }
+
+    public function getUserParticipations($userId)
+    {
+        $requestUrl = '/participating-events?user_id='.$userId;
+
         return $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
     }
 }

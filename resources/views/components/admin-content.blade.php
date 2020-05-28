@@ -7,6 +7,7 @@
         @endif
         @include('components.user-update-form')
         @include('components.admin-events')
+        @include('components.participation-record')
     </div>
 </div>
 </div>
