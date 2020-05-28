@@ -73,3 +73,8 @@
         />
     </div>
 </form>
+<script>
+    $(document).ready(function () {
+        $('#createEventButton').hide();
+    })
+</script>

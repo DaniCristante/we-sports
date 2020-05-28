@@ -45,7 +45,8 @@
                             <i class="fas fa-user-cog"></i> <span class="caret"></span>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right"  aria-labelledby="navbarDropdown" id="userDropDownMenu" >
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
+                             id="userDropDownMenu">
                             <a class="dropdown-item" href="{{url('/dashboard')}}">Gestión de cuenta y eventos</a>
                             <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}">Ver mi
                                 perfil</a>
