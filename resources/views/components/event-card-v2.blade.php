@@ -5,22 +5,42 @@
                  alt="  {{$event['title']}} "
                  width="280"/>
         </div>
-        <div class="col-12 col-xs-8 col-lg-7 ">
+        <div class="col-12 col-xs-8 col-lg-7 px-5 px-md-2 ">
             <h4> {{$event['title']}}</h4>
-            <i class="fas fa-user"></i><span>Organizador:</span><a class="text-decoration-none"
-                                                                   href="{{url('/profile/'.$event['nickname'])}}">{{$event['nickname']}}</a><br>
-            <span class="fas {{$event['logo']}}">Categoria: {{$event['name']}}</span><br>
-            <span class="fas fa-users">  {{$event['current_participants']}} of {{$event['max_participants']}} </span>
-            <span
-                class="fas fa-calendar-alt"> {{$event['datetime']}}</span>
-            <span class="fas fa-compass"> {{$event['address']}} </span>
+            <span class="d-block">
+            <i class="fas fa-user mr-2"></i>
+            <a class="text-decoration-none" href="{{url('/profile/'.$event['nickname'])}}">{{$event['nickname']}}</a>
+        </span>
+            <span class="d-block">
+            <i class="fas {{$event['logo']}} mr-2"></i> {{$event['name']}}
+        </span>
+            <span class="d-block">
+            <i class="fas fa-calendar-alt mr-2"></i> {{substr($event['datetime'],0,10)}} <span
+                    class="btn-warning ">{{substr($event['datetime'],-9,6)}}</span>
+        </span>
+
+            <span class="d-block">
+            <i class="fas fa-map-marked-alt mr-2"></i> {{$event['city']}}
+        </span>
+
+            <span class="d-block">
+                            <i class="fas fa-users mr-2"></i>  Participantes {{$event['current_participants']}} de {{$event['max_participants']}}
+
+            </span>
+            <span class="d-block">
+                    <x-progress-bar :event="$event"/>
+
+            </span>
         </div>
+
     </div>
     <div class="card-body col-12">
         <p class="text-black-50">
             {{$event['description']}}
         </p>
+
     </div>
+
     <div class="card-footer bg-white mr-auto ml-auto">
         <a href="{{url('events/'.$event['id'])}}" class="float-left btn btn-info ">Ver evento</a>
     </div>

@@ -36,17 +36,16 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="btn btn-outline-light " href="{{ route('login') }}"><i
-                                class="fas fa-user-circle fa-1x mr-2"></i><strong>Iniciar sesión</strong></a>
+                        <a class="btn btn-outline-light " href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
                     </li>
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-secondary" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->uname }} <span class="caret"></span>
+                            <i class="fas fa-user-cog"></i> <span class="caret"></span>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right"  aria-labelledby="navbarDropdown" id="userDropDownMenu" >
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

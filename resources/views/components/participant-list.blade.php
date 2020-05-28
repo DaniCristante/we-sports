@@ -1,4 +1,4 @@
-<div class="col-md-3 col-12 justify-content-center align-items-center my-3">
+<div class="col-md-3 col-12 justify-content-center align-items-center my-3 bg-info p-3 border rounded-lg">
     <div class="col-12 text-center">
         <p class="text-success col-12">
             <i class="fas fa-user-check"><span class="mx-1">Organizado por {{$event['nickname']}}</span></i>
@@ -24,17 +24,24 @@
 
     <hr class="bg-secondary">
 
-    <div id="list-container" class="col-12 text-center justify-content-center">
-        <a class="btn btn-dark my-1  collapsed border border-secondary  text-uppercase col-12 text-center text-light"
+    <div id="list-container" class="col-12 text-center justify-content-center " data-spy="scroll"
+         data-target="#list-parent">
+        <a class="btn btn-dark my-1  collapsed  bg-dark border border-secondary rounded-lg  text-uppercase w-100"
            data-toggle="collapse" data-target="#list-parent">
-            Lista de participantes
+            <h5 class="text-center m-auto">Lista de participantes</h5>
         </a>
         <ul id="list-parent" class="list-group collapse">
 
             @foreach($participants as $participant)
-                <li class="my-1 participant-list text-uppercase">{{$participant['nickname']}}</li>
+                <li class="my-1 participant-list text-uppercase text-dark">{{$participant['nickname']}}</li>
             @endforeach
         </ul>
     </div>
 
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#list-parent').addClass('show');
+    })
+</script>

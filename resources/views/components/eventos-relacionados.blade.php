@@ -1,7 +1,7 @@
 <div class="row justify-content-center my-4">
 
-    <div class="col-11 col-md-6 p-2  my-3 bg-white border border-secondary rounded-lg">
-        <h4 class="text-center">EVENTOS RELACIONADOS</h4>
+    <div class="col-10 p-1  my-3 bg-dark border border-secondary rounded-lg">
+        <h5 class="text-center m-auto">EVENTOS RELACIONADOS</h5>
     </div>
 
     {{--            Releted events carousel--}}

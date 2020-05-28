@@ -138,31 +138,21 @@ input:read-only {
     margin-top: 25px;
 }
 
-//Scroll option
-//#homePageHeader {
-//    //background-image: url("https://wallpaperaccess.com/full/486709.jpg") !important;
-//    background-image: url("https://i.pinimg.com/originals/52/2f/72/522f727ba9704734729513b9d7ccf499.jpg") !important;
-//    height: 75vh !important;
-//    //background-color: transparent !important;
-//
-//
-//    nav span {
-//        font-size: 48px;
-//        color: $secondary;
-//        padding: 40px;
-//        font-family: 'Anton', sans-serif;
-//        letter-spacing: 0.2em;
-//
-//
-//    }
-//    p {
-//        font-size: xx-large;
-//        color: black;
-//
-//    }
-//
-//
-//}
+#userDropDownMenu{
+    background-color: transparent;
+    border: solid 1px $secondary;
+    opacity: 0.4;
+
+    a {
+        color: white;
+        &:hover{
+            transition: all 1s;
+            color: $secondary;
+        }
+    }
+
+
+}
 .search-sec {
     padding: 2rem;
 }

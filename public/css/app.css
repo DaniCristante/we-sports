@@ -6177,6 +6177,21 @@ input:read-only {
   margin-top: 25px;
 }
 
+#userDropDownMenu {
+  background-color: transparent;
+  border: solid 1px #ee6c4d;
+  opacity: 0.4;
+}
+
+#userDropDownMenu a {
+  color: white;
+}
+
+#userDropDownMenu a:hover {
+  transition: all 1s;
+  color: #ee6c4d;
+}
+
 .search-sec {
   padding: 2rem;
 }
