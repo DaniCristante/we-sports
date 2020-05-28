@@ -33,5 +33,5 @@ Route::get('dashboard/delete', 'Eventcontroller@deleteEvent');
 /** ROUTE FOR TEST TEMPLETE */
 Route::get('/demo', function () {
 
-    return view('user.profile');
+    return view('http-errors.404');
 });
