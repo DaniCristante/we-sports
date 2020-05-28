@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
+@if(isset($user))
+    @section('title', $user['nickname'])
+@else
+    @section('title', 'Usuario no encontrado')
+@endif
 @section('content')
     @if(!isset($user))
         <div class="text-center">
