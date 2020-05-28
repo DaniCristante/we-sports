@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
+@section('title', $event['title'])
 @section('content')
 
     <div id="detail-container">
         <div class="row justify-content-center">
-            <div id="jumbotron-event" class="jumbotron my-1 mx-2 col-8">
+            <div id="jumbotron-event" class="jumbotron-fluid p-2 my-1 mx-2 col-8 bg-transparent">
                 <h1 class="display-4 text-secondary">{{$event['title']}}</h1>
                 <div id="image" class="row justify-content-center">
                     <div id="detail-image-container"
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <hr class="bg-secondary">
-                <div class="row  justify-content-around">
+                <div class="row justify-content-around">
                     <div class="col-12 col-md-5 text-dark text-uppercase">
                         <p>
                             <i class="fas fa-map"> <span class="mx-1"> {{$event['address']}}</span></i>

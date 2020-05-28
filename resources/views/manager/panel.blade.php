@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Gestionar perfil')
 @section('content')
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top justify-content-between align-items-center">

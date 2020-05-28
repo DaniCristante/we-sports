@@ -1,9 +1,8 @@
 @extends('layouts.app')
-
-
-
+@section('title', 'Crear evento')
 @section('content')
-
-    @include('components.event-form')
+    <div class="my-5">
+        @include('components.event-form')
+    </div>
 
 @endsection

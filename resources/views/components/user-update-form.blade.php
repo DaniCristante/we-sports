@@ -53,6 +53,7 @@
 
         <div class="text-center">
             <input
+
                 type="submit"
                 value="Actualizar"
                 class="btn btn-outline-success p-2 my-2  w-50"
