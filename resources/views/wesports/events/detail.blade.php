@@ -38,7 +38,13 @@
             </div>
             @include('components.participant-list')
         </div>
-        @include('components.eventos-relacionados')
+        <div class="my-3">
+            <div class="text-center">
+                <h3 class="text-secondary">Eventos Relacionados</h3>
+                <hr class="bg-secondary">
+                @include('components.events-related')
+            </div>
+        </div>
     </div>
 @endsection
 

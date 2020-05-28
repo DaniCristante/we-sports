@@ -72,7 +72,7 @@
         {{--        @include('wesports.events.event-list')--}}
         <div id="eventsField" class="row justify-content-center">
             @foreach($events as $event)
-                {{--        <x-event-card-v2 :event="$event"/>--}}
+                {{--        <x-event-ca rd-v2 :event="$event"/>--}}
                 @include('components.event-card')
             @endforeach
         </div>
