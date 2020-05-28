@@ -26,16 +26,26 @@ class UserController extends Controller
         if (!empty($user)){
             $userId = $user['id'];
             $events = $this->getUserEvents($userId);
+            $eventParticipations = $this->getUserParticipations($userId);
             return view('user.profile', [
                 'user' => $user,
-                'createdEvents' => $events
+                'createdEvents' => $events,
+                'eventParticipations' => $eventParticipations
             ]);
-        } return view('user.profile');
+        }
+        return view('user.profile');
     }
 
     public function getUserEvents(int $userId)
     {
         $requestUrl = '/users-events/'.$userId;
+        return $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
+    }
+
+    public function getUserParticipations($userId)
+    {
+        $requestUrl = '/participating-events?user_id='.$userId;
+
         return $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
     }
 

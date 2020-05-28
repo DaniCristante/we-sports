@@ -7,10 +7,12 @@
                     <img class="card-img-top" src="/{{$event['img']}}" alt="Card image cap">
                     <div class="card-body">
                         <h6 class="card-title">{{$event['title']}}</h6>
+                        @if(isset($event['logo']))
                         <p>
                             <i class="fas {{$event['logo']}}"></i>
                             <span class="mx-2">{{$event['name']}}</span>
                         </p>
+                        @endif
                         <p>
                             <i class="fas fa-calendar-alt"></i>
                             <span class="mx-2">{{substr($event['datetime'],'0','10')}}</span>

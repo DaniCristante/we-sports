@@ -5,14 +5,14 @@
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventsBtn">
                     <i class="far fa-calendar-plus text-white mx-2"></i>
-                    <span class="text-white">Mis eventos </span>
+                    <span class="text-white">Gestionar mis eventos </span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventosParticipadosBtn">
                     <i class="far fa-calendar-check text-white mx-2"></i>
-                    <span class="text-white">Eventos participados</span>
+                    <span class="text-white">Historial eventos participados</span>
                 </a>
             </li>
 

@@ -6,8 +6,8 @@
         <button class="navbar-toggler sideMenuToggler mr-3 bg-secondary float-left" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{{url('/dashboard')}}">WeSports<span class="text-danger">Admin</span></a>
-        <a href="{{url('/')}}" class="btn btn-danger float-right"><i class="fas fa-sign-out-alt"></i></a>
+        <a class="navbar-brand" href="{{url('/dashboard')}}">WeSports<span class="text-danger">User</span></a>
+        <a href="{{url('/')}}" class="btn btn-danger float-right">Volver a la web <i class="fas fa-sign-out-alt"></i></a>
     </nav>
 
     <div class="wrapper d-flex ">

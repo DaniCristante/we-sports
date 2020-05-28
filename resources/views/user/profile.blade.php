@@ -42,7 +42,6 @@
 
                 </div>
 
-
                 <div class="col-12 col-lg-8  ml-md-1 row  justify-content-center ">
                     <div class="my-2 text-center row m-0 p-0 justify-content-center   ">
                         <ul class="list-group list-group-horizontal text-center">
@@ -63,7 +62,7 @@
                         <div class="col-12 p-2 " id="usersEventsParticipate">
 
                             {{--TODO cambiar $createdEvents por eventos participados del usuario--}}
-                            <x-user-profile-event-card :events="$createdEvents"/>
+                            <x-user-profile-event-card :events="$eventParticipations"/>
                         </div>
 
                     </div>
