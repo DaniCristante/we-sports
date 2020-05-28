@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use function GuzzleHttp\Promise\all;
 
 class EventController extends Controller
 {
@@ -154,5 +155,29 @@ class EventController extends Controller
         return view('wesports.events.edit', [
             'event' => $event
         ]);
+    }
+
+    public function sendUpdate(Request $request)
+    {
+        $userToken = $request->session()->get('api_token');
+        $requestUrl = '/events/'.$request->get('id');
+        $eventData = $request->all();
+        unset($eventData['id']);
+        unset($eventData['_token']);
+        if ($eventData['datetime'] === null){
+            unset($eventData['datetime']);
+        }
+        if ($request->file('img')) {
+            $imagePath = $this->imageManager->moveEventImage($request['img']);
+            if ($imagePath !== null) {
+                $eventData['img'] = $imagePath;
+            }
+        }
+        $response = $this->callHandler->authorizedPutMethodHandler($requestUrl, $userToken, $eventData);
+        if ($response->status() !== 200){
+            return redirect()->back()->with('error', 'El evento no se ha podido actualizar');
+        }
+        $id = $response->json()['id'];
+        return redirect('/events/'.$id)->with('updated', 'Evento actualizado correctamente');
     }
 }

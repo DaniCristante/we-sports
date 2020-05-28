@@ -1,4 +1,4 @@
-<form action="{{url('events/create')}}" class="form-group form p-4" method="POST" enctype="multipart/form-data">
+<form action="{{url('update')}}" class="form-group form p-4" method="POST" enctype="multipart/form-data">
     @csrf
     <div>
         <div class="row my-2 justify-content-center align-items-center">
@@ -47,7 +47,7 @@
                 @enderror
             </div>
         </div>
-
+        <input value="{{$event['id']}}" name="id" hidden>
         <div class="row my-2 justify-content-center align-items-center">
             <div class="col-12 col-md-2">
                 <span>Nueva imagen </span>
@@ -68,7 +68,7 @@
     <div class="text-center">
         <input
             type="submit"
-            value="Crear evento"
+            value="Actualizar evento"
             class="btn btn-success p-2 my-2  w-50"
         />
     </div>

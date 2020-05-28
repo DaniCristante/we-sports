@@ -24,6 +24,7 @@ Route::post('/events/create', 'EventController@storeEvent')->name('events.store'
 Route::get('/events/delete', 'EventController@deleteEvent')->middleware('auth');
 Route::get('/profile/{nickname?}', 'UserController@getProfile');
 Route::get('/events/update', 'EventController@updateEvent')->middleware('verify-creator');
+Route::post('update', 'EventController@sendUpdate')->middleware('auth');
 Route::get('events/{id?}', 'EventController@eventDetail');
 Route::get('dashboard', 'AdminController@showAdminPanel');
 Route::post('dashboard/update', 'AdminController@updateUser');
