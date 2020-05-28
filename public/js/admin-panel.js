@@ -79,7 +79,7 @@ function updateUserFormValidate() {
 
     //Image 2mb validation
     $('#uimg').change(function () {
-        if (this.files[0].size > 16000000) {
+        if (this.files[0].size > 16777216) {
             $('#imgInput').append(' <small class="alert-danger text-center">Imagen debe ser inferior a 16MB</small>');
 
         }else{
