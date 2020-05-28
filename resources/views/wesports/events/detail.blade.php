@@ -3,6 +3,11 @@
 @section('content')
 
     <div id="detail-container">
+        @if (session('updated'))
+            <div id="alerts" class="alert alert-success text-center">
+                {{session('updated')}}
+            </div>
+        @endif
         <div class="row justify-content-center">
             <div id="jumbotron-event" class="jumbotron-fluid p-2 my-1 mx-2 col-8 bg-transparent">
                 <h1 class="display-4 text-secondary">{{$event['title']}}</h1>
@@ -153,4 +158,5 @@
             })
         })
     </script>
+    <script src="{{asset('js/alerts.js')}}"></script>
 @endsection

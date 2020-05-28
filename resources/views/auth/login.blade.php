@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Iniciar sesión')
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-xs-7 col-md-6 " id="loginPanel">

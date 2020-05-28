@@ -18,7 +18,8 @@ class CallHandler
     /**
      * URL de la API
      */
-    private const API_ENDPOINT = 'http://52.91.0.226:8000/api';
+//    private const API_ENDPOINT = 'http://52.91.0.226:8000/api';
+    private const API_ENDPOINT = 'http://127.0.0.1:8001/api';
 
     /**
      * Headers requeridos para llamar a la api.
@@ -96,5 +97,12 @@ class CallHandler
         return Http::withToken($token)
             ->withHeaders(self::HEADERS)
             ->delete(self::API_ENDPOINT.$url);
+    }
+
+    public function authorizedPutMethodHandler(string $url, string $token, $data)
+    {
+        Return Http::withToken($token)
+            ->withHeaders(self::HEADERS)
+            ->put(self::API_ENDPOINT.$url, $data);
     }
 }
