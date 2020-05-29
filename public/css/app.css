@@ -6318,6 +6318,10 @@ input:read-only {
 }
 
 @media (max-width: 400px) {
+  .wrapper.active #sideMenuTogglerInsideMenu {
+    display: inline-block;
+  }
+
   .wrapper.active .sideMenu {
     width: 100vw;
     height: 100vh;
