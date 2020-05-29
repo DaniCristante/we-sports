@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-6 col-md-4">
                     <p>
-                        <i class="fa fa-calendar-alt"></i>  {{substr($event['datetime'],0,16)}} </strong>
+                        <i class="fa fa-calendar-alt"></i>  <strong>{{substr($event['datetime'],0,16)}} </strong>
                     </p>
                 </div>
                 <div class="col-6 col-md-4">

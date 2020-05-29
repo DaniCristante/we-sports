@@ -1,5 +1,6 @@
 <div id="userUpdateForm">
-    <form action="{{url('dashboard/update')}}" class="form-group form  col-12 my-2 mx-1 p-4" method="POST" enctype="multipart/form-data">
+    <form action="{{url('dashboard/update')}}" class="form-group form  col-12 my-2 mx-1 p-4" method="POST"
+          enctype="multipart/form-data">
         @csrf
 
         <div class="form-group" id="imgInput">
