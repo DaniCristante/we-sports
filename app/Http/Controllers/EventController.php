@@ -89,6 +89,10 @@ class EventController extends Controller
         $requestUrl = '/events/' . $id;
 
         $event = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
+        if (isset($event['exception'])) {
+            return redirect('/events');
+        }
+
         $event = \reset($event);
         if (empty($event)) {
             return redirect('/events');
@@ -98,11 +102,10 @@ class EventController extends Controller
         $eventSportId = $event['sport_id'];
         $relatedEventsRequestUrl = '/events?sport=' . $eventSportId;
         $relatedEvents = $this->callHandler->unauthorizedGetMethodHandler($relatedEventsRequestUrl);
-        if (count($relatedEvents) > 4) {
+        if (count($relatedEvents) > 3) {
             shuffle($relatedEvents);
-            array_splice($relatedEvents, 0, 4);
+            $relatedEvents = array_slice($relatedEvents, 0, 3);
         }
-
         $loggedUserId = null;
         $isParticipating = null;
         $token = null;
@@ -144,11 +147,11 @@ class EventController extends Controller
         $requestUrl = '/events/' . $eventId;
         $response = $this->callHandler->authorizedDeleteMethodHandler($requestUrl, $userToken);
 
-        $responseMessage = 'Evento creado correctamente';
+        $responseMessage = 'Evento eliminado correctamente';
         if ($response->status() !== 204) {
             $responseMessage = '¡Ups! Algo ha fallado en la petición';
         }
-        return redirect()->back()->with('event-status', $responseMessage);
+        return redirect()->back()->with('status', $responseMessage);
     }
 
     public function updateEvent(Request $request)
@@ -192,10 +195,11 @@ class EventController extends Controller
     public function editValidator(array $data)
     {
         return Validator::make($data, [
-            'title' => ['string', 'max:100'],
-            'city' => ['string', 'max: 100'],
-            'address' => ['string', 'max: 200'],
-            'datetime' => ['after_or_equal:' . Carbon::now('Europe/Madrid')]
+            'title' => ['required', 'string', 'max:100'],
+            'description' => ['required'],
+            'city' => ['required', 'string', 'max: 100'],
+            'address' => ['required', 'string', 'max: 200'],
+            'datetime' => ['required', 'after_or_equal:' . Carbon::now('Europe/Madrid')]
         ]);
     }
 }

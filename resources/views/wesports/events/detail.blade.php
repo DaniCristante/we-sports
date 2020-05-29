@@ -96,11 +96,9 @@
                         success: function (result) {
                             $('#button-container').append(successElement);
                             let participantElement = document.createElement('li');
-                            console.log('hola');
                             participantElement.innerText = result.nickname;
-                            participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
+                            participantElement.setAttribute('class', 'my-1 participant-list text-uppercase text-dark');
                             listParent.appendChild(participantElement);
-                            console.log('adios');
                             document.getElementById('current-participants').innerText = numberOfParticipants + 1;
                             numberOfParticipants += 1;
                             $('#participate-button').hide();
@@ -145,7 +143,7 @@
                             $('#list-parent').empty();
                             for (var i = 0; i < result.length; i++) {
                                 let participantElement = document.createElement('li');
-                                participantElement.setAttribute('class', 'my-1 participant-list text-uppercase');
+                                participantElement.setAttribute('class', 'my-1 participant-list text-uppercase text-dark');
                                 participantElement.innerText = result[i].nickname;
                                 listParent.appendChild(participantElement);
                             }
