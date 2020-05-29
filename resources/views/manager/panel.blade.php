@@ -10,7 +10,7 @@
         <a href="{{url('/')}}" class="btn btn-danger float-right">Volver a la web <i class="fas fa-sign-out-alt"></i></a>
     </nav>
 
-    <div class="wrapper d-flex ">
+    <div class="wrapper d-flex " id="adminWrapper">
         @include('components.admin-side-menu')
         @include('components.admin-content')
     </div>
