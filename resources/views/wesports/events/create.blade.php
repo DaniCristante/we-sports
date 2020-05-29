@@ -4,5 +4,4 @@
     <div class="my-5">
         @include('components.event-form')
     </div>
-
 @endsection

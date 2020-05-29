@@ -8,10 +8,10 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$event['title']}}</h5>
                     @if(isset($event['logo']))
-                    <p>
-                        <i class="fas {{$event['logo']}}"></i>
-                        <span class="mx-2">{{$event['name']}}</span>
-                    </p>
+                        <p>
+                            <i class="fas {{$event['logo']}}"></i>
+                            <span class="mx-2">{{$event['name']}}</span>
+                        </p>
                     @endif
                     <p>
                         <i class="fas fa-calendar-alt"></i>

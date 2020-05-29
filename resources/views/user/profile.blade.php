@@ -6,9 +6,11 @@
 @endif
 @section('content')
     @if(!isset($user))
-        <div class="text-center">
-            <h3 class="alert alert-danger">Usuario no encontrado</h3>
-            <a href="{{'/'}}">Volver al home</a>
+        <div class="text-center mb-3">
+            <h3 class="alert alert-danger">Usuario no encontrado.</h3>
+        </div>
+        <div class="my-3 text-center">
+            <a href="{{url('/')}}">Volver a la página inicial</a>
         </div>
 
     @else
@@ -17,9 +19,8 @@
             <div class="row justify-content-center my-3  p-1">
                 <div class="col-8 col-md-6 col-lg-3 mb-4    border border-primary" style="max-height: 650px">
                     <img class="img-fluid my-1 p-5"
-                         src="/{{$user['uimg']}}"
-                         alt="Card image cap">
-
+                         src="{{'/'.$user['uimg']}}"
+                         alt="Foto por defecto">
                     <div class=" p-2 my-2">
                         <h5>
                             {{$user['uname']}} {{$user['surnames']}}
