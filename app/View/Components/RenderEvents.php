@@ -10,8 +10,6 @@ class RenderEvents extends Component
 
     public $events;
 
-//    TODO pasar categorias de deportes con id y su nombre
-
     public $categorias;
 
     /**
