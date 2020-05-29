@@ -49,13 +49,13 @@
             <div class="nav-item" id="navMenuItems">
 
                 <ul class="navbar-nav mr-auto text-white">
-                    <a class="dropdown-item" href="{{url('/dashboard')}}">Gestión de cuenta y eventos</a>
-                    <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}">Ver mi
+                    <a class="dropdown-item" href="{{url('/dashboard')}}"><i class="fas fa-user-cog"></i>Gestión de cuenta y eventos</a>
+                    <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}"><i class="fas fa-user"></i>Ver mi
                         perfil</a>
-                    <a class="dropdown-item" href="{{url('/events/create')}}">Crear evento</a>
+                    <a class="dropdown-item" href="{{url('/events/create')}}"><i class="fas fa-plus"></i>Crear evento</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
+                                                                     document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
                         Cerrar sesión
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
