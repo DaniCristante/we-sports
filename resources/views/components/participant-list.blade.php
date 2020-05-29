@@ -1,7 +1,8 @@
 <div class="col-md-3 col-12 justify-content-center align-items-center my-3 bg-info p-3 border rounded-lg">
     <div class="col-12 text-center">
         <p class="text-success col-12">
-            <i class="fas fa-user-check"><span class="mx-1">Organizado por {{$event['nickname']}}</span></i>
+            <i class="fas fa-user-check"><span class="mx-1">Organizado por <a class="text-success border-bottom border-success text-decoration-none"
+                        href="{{url('/profile/'.$event['nickname'])}}">{{$event['nickname']}}</a></span></i>
 
         </p>
         <p class="text-uppercase" id="participant-list"><span
