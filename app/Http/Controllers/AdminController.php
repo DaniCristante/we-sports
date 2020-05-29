@@ -40,7 +40,6 @@ class AdminController extends Controller
 
     public function updateUser(Request $request)
     {
-        dump($request->all());
         $userId = Auth::user()->getAuthIdentifier();
         $userToken = $request->session()->get('api_token');
         $userData = $request->all();
