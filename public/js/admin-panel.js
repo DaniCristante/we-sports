@@ -9,6 +9,10 @@ $(document).ready(function () {
 
     });
 
+    $('#adminWrapper').click(function () {
+        $(this).removeClass('active');
+    })
+
     let adminWelcome = $('#adminWelcome');
     let userUpdateForm = $('#userUpdateForm');
     let participationRecord = $('#participation-record');

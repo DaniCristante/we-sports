@@ -4,8 +4,9 @@
             <img class="card-img-top embed-responsive-item" src="{{$event['img']}}"
                  alt="{{$event['title']}}">
         </div>
-        <div class="col-12 col-xs-8 col-lg-7 px-5 px-md-2">
-            <h4> {{$event['title']}}</h4>
+
+        <div class="col-12 col-xs-8 col-lg-7 px-5 px-md-2 ">
+            <a href="{{url('events/'.$event['id'])}}" class="text-decoration-none"><h4> {{$event['title']}}</h4></a>
             <span class="d-block">
                 <i class="fas fa-user mr-2"></i>
                 <a class="text-decoration-none"

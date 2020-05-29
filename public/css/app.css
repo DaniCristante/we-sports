@@ -6317,6 +6317,14 @@ input:read-only {
   transform: translateX(0);
 }
 
+@media (max-width: 400px) {
+  .wrapper.active .sideMenu {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0px !important;
+  }
+}
+
 @media (min-width: 992px) {
   .wrapper .sideMenu {
     transform: translateX(0);

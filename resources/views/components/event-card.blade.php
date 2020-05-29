@@ -6,7 +6,7 @@
                  style="min-width: 220px"/>
         </div>
         <div class="card-body col-12  col-lg-6 px-5 p-lg-2">
-            <h4> {{$event['title']}}</h4>
+            <a href="{{url('events/'.$event['id'])}}" class="text-decoration-none"><h4> {{$event['title']}}</h4></a>
             <span class="d-block">
             <i class="fas fa-user mr-2"></i>
             <a class="text-decoration-none" href="{{url('/profile/'.$event['nickname'])}}">{{$event['nickname']}}</a>
