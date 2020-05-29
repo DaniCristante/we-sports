@@ -5,7 +5,7 @@
                  alt="{{$event['title']}}">
         </div>
 
-        <div class="col-12 col-xs-8 col-lg-7 px-5 px-md-2 ">
+        <div class="col-12 col-xs-8 col-lg-7 px-5 px-md-2 pl-lg-3 pl-md-5 pt-md-2 pt-sm-2">
             <a href="{{url('events/'.$event['id'])}}" class="text-decoration-none"><h4> {{$event['title']}}</h4></a>
             <span class="d-block">
                 <i class="fas fa-user mr-2"></i>
@@ -28,9 +28,8 @@
                             <i class="fas fa-users mr-2"></i>  Participantes {{$event['current_participants']}} de {{$event['max_participants']}}
 
             </span>
-            <span class="d-block">
+            <span class="d-block mr-2">
                     <x-progress-bar :event="$event"/>
-
             </span>
         </div>
 
