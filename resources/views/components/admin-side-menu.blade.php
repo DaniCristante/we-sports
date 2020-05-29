@@ -18,7 +18,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="events/create" class="nav-link px-1 btn-outline-secondary">
+                <a href="{{url('events/create')}}" class="nav-link px-1 btn-outline-secondary">
                     <i class="fas fa-plus text-white mx-2"></i>
                     <span class="text-white">Nuevo evento</span>
                 </a>
@@ -38,7 +38,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="/events" class="nav-link px-1 btn-outline-secondary">
+                <a href="{{url('/events')}}" class="nav-link px-1 btn-outline-secondary">
                     <i class="fas fa-calendar-alt text-white mx-2"></i>
                     <span class="text-white">Eventos </span>
                 </a>
