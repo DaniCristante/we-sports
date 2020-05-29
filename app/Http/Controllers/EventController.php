@@ -98,11 +98,10 @@ class EventController extends Controller
         $eventSportId = $event['sport_id'];
         $relatedEventsRequestUrl = '/events?sport=' . $eventSportId;
         $relatedEvents = $this->callHandler->unauthorizedGetMethodHandler($relatedEventsRequestUrl);
-        if (count($relatedEvents) > 4) {
+        if (count($relatedEvents) > 3) {
             shuffle($relatedEvents);
-            array_splice($relatedEvents, 0, 4);
+            $relatedEvents = array_slice($relatedEvents, 0, 3);
         }
-
         $loggedUserId = null;
         $isParticipating = null;
         $token = null;
