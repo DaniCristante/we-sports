@@ -19,20 +19,14 @@
 <div id="app">
     <nav class="navbar navbar-expand-lg bg-dark sticky-top" id="mainMenu">
         <div class="container">
-            <a class="navbar-brand" href="{{url('/')}}">
-                <img class="border border-primary rounded-lg" src="{{asset('images/brand-logo.png')}}" alt="WeSports"
-                     width="180" height="40">
-            </a>
-
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{url('/events')}}">Eventos</a>
-                </li>
-            </ul>
-
-
+            <div class="col-md-12 mr-auto ml-auto">
+                <a class="navbar-brand" href="{{url('/')}}">
+                    <img class="border border-primary rounded-lg" src="{{asset('images/brand-logo.png')}}" alt="WeSports"
+                         width="180" height="40">
+                </a>
+            </div>
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto">
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
