@@ -18,7 +18,7 @@
                         <div class="col-12 col-md-5">
                             <input type="text" placeholder="Nombre" name="uname" value="{{old('uname')}}"
                                    class="form-control my-1 @error('uname') is-invalid @enderror">
-                            @error('name')
+                            @error('uname')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
