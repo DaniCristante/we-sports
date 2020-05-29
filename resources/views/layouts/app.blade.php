@@ -18,28 +18,28 @@
 <body>
 <div id="app">
     <nav class="navbar navbar-expand-lg bg-dark sticky-top" id="mainMenu">
-        <div class="container">
-            <div class="col-md-12 mr-auto ml-auto">
+        <div class="container align-items-start">
+            <div class="col-8">
                 <a class="navbar-brand" href="{{url('/')}}">
                     <img class="border border-primary rounded-lg" src="{{asset('images/brand-logo.png')}}" alt="WeSports"
                          width="180" height="40">
                 </a>
             </div>
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav col-4">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="btn btn-outline-light " href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
                     </li>
                 @else
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown ">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle text-secondary" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <i class="fas fa-user-cog"></i> <span class="caret"></span>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
+                        <div class="dropdown-menu dropdown-menu-left col-12" aria-labelledby="navbarDropdown"
                              id="userDropDownMenu">
                             <a class="dropdown-item" href="{{url('/dashboard')}}">Gestión de cuenta y eventos</a>
                             <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}">Ver mi
