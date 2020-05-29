@@ -22,16 +22,18 @@
                 <div class="row justify-content-around">
                     <div class="col-12 col-md-5 text-dark text-uppercase">
                         <p>
-                            <i class="fas fa-map"> <span class="mx-1"> {{$event['address']}}</span></i>
-                        </p>
-                        <p>
                             <i class="fas fa-city"> <span class="mx-1"> {{$event['city']}}</span></i>
                         </p>
+
+                        <p>
+                            <i class="fas fa-map-marked-alt"><span class="mx-1"> {{$event['address']}}</span></i>
+                        </p>
+
                         <p>
                             <i class="fas fa-calendar"> <span class="mx-1"> {{$event['datetime']}}</span></i>
                         </p>
                     </div>
-                    <div class="col-12 col-md-5">
+                    <div class="col-12 col-md-5 text-justify">
                         <p class="text-dark-50">{{$event['description']}}</p>
                     </div>
                 </div>

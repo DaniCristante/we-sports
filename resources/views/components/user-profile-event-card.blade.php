@@ -23,6 +23,11 @@
                         <span class="mx-2">{{$event['city']}} </span>
                     </p>
 
+                    <p>
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span class="mx-2">{{$event['address']}} </span>
+                    </p>
+
                 </div>
 
             </a>
