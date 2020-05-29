@@ -4,7 +4,7 @@
         <div class="card m-2" style="width: 18rem;">
             <a href="{{url('events/'.$event['id'])}}" class="text-decoration-none">
 
-                <img class="card-img-top" src="/{{$event['img']}}" alt="{{$event['title']}}">
+                <img class="card-img-top" src="{{'/'.$event['img']}}" alt="{{$event['title']}}">
                 <div class="card-body">
                     <h5 class="card-title">{{$event['title']}}</h5>
                     @if(isset($event['logo']))

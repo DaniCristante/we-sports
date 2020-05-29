@@ -14,8 +14,8 @@
                 <div id="image" class="row justify-content-center">
                     <div id="detail-image-container"
                          class="media-container embed-responsive embed-responsive-16by9 col-10 col-md-7">
-                        <img id="detail-image" class="embed-responsive-item detalled-image"
-                             src="/{{$event['img']}}">
+                        <img id="detail-image" class="embed-responsive-item detalled-image" alt="{{$event['title']}}"
+                             src="{{'/'.$event['img']}}">
                     </div>
                 </div>
                 <hr class="bg-secondary">
