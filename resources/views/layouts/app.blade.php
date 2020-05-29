@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarMenuContent">
             @guest
                 <div class="nav-item text-center">
-                    <a href="{{ route('register') }}" class="text-info text-decoration-none mx-1">
+                    <a href="{{ route('register') }}" class=" text-decoration-none mx-1">
                         <i class="fas fa-user-plus"> <span class="mx-1">Regístrate</span></i>
                     </a>
                     <a href="{{ route('login') }}" class="text-success text-decoration-none mx-1">

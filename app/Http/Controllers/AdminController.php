@@ -25,17 +25,18 @@ class AdminController extends Controller
     {
         $token = $request->session()->get('api_token');
         $response = $this->callHandler->authorizedGetMethodHandler('/user', $token);
+        if ($response->status() !== 200) {
+            return redirect('/login');
+        }
         $userId = Auth::user()->getAuthIdentifier();
-        if ($response->status() === 200) {
-            $userData = $response->json()['user'];
-            $userEvents = $this->getUserEvents($userId);
-            $eventParticipations = $this->getUserParticipations($userId);
-            return view('manager.panel', [
-                'data' => $userData,
-                'userEvents' => $userEvents,
-                'eventParticipations' => $eventParticipations
-            ]);
-        } //TODO Else
+        $userData = $response->json()['user'];
+        $userEvents = $this->getUserEvents($userId);
+        $eventParticipations = $this->getUserParticipations($userId);
+        return view('manager.panel', [
+            'data' => $userData,
+            'userEvents' => $userEvents,
+            'eventParticipations' => $eventParticipations
+        ]);
     }
 
     public function updateUser(Request $request)
