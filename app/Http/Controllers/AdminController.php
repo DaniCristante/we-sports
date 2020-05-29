@@ -27,7 +27,6 @@ class AdminController extends Controller
         $response = $this->callHandler->authorizedGetMethodHandler('/user', $token);
         $userId = Auth::user()->getAuthIdentifier();
         if ($response->status() === 200) {
-            dump('hola');
             $userData = $response->json()['user'];
             $userEvents = $this->getUserEvents($userId);
             $eventParticipations = $this->getUserParticipations($userId);
@@ -41,7 +40,6 @@ class AdminController extends Controller
 
     public function updateUser(Request $request)
     {
-        dump($request->all());
         $userId = Auth::user()->getAuthIdentifier();
         $userToken = $request->session()->get('api_token');
         $userData = $request->all();
