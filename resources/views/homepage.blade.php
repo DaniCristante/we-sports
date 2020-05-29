@@ -14,9 +14,8 @@
             @endforeach
         </div>
 
-
         <div class="col-12 text-center my-2">
-            <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events')}}">Ver mas
+            <a class="btn btn-outline-secondary p-2 p-md-3 text-center" href="{{url('/events')}}">Ver más
                 eventos</a>
         </div>
     </div>

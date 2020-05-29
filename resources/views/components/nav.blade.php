@@ -26,16 +26,16 @@
         <div class="nav-item" id="navMenuItems">
 
             <ul class="navbar-nav mr-auto text-white">
-                <a class="dropdown-item" href="{{url('/dashboard')}}"><i class="fas fa-user-cog"></i>Gestión de cuenta y
+                <a class="dropdown-item " href="{{url('/dashboard')}}"><i class="fas fa-user-cog mr-2"></i>Gestión de cuenta y
                     eventos</a>
-                <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}"><i class="fas fa-user"></i>Ver
+                <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}"><i class="fas fa-user mr-2"></i>Ver
                     mi
                     perfil</a>
-                <a class="dropdown-item" href="{{url('/events/create')}}"><i class="fas fa-plus"></i>Crear evento</a>
+                <a class="dropdown-item" href="{{url('/events/create')}}"><i class="fas fa-plus mr-2"></i>Crear evento</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                                      document.getElementById('logout-form').submit();"><i
-                        class="fas fa-sign-out-alt"></i>
+                        class="fas fa-sign-out-alt mr-2"></i>
                     Cerrar sesión
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST"

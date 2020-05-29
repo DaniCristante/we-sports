@@ -10,7 +10,6 @@
             </button>
         </div>
 
-        <!--form sidebar-->
         <div class="col-10 col-md-4 my-2" id="filterForm">
             <form method="post" action="" class="form-group form p-5 p-md-3 p-lg-5">
                 <h5>Filtar eventos</h5>

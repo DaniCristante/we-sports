@@ -10,13 +10,14 @@
                 <div class="col-12">
                     <h2 class="text-center">Bienvenido a WeSports</h2>
                     <div id="web-abstract">
-                        <h4 class="p-2 text-center border-bottom">
+                        <h4 class="p-2 text-center">
                             Crea eventos, únete a actividades y comparte experiencias.
                         </h4>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="">
+                <hr class="col-8 bg-light">
+                <div class="container pt-2">
+                    <div>
                         <h5 class="text-center text-white">Filtra por ciudad, fecha o deporte</h5>
                     </div>
                     <form action="{{url('events')}}" method="post" novalidate="novalidate">
