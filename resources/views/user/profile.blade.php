@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="col-12 col-lg-8  ml-md-1 row justify-content-center">
-                    <div class="text-center justify-content-center">
+                    <div class="text-center justify-content-center col-12">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item btn " id="eventsBtn">
                                 <i class="far fa-calendar-plus mx-1"></i>Eventos creados
@@ -58,8 +58,7 @@
                         <div class="col-12 p-2" id="usersEvents">
                             <x-user-profile-event-card :events="$createdEvents"/>
                         </div>
-                        <div class="col-12 p-2 " id="usersEventsParticipate">
-                            {{--TODO cambiar $createdEvents por eventos participados del usuario--}}
+                        <div class="col-12 p-2" id="usersEventsParticipate">
                             <x-user-profile-event-card :events="$eventParticipations"/>
                         </div>
 

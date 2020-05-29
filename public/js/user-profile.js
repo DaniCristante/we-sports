@@ -1,17 +1,21 @@
 $(document).ready(function () {
 
 
-    console.log('fun')
 
     let userContentField = $('#userContentField');
     let eventsParticipateBtn = $('#eventsParticipateBtn');
     let eventsBtn = $('#eventsBtn');
+    let usersEventsParticipate = $('#usersEventsParticipate');
+
     eventsBtn.addClass('active');
+    usersEventsParticipate.hide();
+
 
     eventsParticipateBtn.on('click', function () {
         eventsBtn.removeClass('active');
         eventsParticipateBtn.addClass('active');
         userContentField.children().hide();
+
         $('#usersEventsParticipate').show();
 
     });
