@@ -11,6 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('js/validation/validate.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     {{--    Styles--}}
     <link rel="shortcut icon" type="image/png" href="{{asset('images/favicon.png')}}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

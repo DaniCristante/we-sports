@@ -27,4 +27,5 @@
 @section('scripts')
     <script src="{{asset('js/alerts.js')}}"></script>
     <script src="{{asset('js/admin-panel.js')}}"></script>
+    <script src="{{asset('js/validation/form-validation.js')}}"></script>
 @endsection
