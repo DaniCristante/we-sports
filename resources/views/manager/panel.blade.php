@@ -3,11 +3,12 @@
 @section('content')
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top justify-content-between align-items-center">
-        <button class="navbar-toggler sideMenuToggler mr-3 bg-secondary float-left" type="button">
+        <button class="navbar-toggler sideMenuToggler mr-4 bg-secondary float-left" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{{url('/dashboard')}}">WeSports<span class="text-danger">User</span></a>
-        <a href="{{url('/')}}" class="btn btn-danger float-right">Volver a la web <i class="fas fa-sign-out-alt"></i></a>
+        <a class="navbar-brand" href="{{url('/dashboard')}}">WeSports <i class="fas fa-user-cog mx-1 text-danger"></i></a>
+        <a href="{{url('/')}}" class="float-right text-white"> <span class="mx-2">Home</span><i
+                class="fas fa-sign-out-alt"></i></a>
     </nav>
 
     <div class="wrapper d-flex " id="adminWrapper">
@@ -16,7 +17,7 @@
     </div>
 
     @error('phone')
-        <span class="invalid-feedback" role="alert">
+    <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
     @enderror
