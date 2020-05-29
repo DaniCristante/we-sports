@@ -29,9 +29,3 @@ Route::get('events/{id?}', 'EventController@eventDetail');
 Route::get('dashboard', 'AdminController@showAdminPanel');
 Route::post('dashboard/update', 'AdminController@updateUser');
 Route::get('dashboard/delete', 'Eventcontroller@deleteEvent');
-
-/** ROUTE FOR TEST TEMPLETE */
-Route::get('/demo', function () {
-
-    return view('http-errors.404');
-});
