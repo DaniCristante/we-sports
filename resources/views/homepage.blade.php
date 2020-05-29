@@ -14,21 +14,14 @@
                     <div class="col-12">
                         <h2 class="text-center">Bienvenido a WeSports</h2>
                         <div id="web-abstract">
-                            <h4 class="p-2">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias dolorem
-                                eligendi
-                                error
-                                eum
-                                harum ipsam libero, modi molestias obcaecati odit pariatur perferendis quidem rem sit,
-                                soluta
-                                totam.
-                                Beatae, officiis.
+                            <h4 class="p-2 text-center border-bottom">
+                                Crea eventos, únete a actividades y comparte experiencias.
                             </h4>
                         </div>
                     </div>
                     <div class="container">
                         <div class="">
-                            <h4 class="text-center">Filtra por ciudad, fecha o deporte</h4>
+                            <h5 class="text-center text-white">Filtra por ciudad, fecha o deporte</h5>
                         </div>
                         <form action="{{url('events')}}" method="post" novalidate="novalidate">
                             @csrf
