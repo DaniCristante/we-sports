@@ -15,7 +15,6 @@
     });
 
     const surnameRegexp = new RegExp(/^[A-Z](\w+)?(\s?([A-Z]+?\w+))*/);
-    const regex = new RegExp(/(?=.*?\d)(?=.*?[a-z])/);
     // These are the constraints used to validate the form
     var constraints = {
         uname: {
@@ -127,11 +126,11 @@
     }
     function resetFormGroup(formGroup, input) {
         // Remove the success and error classes
-        // formGroup.classList.remove("has-error");
-        // formGroup.classList.remove("has-success");
+        formGroup.classList.remove("has-error");
+        formGroup.classList.remove("has-success");
         input.style.border = "";
         // and remove any old messages
-        _.each(formGroup.querySelectorAll(".text-muted.form-text"), function(el) {
+        _.each(formGroup.querySelectorAll(".text-danger.form-text"), function(el) {
             el.parentNode.removeChild(el);
         });
     }
@@ -140,7 +139,7 @@
     function addError(messages, error, input) {
         var warningMessage = document.createElement("small");
         input.style.border = "2px solid red";
-        warningMessage.classList.add("text-muted");
+        warningMessage.classList.add("text-danger");
         warningMessage.classList.add("form-text");
         warningMessage.innerText = error;
         messages.appendChild(warningMessage);
