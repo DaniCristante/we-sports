@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/', 'HomeController@index');
+
 Auth::routes();
 
+Route::get('/events', 'EventController@eventList');
+Route::post('/events', 'EventController@eventList');
 Route::get('/events/create', 'EventController@createEvent')->middleware('auth');
 Route::post('/events/create', 'EventController@storeEvent')->name('events.store')->middleware('auth');
 Route::get('/events/delete', 'EventController@deleteEvent')->middleware('auth');
-Route::get('/events/update', 'EventController@updateEvent')->middleware('verify-creator');
-Route::get('events/{id?}', 'EventController@eventDetail');
-Route::get('/events', 'EventController@eventList');
-Route::post('/events', 'EventController@eventList');
 Route::get('/profile/{nickname?}', 'UserController@getProfile');
+Route::get('/events/update', 'EventController@updateEvent')->middleware('verify-creator');
 Route::post('update', 'EventController@sendUpdate')->middleware('auth');
-Route::get('dashboard/delete', 'Eventcontroller@deleteEvent');
-Route::post('dashboard/update', 'AdminController@updateUser');
+Route::get('events/{id?}', 'EventController@eventDetail');
 Route::get('dashboard', 'AdminController@showAdminPanel');
-Route::get('/', 'HomeController@index');
-
+Route::post('dashboard/update', 'AdminController@updateUser');
+Route::get('dashboard/delete', 'Eventcontroller@deleteEvent');

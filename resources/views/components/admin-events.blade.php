@@ -7,7 +7,7 @@
     <h3 class="form-title">Mis eventos</h3>
     @if(empty($userEvents))
         <h3>Todavía no has creado ningún evento <a class="h3" style="text-decoration: none;"
-                                                   href="{{'/events/create'}}">crea uno ahora</a></h3>
+                                                   href="{{url('/events/create')}}">crea uno ahora</a></h3>
     @else
         @foreach($userEvents as $userEvent)
             <div class="row  justify-content-around border border-primary m-0 my-2 p-3  admin-event-card">
@@ -26,7 +26,7 @@
 
                 <div class="col-12 col-md-3 m-0 p-0">
                     <div class="row justify-content-center">
-                        <a href="{{'/events/update?eid='.$userEvent['id']}}"
+                        <a href="{{url('/events/update?eid='.$userEvent['id'])}}"
                            class="mx-2 btn btn-outline-warning text-danger" id="editEvent">
                             <i class="far fa-edit"></i>
                         </a>
