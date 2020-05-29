@@ -4,7 +4,7 @@
         <div class="col-10 col-md-4 my-1 ">
             <a class="text-decoration-none" href="{{url('events/'.$event['id'])}}">
                 <div class="card w-100">
-                    <img class="card-img-top" src="/{{$event['img']}}" alt="Card image cap">
+                    <img class="card-img-fluid" src="/{{$event['img']}}" alt="Card image cap">
                     <div class="card-body">
                         <h6 class="card-title">{{$event['title']}}</h6>
                         @if(isset($event['logo']))
