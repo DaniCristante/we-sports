@@ -14,10 +14,10 @@
 
             <p>
 
-                <a href="{{'/'}}" class="btn btn-outline-dark">Página principal</a>
+                <a href="{{url('/')}}" class="btn btn-outline-dark">Página principal</a>
             </p>
             <p>
-                <a href="{{'/events'}}" class="btn btn-outline-dark">Ver eventos</a>
+                <a href="{{url('/events')}}" class="btn btn-outline-dark">Ver eventos</a>
             </p>
 
             <p>
