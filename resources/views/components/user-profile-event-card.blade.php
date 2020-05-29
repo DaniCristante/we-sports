@@ -19,7 +19,7 @@
                     </p>
 
                     <p>
-                        <i class="fas fa-map-marked-alt"></i>
+                        <i class="fas fa-city"></i>
                         <span class="mx-2">{{$event['city']}} </span>
                     </p>
 

@@ -28,7 +28,7 @@
                             <i class="fas fa-portrait mx-2 my-1"></i>{{$user['nickname']}}
                         </p>
                         <p>
-                            <i class="fas fas fa-map-marked-alt mx-2"></i>{{$user['city']}}
+                            <i class="fas fa-city mx-2"></i>{{$user['city']}}
                         </p>
                         <p>
                             <i class="fas fa-at my-1 mx-2"></i>{{$user['email']}}
