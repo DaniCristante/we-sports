@@ -1,8 +1,8 @@
 <div class="sideMenu bg-primary">
     <div class="sidebar">
 
-        <div class="fixed-top mt-3">
-            <button class="navbar-toggler sideMenuToggler mr-3 float-right" type="button">
+        <div class="fixed-top mt-3 d-none">
+            <button class="navbar-toggler sideMenuToggler mr-3 float-right" type="button" id="sideMenuTogglerInsideMenu">
                <i class="fas fa-times-circle text-danger"></i>
             </button>
         </div>
