@@ -15,7 +15,7 @@
 
         <div class="container-fluid">
             <div class="row justify-content-center my-3  p-1">
-                <div class="col-8 col-md-6 col-lg-3 mb-4    border border-primary" style="max-height: 625px">
+                <div class="col-8 col-md-6 col-lg-3 mb-4    border border-primary" style="max-height: 650px">
                     <img class="img-fluid my-1 p-5"
                          src="/{{$user['uimg']}}"
                          alt="Card image cap">

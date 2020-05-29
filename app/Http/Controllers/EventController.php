@@ -130,6 +130,8 @@ class EventController extends Controller
             'description' => ['required'],
             'sport_id' => ['required'],
             'max_participants' => ['required'],
+            'address' => ['required', 'string', 'max: 200'],
+            'city' => ['required', 'string', 'max: 100'],
             'datetime' => ['required', 'after_or_equal:' . Carbon::now('Europe/Madrid')]
         ]);
     }
@@ -139,32 +141,38 @@ class EventController extends Controller
         $eventId = $request->get('eid');
 
         $userToken = $request->session()->get('api_token');
-        $requestUrl = '/events/'.$eventId;
+        $requestUrl = '/events/' . $eventId;
         $response = $this->callHandler->authorizedDeleteMethodHandler($requestUrl, $userToken);
 
         $responseMessage = 'Evento creado correctamente';
-        if ($response->status() !== 204){
+        if ($response->status() !== 204) {
             $responseMessage = '¡Ups! Algo ha fallado en la petición';
         }
-        return  redirect()->back()->with('event-status', $responseMessage);
+        return redirect()->back()->with('event-status', $responseMessage);
     }
 
     public function updateEvent(Request $request)
     {
         $event = $request->get('event');
+        $datetime = $event['datetime'];
+        $datetime = str_replace(" ", "T", $datetime);
+
         return view('wesports.events.edit', [
-            'event' => $event
+            'event' => $event,
+            'datetime' => $datetime
         ]);
     }
 
     public function sendUpdate(Request $request)
     {
+        $this->editValidator($request->all())->validate();
+
         $userToken = $request->session()->get('api_token');
-        $requestUrl = '/events/'.$request->get('id');
+        $requestUrl = '/events/' . $request->get('id');
         $eventData = $request->all();
         unset($eventData['id']);
         unset($eventData['_token']);
-        if ($eventData['datetime'] === null){
+        if ($eventData['datetime'] === null) {
             unset($eventData['datetime']);
         }
         if ($request->file('img')) {
@@ -174,10 +182,20 @@ class EventController extends Controller
             }
         }
         $response = $this->callHandler->authorizedPutMethodHandler($requestUrl, $userToken, $eventData);
-        if ($response->status() !== 200){
+        if ($response->status() !== 200) {
             return redirect()->back()->with('error', 'El evento no se ha podido actualizar');
         }
         $id = $response->json()['id'];
-        return redirect('/events/'.$id)->with('updated', 'Evento actualizado correctamente');
+        return redirect('/events/' . $id)->with('updated', 'Evento actualizado correctamente');
+    }
+
+    public function editValidator(array $data)
+    {
+        return Validator::make($data, [
+            'title' => ['string', 'max:100'],
+            'city' => ['string', 'max: 100'],
+            'address' => ['string', 'max: 200'],
+            'datetime' => ['after_or_equal:' . Carbon::now('Europe/Madrid')]
+        ]);
     }
 }

@@ -33,6 +33,7 @@
                     </span>
                     @enderror
                 </div>
+
                 <hr class="bg-primary">
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-2">
@@ -43,13 +44,23 @@
                                class="form-control">
                     </div>
                 </div>
+                <div class="row my-2 justify-content-center align-items-center">
+                    <div class="col-12 col-md-2">
+                        <span>Nueva ciudad </span>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <input type="text" name="city" placeholder="City" value="{{$event['city']}}"
+                               class="form-control">
+                    </div>
+                </div>
+                <hr class="bg-primary">
 
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-2">
                         <span>Nueva fecha </span>
                     </div>
                     <div class="col-12 col-md-10">
-                        <input type="datetime-local" name="datetime"
+                        <input type="datetime-local" name="datetime" value="{{$datetime}}"
                                class="form-control @error('datetime') is-invalid @enderror">
                         @error('datetime')
                         <span class="invalid-feedback" role="alert">
