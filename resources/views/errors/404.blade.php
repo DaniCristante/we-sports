@@ -14,14 +14,14 @@
 
             <p>
 
-                <a href="/" class="btn btn-outline-dark">Página principal</a>
+                <a href="{{'/'}}" class="btn btn-outline-dark">Página principal</a>
             </p>
             <p>
-                <a href="/events" class="btn btn-outline-dark">Ver eventos</a>
+                <a href="{{'/events'}}" class="btn btn-outline-dark">Ver eventos</a>
             </p>
 
             <p>
-                <a href="/login" class="btn btn-outline-dark">Iniciar sessión</a>
+                <a href="{{url('/login')}}" class="btn btn-outline-dark">Iniciar sesinó</a>
             </p>
 
         </div>
