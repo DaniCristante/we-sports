@@ -6249,6 +6249,17 @@ input:read-only {
   transform-origin: 50% 50%;
 }
 
+#navMenuItems .dropdown-item {
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+
+#navMenuItems .dropdown-item:hover {
+  color: #3d5a80;
+  transition: all 1s ease;
+}
+
 .detalled-image:hover {
   width: 110%;
   box-shadow: 0 0 10px #98c1d9;
