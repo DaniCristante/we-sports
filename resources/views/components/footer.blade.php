@@ -4,13 +4,13 @@
             <h6>Acceso web</h6>
             <ul class="list-unstyled">
                 <li>
-                    <a href="/register" class="text-white-50">Crear cuenta</a>
+                    <a href="{{url('/register')}}" class="text-white-50">Crear cuenta</a>
                 </li>
                 <li>
-                    <a href="/login" class="text-white-50">Iniciar sesión</a>
+                    <a href="{{url('/login')}}" class="text-white-50">Iniciar sesión</a>
                 </li>
                 <li>
-                    <a href="/dashboard" class="text-white-50">Area personal</a>
+                    <a href="{{url('/dashboard')}}" class="text-white-50">Area personal</a>
                 </li>
             </ul>
         </div>
@@ -18,16 +18,13 @@
             <h6>Enlaces de la web </h6>
             <ul class="list-unstyled">
                 <li>
-                    <a href="" class="text-white-50">Pagina inicial</a>
+                    <a href="{{url('/')}}" class="text-white-50">Pagina inicial</a>
                 </li>
                 <li>
-                    <a href="/events" class="text-white-50">Eventos</a>
+                    <a href="{{url('/events')}}" class="text-white-50">Eventos</a>
                 </li>
                 <li>
-                    <a href="/events/create" class="text-white-50">Crear un evento</a>
-                </li>
-                <li>
-                    <a href="" class="text-white-50"></a>
+                    <a href="{{url('/events/create')}}" class="text-white-50">Crear un evento</a>
                 </li>
             </ul>
         </div>
