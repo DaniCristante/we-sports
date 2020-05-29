@@ -17,7 +17,7 @@
                         <span>Nuevo título </span>
                     </div>
                     <div class="col-12 col-md-10">
-                        <input type="text" name="title" class="form-control" value="{{$event['title']}}">
+                        <input type="text" name="title" class="form-control" value="{{$event['title']}}" required>
                     </div>
                 </div>
                 <div class="row my-2 justify-content-center align-items-center">
@@ -25,7 +25,7 @@
                         <span>Nueva descripción </span>
                     </div>
                     <div class="col-12 col-md-10">
-                        <textarea name="description" class="form-control">{{$event['description']}}</textarea>
+                        <textarea name="description" class="form-control" required>{{$event['description']}}</textarea>
                     </div>
                     @error('description')
                     <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-12 col-md-10">
                         <input type="text" name="address" placeholder="Dirección" value="{{$event['address']}}"
-                               class="form-control">
+                               class="form-control" required>
                     </div>
                 </div>
                 <div class="row my-2 justify-content-center align-items-center">
@@ -49,8 +49,8 @@
                         <span>Nueva ciudad </span>
                     </div>
                     <div class="col-12 col-md-10">
-                        <input type="text" name="city" placeholder="City" value="{{$event['city']}}"
-                               class="form-control">
+                        <input type="text" name="city" placeholder="Ciudad" value="{{$event['city']}}"
+                               class="form-control" required>
                     </div>
                 </div>
                 <hr class="bg-primary">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-12 col-md-10">
                         <input type="datetime-local" name="datetime" value="{{$datetime}}"
-                               class="form-control @error('datetime') is-invalid @enderror">
+                               class="form-control @error('datetime') is-invalid @enderror" required>
                         @error('datetime')
                         <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

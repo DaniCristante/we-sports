@@ -11,13 +11,13 @@
         <div class="form-group">
             <label>Nickname</label>
             <input type="text" class="form-control" readonly name="nickname" value="{{$data['nickname']}}">
-            <small class="alert-warning">este campo no se puede modificar</small>
+            <small class="alert-warning">Este campo no se puede modificar</small>
         </div>
 
         <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" readonly name="email" value="{{$data['email']}}">
-            <small class="alert-warning">este campo no se puede modificar</small>
+            <small class="alert-warning">Este campo no se puede modificar</small>
         </div>
 
         <hr class="bg-secondary">
