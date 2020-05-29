@@ -15,7 +15,7 @@
 
         <div class="container-fluid">
             <div class="row justify-content-center my-3  p-1">
-                <div class="col-8 col-md-6 col-lg-3 mb-4    border border-primary" style="max-height: 800px">
+                <div class="col-8 col-md-6 col-lg-3 mb-4    border border-primary" style="max-height: 550px">
                     <img class="img-fluid my-1 p-5"
                          src="/{{$user['uimg']}}"
                          alt="Card image cap">
@@ -42,9 +42,9 @@
 
                 </div>
 
-                <div class="col-12 col-lg-8  ml-md-1 row  justify-content-center ">
-                    <div class="my-2 text-center row m-0 p-0 justify-content-center   ">
-                        <ul class="list-group list-group-horizontal text-center">
+                <div class="col-12 col-lg-8  ml-md-1 row justify-content-center">
+                    <div class="text-center justify-content-center">
+                        <ul class="list-group list-group-horizontal">
                             <li class="list-group-item btn " id="eventsBtn">
                                 <i class="far fa-calendar-plus mx-1"></i>Eventos creados
                             </li>
@@ -52,7 +52,6 @@
                                 data-target="#eventosParticipados">
                                 <i class="far fa-calendar-check mx-1"></i>Eventos participados
                             </li>
-
                         </ul>
                     </div>
                     <div id="userContentField">
@@ -60,7 +59,6 @@
                             <x-user-profile-event-card :events="$createdEvents"/>
                         </div>
                         <div class="col-12 p-2 " id="usersEventsParticipate">
-
                             {{--TODO cambiar $createdEvents por eventos participados del usuario--}}
                             <x-user-profile-event-card :events="$eventParticipations"/>
                         </div>
