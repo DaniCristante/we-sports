@@ -34,7 +34,7 @@ class EventController extends Controller
                 'name' => $sport['name']
             ]);
         }
-        return view('events.create', array('sports' => $list));
+        return view('events.form-page', array('sports' => $list));
     }
 
     public function storeEvent(Request $request)
@@ -160,7 +160,7 @@ class EventController extends Controller
         $datetime = $event['datetime'];
         $datetime = str_replace(" ", "T", $datetime);
 
-        return view('events.edit', [
+        return view('events.form-page', [
             'event' => $event,
             'datetime' => $datetime
         ]);
