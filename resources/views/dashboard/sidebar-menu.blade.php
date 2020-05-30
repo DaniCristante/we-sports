@@ -6,7 +6,7 @@
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventsBtn">
                     <i class="far fa-calendar-plus text-white mx-2"></i>
-                    <span class="text-white">aknsdfasdfasdfasdf</span>
+                    <span class="text-white">{{__('messages.dashboard.sidebar.manage')}}</span>
                 </a>
             </li>
 
