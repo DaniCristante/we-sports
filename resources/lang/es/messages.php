@@ -8,6 +8,16 @@ return [
         'login' => 'Iniciar sesión',
         'register' => 'Regístrate'
     ],
+    'form-inputs' => [
+        'city' => 'Ciudad',
+        'sport' => 'Selecciona un deporte',
+        'date' => 'Fecha',
+        'find' => 'Buscar',
+    ],
+    'card' => [
+        'participants' => 'Participantes: :curr de :max',
+        'view' => 'Ver evento'
+    ],
     'homepage' => [
         'welcome' => 'Bienvenido a WeSports',
         'abstract' => 'Crea eventos, únete a actividades y comparte experiencias.',
@@ -15,10 +25,8 @@ return [
         'most-populated' => 'Eventos con más participantes',
         'view-more' => 'Ver todos'
     ],
-    'form-inputs' => [
-        'city' => 'Ciudad',
-        'sport' => 'Selecciona un deporte',
-        'date' => 'Fecha',
-        'find' => 'Buscar',
+    'listpage' => [
+        'title' => 'Eventos Disponibles',
+        'form-title' => 'Busca lo que interese',
     ]
 ];
