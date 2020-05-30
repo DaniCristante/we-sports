@@ -18,7 +18,7 @@
             <h6>{{__('messages.footer.links')}}</h6>
             <ul class="list-unstyled">
                 <li>
-                    <a href="{{url('/')}}" class="text-white-50">{{__('messages.footer.homepage')}}</a>
+                    <a href="{{url('/')}}" class="text-white-50">{{__('messages.footer.home')}}</a>
                 </li>
                 <li>
                     <a href="{{url('/events')}}" class="text-white-50">{{__('messages.footer.events')}}</a>
