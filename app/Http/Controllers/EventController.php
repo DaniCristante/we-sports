@@ -75,7 +75,7 @@ class EventController extends Controller
             $requestUrl .= 'date=' . $request->get('date') . '&';
         }
         $events = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
-        return view('events.events-page', [
+        return view('events.event-list-page', [
             'events' => $events,
             'sports' => $sports
         ]);

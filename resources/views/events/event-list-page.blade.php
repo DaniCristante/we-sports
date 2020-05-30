@@ -27,7 +27,11 @@
         </div>
 
         <div class="col-10 col-md-7">
-            @include('events.event-list')
+            <div id="eventsField" class="row justify-content-center">
+                @foreach($events as $event)
+                    @include('events.components.listpage-card')
+                @endforeach
+            </div>
         </div>
     </div>
 
