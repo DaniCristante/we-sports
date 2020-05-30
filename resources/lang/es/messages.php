@@ -53,5 +53,19 @@ return [
         'participations' => 'Eventos participados',
         'not-found'=> 'Usuario no encontrado',
         'return' => 'volver al home'
-    ]
+    ],
+    'dashboard' => [
+        'sidebar' => [
+            'manage' => 'Gestionar mis eventos',
+            'record' => 'Historial de eventos participados',
+            'create' => 'Crear evento',
+            'profile' => 'Ver mi perfil',
+            'update' => 'Actualizar mis datos personales',
+            'logout' => 'Cerrar sesión',
+            'events' => 'Eventos'
+        ],
+        'components' => [
+
+        ]
+    ],
 ];
