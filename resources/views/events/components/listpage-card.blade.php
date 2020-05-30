@@ -16,11 +16,8 @@
                 <i class="fas {{$event['logo']}} mr-2"></i> {{$event['name']}}
             </span>
             <span class="d-block">
-                            <i class="fas fa-users mr-2"></i>
-                {{__('messages.card.participants', [
-                        'curr' => $event['current_participants'], 'max' => $event['max_participants']
-                        ]
-                    )}}
+                <i class="fas fa-users mr-2"></i>{{__('messages.card.participants', [
+                                'curr' => $event['current_participants'], 'max' => $event['max_participants']])}}
 
             </span>
 
