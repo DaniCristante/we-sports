@@ -8,6 +8,24 @@ return [
         'login' => 'Iniciar sesión',
         'register' => 'Regístrate'
     ],
+    'register' => [
+        'title' => 'Crear una nueva cuenta',
+        'name' => 'Nombre',
+        'surnames' => 'Apellidos',
+        'password' => 'Contraseña',
+        'email' => 'Correo electrónico',
+        'confirm' => 'Confirma la contraseña',
+        'button' => 'Registrate',
+        'user' => '¿Ya estás registrado?',
+        'link' => 'Inicia sesión ahora',
+    ],
+    'login' => [
+        'title' => 'Iniciar sesión',
+        'email' => 'Correo electrónico',
+        'password' => 'Contraseña',
+        'notuser' => '¿Aún no tienes una cuenta?',
+        'link' => 'Regístrate ahora'
+    ],
     'create-page' => [
         'title' => 'Crear evento',
     ],

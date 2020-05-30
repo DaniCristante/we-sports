@@ -4,6 +4,8 @@
              alt="WeSports"
              width="180" height="40">
     </a>
+    <a href="{{url('locale/en')}}" class="text-white mr-2 nav-item"><img style="height: 30px;" src="{{asset('images/en.png')}}"> </a>
+    <a href="{{url('locale/es')}}" class="text-white nav-item"><img src="{{asset('images/es.png')}}"></a>
     <button class="navbar-toggler bg-secondary text-dark" type="button" data-toggle="collapse"
             data-target="#navbarMenuContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
