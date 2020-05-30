@@ -30,7 +30,7 @@
                            class="mx-2 btn btn-outline-warning text-danger" id="editEvent">
                             <i class="far fa-edit"></i>
                         </a>
-                        @include('components.delete-modal')
+                        @include('dashboard.components.delete-modal')
                         <button class="mx-2 btn btn-outline-warning text-danger" data-toggle="modal"
                                 data-target="#modalDelete">
                             <i class="fas fa-trash-alt"></i>

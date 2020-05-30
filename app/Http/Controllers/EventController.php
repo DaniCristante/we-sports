@@ -34,7 +34,7 @@ class EventController extends Controller
                 'name' => $sport['name']
             ]);
         }
-        return view('wesports.events.create', array('sports' => $list));
+        return view('events.create', array('sports' => $list));
     }
 
     public function storeEvent(Request $request)
@@ -75,7 +75,7 @@ class EventController extends Controller
             $requestUrl .= 'date=' . $request->get('date') . '&';
         }
         $events = $this->callHandler->unauthorizedGetMethodHandler($requestUrl);
-        return view('wesports.events.events-page', [
+        return view('events.events-page', [
             'events' => $events,
             'sports' => $sports
         ]);
@@ -116,7 +116,7 @@ class EventController extends Controller
             $isParticipating = $this->callHandler->unauthorizedGetMethodHandler($urlParticipating);
         }
 
-        return view('wesports.events.detail', [
+        return view('events.detail', [
             'event' => $event,
             'participants' => $participants,
             'loggedUserId' => $loggedUserId,
@@ -160,7 +160,7 @@ class EventController extends Controller
         $datetime = $event['datetime'];
         $datetime = str_replace(" ", "T", $datetime);
 
-        return view('wesports.events.edit', [
+        return view('events.edit', [
             'event' => $event,
             'datetime' => $datetime
         ]);

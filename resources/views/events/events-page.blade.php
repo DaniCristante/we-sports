@@ -27,7 +27,7 @@
         </div>
 
         <div class="col-10 col-md-7">
-            @include('wesports.events.event-list')
+            @include('events.event-list')
         </div>
     </div>
 

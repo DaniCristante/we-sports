@@ -6,10 +6,8 @@
         <div id="page-title">
             <h2 class="text-center h1 text-dark">Eventos con más participantes</h2>
         </div>
-        {{--        @include('wesports.events.event-list')--}}
         <div id="eventsField" class="row justify-content-center">
             @foreach($events as $event)
-                {{--        <x-event-ca rd-v2 :event="$event"/>--}}
                 @include('components.event-card')
             @endforeach
         </div>
