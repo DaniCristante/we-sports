@@ -102,5 +102,16 @@ return [
         'delete-event' => '¿Seguro que deseas eliminar este evento?',
         'yes' => 'Si',
         'no' => 'No'
+    ],
+    'footer' => [
+        'access' => 'Acceso a la web',
+        'signup' => 'Registro',
+        'login' => 'Iniciar sesión',
+        'personal' => 'Area personal',
+        'links' => 'Enlaces de la web',
+        'home' => 'Página principal',
+        'events' => 'Eventos',
+        'create' => 'Crea un evento',
+        'social' => 'Redes sociales'
     ]
 ];
