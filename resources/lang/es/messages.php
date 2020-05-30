@@ -75,6 +75,13 @@ return [
                 'address' => 'Dirección',
                 'update' => 'Actualizar datos'
             ],
+            'manage' => [
+                'empty' => 'Todavía no has creado ningún evento',
+                'link' => 'crea uno ahora',
+                'head' => 'Mis eventos',
+                'title' => 'Título',
+                'participants' => 'Participantes'
+            ],
         ]
     ],
 ];
