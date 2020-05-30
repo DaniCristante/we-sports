@@ -40,4 +40,10 @@ return [
     'detailpage' => [
         'related' => 'Eventos del mismo deporte'
     ],
+    'profile' => [
+        'created' => 'Eventos creados',
+        'participations' => 'Eventos participados',
+        'not-found'=> 'Usuario no encontrado',
+        'return' => 'volver al home'
+    ]
 ];
