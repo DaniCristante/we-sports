@@ -5,9 +5,9 @@
                 {{session('status')}}
             </div>
         @endif
-        @include('components.user-update-form')
-        @include('components.admin-events')
-        @include('components.participation-record')
+        @include('dashboard.components.update-user-form')
+        @include('dashboard.components.created-events')
+        @include('dashboard.components.participation-record')
     </div>
 </div>
 </div>

@@ -12,8 +12,8 @@
     </nav>
 
     <div class="wrapper d-flex " id="adminWrapper">
-        @include('components.admin-side-menu')
-        @include('components.admin-content')
+        @include('dashboard.sidebar-menu')
+        @include('dashboard.component-wrapper')
     </div>
 
     @error('phone')

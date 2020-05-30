@@ -32,7 +32,7 @@ class AdminController extends Controller
         $userData = $response->json()['user'];
         $userEvents = $this->getUserEvents($userId);
         $eventParticipations = $this->getUserParticipations($userId);
-        return view('manager.panel', [
+        return view('dashboard.panel', [
             'data' => $userData,
             'userEvents' => $userEvents,
             'eventParticipations' => $eventParticipations
