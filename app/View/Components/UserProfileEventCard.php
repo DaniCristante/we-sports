@@ -25,6 +25,6 @@ class UserProfileEventCard extends Component
      */
     public function render()
     {
-        return view('components.user-profile-event-card');
+        return view('user.components.event-card');
     }
 }

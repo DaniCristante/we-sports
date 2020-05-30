@@ -44,7 +44,7 @@
             <div class="text-center">
                 <h3 class="text-secondary">Eventos Relacionados</h3>
                 <hr class="bg-secondary">
-                @include('components.events-related')
+                @include('events.components.related-events')
             </div>
         </div>
     </div>
