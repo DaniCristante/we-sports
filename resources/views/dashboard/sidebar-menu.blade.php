@@ -6,41 +6,41 @@
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="eventsBtn">
                     <i class="far fa-calendar-plus text-white mx-2"></i>
-                    <span class="text-white">Gestionar mis eventos </span>
+                    <span class="text-white">{{__('messages.dashboard.sidebar.manage')}}</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="participation-record-button">
                     <i class="far fa-calendar-check text-white mx-2"></i>
-                    <span class="text-white">Historial eventos participados</span>
+                    <span class="text-white">{{__('messages.dashboard.sidebar.record')}}</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{url('events/create')}}" class="nav-link px-1 btn-outline-secondary">
                     <i class="fas fa-plus text-white mx-2"></i>
-                    <span class="text-white">Nuevo evento</span>
+                    <span class="text-white">{{__('messages.dashboard.sidebar.create')}}</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{url('/profile/'.$data['nickname'])}}" class="nav-link px-1 btn-outline-secondary">
                     <i class="fas fa-user text-white mx-2"></i>
-                    <span class="text-white">Ver mi perfil</span>
+                    <span class="text-white">{{__('messages.dashboard.sidebar.profile')}}</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link px-1 btn-outline-secondary" id="profileBtn">
                     <i class="fas fa-user-edit text-white mx-2"></i>
-                    <span class="text-white">Actualizar mis datos personales</span>
+                    <span class="text-white">{{__('messages.dashboard.sidebar.update')}}</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{url('/events')}}" class="nav-link px-1 btn-outline-secondary">
                     <i class="fas fa-calendar-alt text-white mx-2"></i>
-                    <span class="text-white">Eventos </span>
+                    <span class="text-white">{{__('messages.dashboard.sidebar.events')}}</span>
                 </a>
             </li>
 
@@ -49,7 +49,7 @@
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     <i class="fas fa-door-closed text-white mx-2"></i>
-                    <span class="text-white">Cerrar sesión</span>
+                    <span class="text-white">{{__('messages.dashboard.sidebar.logout')}}</span>
                 </a>
             </li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST"

@@ -14,10 +14,10 @@
         @guest
             <div class="nav-item text-center">
                 <a href="{{ route('register') }}" class=" text-decoration-none mx-1">
-                    <i class="fas fa-user-plus"> <span class="mx-1">Regístrate</span></i>
+                    <i class="fas fa-user-plus"> <span class="mx-1">{{__('messages.navbar.register')}}</span></i>
                 </a>
                 <a href="{{ route('login') }}" class="text-success text-decoration-none mx-1">
-                    <i class="fas fa-user"> <span class="mx-1">Iniciar sesión</span></i>
+                    <i class="fas fa-user"> <span class="mx-1">{{__('messages.navbar.login')}}</span></i>
                 </a>
             </div>
     </div>
@@ -26,18 +26,16 @@
         <div class="nav-item" id="navMenuItems">
 
             <ul class="navbar-nav mr-auto text-white">
-                <a class="dropdown-item " href="{{url('/dashboard')}}"><i class="fas fa-user-cog mr-2"></i>Gestión de cuenta y
-                    eventos</a>
-                <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}"><i class="fas fa-user mr-2"></i>Ver
-                    mi
-                    perfil</a>
-                <a class="dropdown-item" href="{{url('/events/create')}}"><i class="fas fa-plus mr-2"></i>Crear evento</a>
+                <a class="dropdown-item " href="{{url('/dashboard')}}">
+                    <i class="fas fa-user-cog mr-2"></i>{{__('messages.navbar.manage')}}</a>
+                <a class="dropdown-item" href="{{url('/profile/'.Auth::user()->nickname)}}">
+                    <i class="fas fa-user mr-2"></i>{{__('messages.navbar.my-profile')}}</a>
+                <a class="dropdown-item" href="{{url('/events/create')}}">
+                    <i class="fas fa-plus mr-2"></i>{{__('messages.navbar.create')}}</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();"><i
-                        class="fas fa-sign-out-alt mr-2"></i>
-                    Cerrar sesión
-                </a>
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt mr-2"></i>{{__('messages.navbar.logout')}}</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                       style="display: none;">
                     @csrf

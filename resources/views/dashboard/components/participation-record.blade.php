@@ -1,5 +1,5 @@
 <div id="participation-record" class="pt-4">
-    <h3 class="form-title my-3">Eventos participados</h3>
+    <h3 class="form-title text-center my-3">{{__('messages.dashboard.components.participation.head')}}</h3>
     @foreach($eventParticipations as $event)
 
         <a href="{{url('events/'.$event['id'])}}" class="text-decoration-none">
@@ -7,7 +7,7 @@
 
                 <div class="col-12 col-md-4">
                     <p>
-                        Evento : <strong> {{$event['title']}} </strong>
+                        {{__('messages.dashboard.components.participation.event')}} <strong> {{$event['title']}} </strong>
                     </p>
                 </div>
                 <div class="col-6 col-md-4">

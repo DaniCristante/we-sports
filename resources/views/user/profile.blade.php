@@ -7,10 +7,10 @@
 @section('content')
     @if(!isset($user))
         <div class="text-center mb-3">
-            <h3 class="alert alert-danger">Usuario no encontrado.</h3>
+            <h3 class="alert alert-danger">{{__('messages.profile.not-found')}}</h3>
         </div>
         <div class="my-3 text-center">
-            <a href="{{url('/')}}">Volver a la página inicial</a>
+            <a href="{{url('/')}}">{{__('messages.profile.return')}}</a>
         </div>
 
     @else
@@ -47,11 +47,11 @@
                     <div class="text-center justify-content-center col-12">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item btn " id="eventsBtn">
-                                <i class="far fa-calendar-plus mx-1"></i>Eventos creados
+                                <i class="far fa-calendar-plus mx-1"></i>{{__('messages.profile.created')}}
                             </li>
                             <li class="list-group-item btn" data-toggle="collapse" id="eventsParticipateBtn"
                                 data-target="#eventosParticipados">
-                                <i class="far fa-calendar-check mx-1"></i>Eventos participados
+                                <i class="far fa-calendar-check mx-1"></i>{{__('messages.profile.participations')}}
                             </li>
                         </ul>
                     </div>
