@@ -65,7 +65,16 @@ return [
             'events' => 'Eventos'
         ],
         'components' => [
-
+            'update-form' => [
+                'cant-modify' => 'Este campo no se puede modificar',
+                'image' => 'Imagen de perfil',
+                'name' => 'Nombre',
+                'surnames' => 'Apellidos',
+                'phone' => 'Número de teléfono',
+                'city' => 'Ciudad',
+                'address' => 'Dirección',
+                'update' => 'Actualizar datos'
+            ],
         ]
     ],
 ];
