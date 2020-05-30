@@ -10,7 +10,7 @@
                     {{__('messages.dashboard.components.manage.link')}}</a>
             </h3>
     @else
-        <h3 class="form-title text-center">{{__('messages.dashboard.components.manage.head')}}</h3>
+        <h3 class="form-title my-3 text-center">{{__('messages.dashboard.components.manage.head')}}</h3>
         @foreach($userEvents as $userEvent)
             <div class="row  justify-content-around border border-primary m-0 my-2 p-3  admin-event-card">
                 <div class="col-7 col-md-5">

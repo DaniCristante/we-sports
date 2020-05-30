@@ -75,6 +75,10 @@ return [
                 'address' => 'Dirección',
                 'update' => 'Actualizar datos'
             ],
+            'participation' => [
+                'head' => 'Eventos en los que has participado',
+                'event' => 'Evento:'
+            ],
             'manage' => [
                 'empty' => 'Todavía no has creado ningún evento',
                 'link' => 'crea uno ahora',
@@ -84,4 +88,9 @@ return [
             ],
         ]
     ],
+    'modal' => [
+        'delete-event' => '¿Seguro que deseas eliminar este evento?',
+        'yes' => 'Si',
+        'no' => 'No'
+    ]
 ];
