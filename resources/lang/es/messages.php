@@ -11,6 +11,16 @@ return [
     'create-page' => [
         'title' => 'Crear evento',
     ],
+    'update-page' => [
+        'head' => 'Editar evento',
+        'title' => 'Nuevo título',
+        'description' => 'Nueva descripción',
+        'address' => 'Nueva dirección',
+        'city' => 'Nueva ciudad',
+        'date' => 'Nueva fecha',
+        'image' => 'Nueva imagen',
+        'button' => 'Actualizar evento'
+    ],
     'form-inputs' => [
         'city' => 'Ciudad',
         'sport' => 'Selecciona un deporte',
