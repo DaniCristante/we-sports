@@ -8,11 +8,19 @@ return [
         'login' => 'Iniciar sesión',
         'register' => 'Regístrate'
     ],
+    'create-page' => [
+        'title' => 'Crear evento',
+    ],
     'form-inputs' => [
         'city' => 'Ciudad',
         'sport' => 'Selecciona un deporte',
-        'date' => 'Fecha',
         'find' => 'Buscar',
+        'title' => 'Título',
+        'description' => 'Descripción',
+        'participants' => 'Participantes máximos',
+        'address' => 'Dirección del evento',
+        'image' => 'Imagen',
+        'date' => 'Fecha del evento'
     ],
     'card' => [
         'participants' => 'Participantes: :curr de :max',

@@ -6,7 +6,7 @@
             @csrf
             <div class="row align-items-center justify-content-between form-title mb-2 ">
                 <h4>
-                    Crear evento
+                    {{__('messages.create-page.title')}}
                 </h4>
                 <img src="{{asset('images/favicon.png')}}" alt="WeSports"
                      class="float-left border rounded-lg border-secondary" width="40" height="40">
@@ -14,7 +14,7 @@
             <div>
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-2">
-                        <span>Título </span>
+                        <span>{{__('messages.form-inputs.title')}} </span>
                     </div>
                     <div class="col-12 col-md-10">
                         <input type="text" name="title" class="form-control" value="{{old('title')}}" required>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-2">
-                        <span>Descripción </span>
+                        <span>{{__('messages.form-inputs.description')}} </span>
                     </div>
                     <div class="col-12 col-md-10">
                         <textarea name="description" class="form-control" required>{{old('description')}}</textarea>
@@ -35,9 +35,9 @@
                 </div>
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-8">
-                        <span>Selecciona un deporte</span>
+                        <span>{{__('messages.form-inputs.sport')}}</span>
                         <select name="sport_id" class="form-control" required>
-                            <option selected disabled hidden>Lista de deportes</option>
+                            <option selected disabled hidden>{{__('messages.form-inputs.sport')}}</option>
                             @foreach($sports as $sport)
                                 <option value="{{$sport['id']}}"
                                         class="form-control">{{$sport['name']}}</option>
@@ -45,7 +45,7 @@
                         </select>
                     </div>
                     <div class="col-12 col-md-4 ">
-                        <span>Participantes</span>
+                        <span>{{__('messages.form-inputs.participants')}}</span>
                         <input type="number" name="max_participants" class="form-control" min="1"
                                value="{{old('max_participants')}}" required>
                     </div>
@@ -55,16 +55,16 @@
 
                 <div class="row my-2 justify-content-center align-items-center">
                     <div class="col-12 col-md-7">
-                        <input type="text" name="address" placeholder="Dirección" value="{{old('address')}}" required
+                        <input type="text" name="address" placeholder="{{__('messages.form-inputs.address')}}" value="{{old('address')}}" required
                                class="form-control my-1">
                     </div>
                     <div class="col-12 col-md-5">
-                        <input type="text" name="city" placeholder="Ciudad" value="{{old('city')}}" required
+                        <input type="text" name="city" placeholder="{{__('messages.form-inputs.city')}}" value="{{old('city')}}" required
                                class="form-control my-1">
 
                     </div>
                     <div class="col-10 col-md-6 my-2 ">
-                        <span>Fecha</span>
+                        <span>{{__('messages.form-inputs.date')}}</span>
                         <input type="datetime-local" name="datetime" value="{{old('datetime')}}"
                                class="form-control @error('datetime') is-invalid @enderror"
                                required>
@@ -75,7 +75,7 @@
                         @enderror
                     </div>
                     <div class="col-10 col-md-6 my-2 ">
-                        <span>Imagen</span>
+                        <span>{{__('messages.form-inputs.image')}}</span>
                         <input type="file" name="img" class="form-control @error('img') is-invalid @enderror">
                         @error('img')
                         <span class="invalid-feedback" role="alert">
@@ -91,7 +91,7 @@
             <div class="text-center">
                 <input
                     type="submit"
-                    value="Crear evento"
+                    value="{{__('messages.create-page.title')}}"
                     class="btn btn-success p-2 my-2  w-50"
                 />
             </div>
