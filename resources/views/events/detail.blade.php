@@ -42,7 +42,7 @@
         </div>
         <div class="my-3">
             <div class="text-center">
-                <h3 class="text-secondary">{{__('messages.detailpage.related')}}</h3>
+                <h3 class="text-secondary">Eventos Relacionados</h3>
                 <hr class="bg-secondary">
                 @include('events.components.related-events')
             </div>

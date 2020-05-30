@@ -16,12 +16,6 @@
                 <i class="fas {{$event['logo']}} mr-2"></i> {{$event['name']}}
             </span>
             <span class="d-block">
-                <i class="fas fa-users mr-2"></i>{{__('messages.card.participants', [
-                                'curr' => $event['current_participants'], 'max' => $event['max_participants']])}}
-
-            </span>
-
-            <span class="d-block">
                 <i class="fas fa-calendar-alt mr-2"></i> {{substr($event['datetime'],0,10)}} <span
                     class="btn-warning ">{{substr($event['datetime'],-9,6)}}</span>
             </span>
@@ -30,6 +24,10 @@
                 <i class="fas fa-map-marked-alt mr-2"></i> {{$event['city']}}
              </span>
 
+            <span class="d-block">
+                            <i class="fas fa-users mr-2"></i>  Participantes {{$event['current_participants']}} de {{$event['max_participants']}}
+
+            </span>
             <span class="d-block mr-2">
                     <x-progress-bar :event="$event"/>
             </span>
@@ -44,7 +42,6 @@
     </div>
 
     <div class="card-footer bg-white mr-auto ml-auto">
-        <a href="{{url('events/'.$event['id'])}}" class="float-left btn btn-info ">
-            {{__('messages.card.view')}}</a>
+        <a href="{{url('events/'.$event['id'])}}" class="float-left btn btn-info ">Ver evento</a>
     </div>
 </div>

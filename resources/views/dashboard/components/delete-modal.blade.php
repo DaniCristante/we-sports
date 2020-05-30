@@ -3,11 +3,11 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center">{{__('messages.modal.delete-event')}}</h5>
+                <h5 class="modal-title text-center">¿Seguro que deseas eliminar el evento?</h5>
             </div>
             <div class="modal-body">
-                <a href="{{url('events/delete?eid='.$userEvent['id'])}}" class="btn btn-primary">{{__('messages.modal.yes')}}</a>
-                <button class="btn-primary btn" data-dismiss="modal">{{__('messages.modal.no')}}</button>
+                <a href="{{url('events/delete?eid='.$userEvent['id'])}}" class="btn btn-primary">Si</a>
+                <button class="btn-primary btn" data-dismiss="modal">No</button>
             </div>
         </div>
     </div>

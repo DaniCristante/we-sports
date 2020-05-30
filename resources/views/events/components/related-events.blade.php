@@ -6,11 +6,10 @@
             </div>
             <div class="text-center mr-auto ml-auto my-1">
                 <h6 class="">{{$event['title']}}</h6>
-                <p><i class="fas fa-users mr-2">
-                    </i>{{__('messages.card.participants',
-                            ['curr' => $event['current_participants'], 'max' => $event['max_participants']])}}</p>
+                <p><i class="fas fa-users mr-2"></i>{{$event['current_participants']}} de {{$event['max_participants']}}
+                    participantes</p>
                 <p><i class="fas fa-calendar-alt mr-2"></i>{{$event['datetime']}}</p>
-                <a href="{{url('events/'.$event['id'])}}" class="btn btn-info ">{{__('messages.card.view')}}</a>
+                <a href="{{url('events/'.$event['id'])}}" class="btn btn-info ">Ver evento</a>
             </div>
         </div>
     @endforeach
