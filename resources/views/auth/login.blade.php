@@ -2,7 +2,7 @@
 @section('title', 'Iniciar sesión')
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-12 col-xs-7 col-md-6 " id="loginPanel">
+        <div class="col-12 col-xs-7 col-md-6 my-5" id="loginPanel">
             <form action="{{route('login')}}" class="form-group form p-4" method="POST">
                 @csrf
                 <div class="row align-items-center justify-content-between form-title mb-2 ">

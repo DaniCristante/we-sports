@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Registro')
 @section('content')
-    <div class="row justify-content-center">
-        <div id="registerPanel" class="col-12 col-xs-7 col-md-6">
+    <div class="row justify-content-center my-3">
+        <div id="registerPanel" class="col-12 col-xs-7 col-md-6 ">
             <form action="{{route('register')}}" class="form-group form text-center p-4" method="POST">
                 @csrf
                 <div class="row align-items-center justify-content-between form-title mb-2 ">
