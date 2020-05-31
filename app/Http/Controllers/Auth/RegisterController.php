@@ -94,6 +94,6 @@ class RegisterController extends Controller
 
         return $request->wantsJson()
             ? new Response('', 201)
-            : redirect($this->redirectPath())->with('status', 'Registro completado!');
+            : redirect($this->redirectPath())->with('status', 'Registro completado, por favor, inicia sesión');
     }
 }
