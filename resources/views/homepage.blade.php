@@ -3,7 +3,7 @@
 @section('content')
     @include('components.header')
     <div id="homePageContent" class="mt-4">
-{{--        <h3>test</h3>--}}
+        <h3>test</h3>
         <div id="page-title">
             <h2 class="text-center h1 text-dark">{{__('messages.homepage.most-populated')}}</h2>
         </div>
