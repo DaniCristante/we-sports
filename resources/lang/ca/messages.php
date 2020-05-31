@@ -63,7 +63,7 @@ return [
         'list-title' => 'Llista de participants'
     ],
     'homepage' => [
-        'welcome' => 'Bienvingut a WeSports',
+        'welcome' => 'Benvingut a WeSports',
         'abstract' => 'Crea esdeveniments, uneix-te a activitats i comparteix experiències.',
         'filter' => 'Filtra per citat, data o esport',
         'most-populated' => 'Events amb més participants',
