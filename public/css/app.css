@@ -6072,6 +6072,11 @@ body {
   font-size: medium;
 }
 
+#googleMap {
+  width: 250px;
+  height: 250px;
+}
+
 h1 {
   font-weight: 900;
   text-align: center;
