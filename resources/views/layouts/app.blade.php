@@ -50,7 +50,5 @@
 </div>
 
 @yield('scripts')
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXEFUYfPCwk6wHgcpz1p33o8wxz1Iridg&callback=initMap"
-        async defer type="text/javascript"></script>
 </body>
 </html>
