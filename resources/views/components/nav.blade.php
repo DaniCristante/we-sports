@@ -16,18 +16,17 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarMenuContent">
         @guest
             <div class="nav-item text-center">
-                <a href="{{ route('register') }}" class=" text-decoration-none mx-1">
-                    <i class="fas fa-user-plus"> <span class="mx-1">{{__('messages.navbar.register')}}</span></i>
+                <a href="{{ route('register') }}" class="text-white mx-1">
+                    <i class="fas fa-user-plus"></i>{{__('messages.navbar.register')}}
                 </a>
-                <a href="{{ route('login') }}" class="text-success text-decoration-none mx-1">
-                    <i class="fas fa-user"> <span class="mx-1">{{__('messages.navbar.login')}}</span></i>
+                <a href="{{ route('login') }}" class="text-white mx-1">
+                    <i class="fas fa-user"></i>{{__('messages.navbar.login')}}
                 </a>
             </div>
     </div>
 
     @else
         <div class="nav-item" id="navMenuItems">
-
             <ul class="navbar-nav mr-auto text-white">
                 <a class="dropdown-item " href="{{url('/dashboard')}}">
                     <i class="fas fa-user-cog mr-2"></i>{{__('messages.navbar.manage')}}</a>
