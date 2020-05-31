@@ -66,7 +66,7 @@ return [
         'welcome' => 'Benvingut a WeSports',
         'abstract' => 'Crea esdeveniments, uneix-te a activitats i comparteix experiències.',
         'filter' => 'Filtra per citat, data o esport',
-        'most-populated' => 'Events amb més participants',
+        'most-populated' => 'Esdeveniments amb més participants',
         'view-more' => 'Veure tots'
     ],
     'listpage' => [
