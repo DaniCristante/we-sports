@@ -14,6 +14,6 @@ return [
     */
 
     'failed' => 'Email i/o contrasenya incorrectes',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'throttle' => 'Molts intents de login. Si us plau, torni a intentar-ho en :seconds segons.',
 
 ];
