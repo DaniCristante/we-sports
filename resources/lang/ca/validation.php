@@ -116,33 +116,12 @@ return [
     'url' => 'El formato de :attribute es inválido.',
     'uuid' => 'El :attribute debe ser un UUID valido.',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Validación del idioma personalizado
-    |--------------------------------------------------------------------------
-    |
-    | Aquí puede especificar mensajes de validación personalizados para atributos utilizando el
-    | convención "attribute.rule" para nombrar las líneas. Esto hace que sea rápido
-    | especifique una línea de idioma personalizada específica para una regla de atributo dada.
-    |
-    */
-
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Atributos de validación personalizados
-    |--------------------------------------------------------------------------
-    |
-    | Las siguientes líneas de idioma se utilizan para intercambiar los marcadores de posición de atributo.
-    | con algo más fácil de leer, como la dirección de correo electrónico.
-    | de "email". Esto simplemente nos ayuda a hacer los mensajes un poco más limpios.
-    |
-    */
 
     'attributes' => [],
 
