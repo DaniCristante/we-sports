@@ -60,7 +60,8 @@ return [
         'login' => 'Inicia sesión para apuntarte',
         'join' => 'Apuntarse',
         'leave' => 'Desapuntarse',
-        'list-title' => 'Lista de participantes'
+        'list-title' => 'Lista de participantes',
+        'full' => 'El evento está lleno.'
     ],
     'homepage' => [
         'welcome' => 'Bienvenido a WeSports',
@@ -74,7 +75,8 @@ return [
         'form-title' => 'Busca lo que interese',
     ],
     'detailpage' => [
-        'related' => 'Eventos del mismo deporte'
+        'related' => 'Eventos del mismo deporte',
+        'empty' => 'No hay eventos relacionados'
     ],
     'profile' => [
         'created' => 'Eventos creados',

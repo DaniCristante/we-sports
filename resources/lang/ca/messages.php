@@ -60,7 +60,8 @@ return [
         'login' => 'Inicia sessió per apuntar-te',
         'join' => 'Apunta\'t',
         'leave' => 'Desapuntar-se',
-        'list-title' => 'Llista de participants'
+        'list-title' => 'Llista de participants',
+        'full' => 'L\'esdeveniment està plè'
     ],
     'homepage' => [
         'welcome' => 'Benvingut a WeSports',
@@ -74,7 +75,8 @@ return [
         'form-title' => 'Busca allò que t\'interessi',
     ],
     'detailpage' => [
-        'related' => 'Esdeveniments rel·lacionats'
+        'related' => 'Esdeveniments rel·lacionats',
+        'empty' => 'Encara no hi ha esdeveniments relaciontas'
     ],
     'profile' => [
         'created' => 'Esdeveniments creats',

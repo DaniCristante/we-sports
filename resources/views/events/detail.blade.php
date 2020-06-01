@@ -40,11 +40,16 @@
             </div>
             @include('components.participant-list')
         </div>
+
         <div class="my-3">
             <div class="text-center">
-                <h3 class="text-secondary">{{__('messages.detailpage.related')}}</h3>
-                <hr class="bg-secondary">
-                @include('events.components.related-events')
+                @if(empty($relatedEvents))
+                    <h3 class="text-secondary">{{__('messages.detailpage.empty')}}</h3>
+                @else
+                    <h3 class="text-secondary">{{__('messages.detailpage.related')}}</h3>
+                    <hr class="bg-secondary">
+                    @include('events.components.related-events')
+                @endif
             </div>
         </div>
     </div>
