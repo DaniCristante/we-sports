@@ -68,7 +68,6 @@
         let postParticipantUrl = 'http://52.91.0.226:8000/api/participants';
         let userUrl = 'http://52.91.0.226:8000/api/users/';
         let participantsUrl = 'http://52.91.0.226:8000/api/events/' + eventId + '/participants';
-        let profileUrl = 'http://52.91.0.226/profile/';
         if (isParticipating === 1) {
             $('#delete-button').show();
             $('#participate-button').hide();
@@ -114,7 +113,7 @@
                             $('#button-container').append(successElement);
                             let participantElement = document.createElement('li');
                             let participantA = document.createElement('a');
-                            participantA.setAttribute("href", profileUrl + result.nickname);
+                            participantA.setAttribute("href", '/profile/' + result.nickname);
                             participantA.innerText = result.nickname;
                             participantElement.appendChild(participantA);
                             participantElement.setAttribute('class', 'my-1 participant-list text-uppercase text-dark');
@@ -164,7 +163,7 @@
                             for (var i = 0; i < result.length; i++) {
                                 let participantElement = document.createElement('li');
                                 let participantA = document.createElement('a');
-                                participantA.setAttribute("href", profileUrl + result[i].nickname);
+                                participantA.setAttribute("href", '/profile/' + result[i].nickname);
                                 participantA.innerText = result[i].nickname;
                                 participantElement.appendChild(participantA);
                                 participantElement.setAttribute('class', 'my-1 participant-list text-uppercase text-dark');
