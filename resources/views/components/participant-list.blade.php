@@ -35,7 +35,7 @@
         <ul id="list-parent" class="list-group collapse">
 
             @foreach($participants as $participant)
-                <li class="my-1 participant-list text-uppercase text-dark">{{$participant['nickname']}}</li>
+                <li class="my-1 participant-list text-uppercase text-dark"><a href="{{url('profile/'.$participant['nickname'])}}">{{$participant['nickname']}}</a></li>
             @endforeach
         </ul>
     </div>
