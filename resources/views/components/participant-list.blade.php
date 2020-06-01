@@ -14,11 +14,15 @@
     <div class="col-12 text-center text-uppercase my-2">
 
         <div id="button-container">
-            @if ($loggedUserId != null)
-                <button id="participate-button" class="btn btn-success">{{__('messages.participant-list.join')}}</button>
-                <button id="delete-button" class="btn btn-warning">{{__('messages.participant-list.leave')}}</button>
+            @if($event['current_participants'] === $event['max_participants'])
+                <p class="text-danger">{{__('messages.participant-list.full')}}</p>
             @else
-                <a href="{{url('login')}}" class="btn btn-success">{{__('messages.participant-list.login')}}</a>
+                @if ($loggedUserId != null)
+                    <button id="participate-button" class="btn btn-success">{{__('messages.participant-list.join')}}</button>
+                    <button id="delete-button" class="btn btn-warning">{{__('messages.participant-list.leave')}}</button>
+                @else
+                    <a href="{{url('login')}}" class="btn btn-success">{{__('messages.participant-list.login')}}</a>
+                @endif
             @endif
         </div>
     </div>

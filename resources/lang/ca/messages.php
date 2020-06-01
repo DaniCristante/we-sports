@@ -60,7 +60,8 @@ return [
         'login' => 'Inicia sessió per apuntar-te',
         'join' => 'Apunta\'t',
         'leave' => 'Desapuntar-se',
-        'list-title' => 'Llista de participants'
+        'list-title' => 'Llista de participants',
+        'full' => 'L\'esdeveniment està plè'
     ],
     'homepage' => [
         'welcome' => 'Benvingut a WeSports',

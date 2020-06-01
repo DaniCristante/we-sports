@@ -60,7 +60,8 @@ return [
         'login' => 'Log in to join this event',
         'join' => 'Join event',
         'leave' => 'Leave event',
-        'list-title' => 'List of participants'
+        'list-title' => 'List of participants',
+        'full' => 'Event is full.'
     ],
     'homepage' => [
         'welcome' => 'Welcome to WeSports',
