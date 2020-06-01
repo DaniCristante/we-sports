@@ -28,15 +28,19 @@
                         <p>
                             <i class="fas fa-portrait mx-2 my-1"></i>{{$user['nickname']}}
                         </p>
-                        <p>
-                            <i class="fas fa-city mx-2"></i>{{$user['city']}}
-                        </p>
+                        @if(isset($user['city']))
+                            <p>
+                                <i class="fas fa-city mx-2"></i>{{$user['city']}}
+                            </p>
+                        @endif
                         <p>
                             <i class="fas fa-at my-1 mx-2"></i>{{$user['email']}}
                         </p>
-                        <p>
-                            <i class="fas fa-mobile-alt my-1 mx-2"></i>{{$user['phone']}}
-                        </p>
+                        @if(isset($user['phone']))
+                            <p>
+                                <i class="fas fa-mobile-alt my-1 mx-2"></i>{{$user['phone']}}
+                            </p>
+                        @endif
 
 
                     </div>
