@@ -74,7 +74,8 @@ return [
         'form-title' => 'Busca lo que interese',
     ],
     'detailpage' => [
-        'related' => 'Eventos del mismo deporte'
+        'related' => 'Eventos del mismo deporte',
+        'empty' => 'No hay eventos relacionados'
     ],
     'profile' => [
         'created' => 'Eventos creados',

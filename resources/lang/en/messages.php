@@ -74,7 +74,8 @@ return [
         'form-title' => 'Find what interests you',
     ],
     'detailpage' => [
-        'related' => 'Related events'
+        'related' => 'Related events',
+        'empty' => 'There are not related events'
     ],
     'profile' => [
         'created' => 'Create events',

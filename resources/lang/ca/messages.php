@@ -74,7 +74,8 @@ return [
         'form-title' => 'Busca allò que t\'interessi',
     ],
     'detailpage' => [
-        'related' => 'Esdeveniments rel·lacionats'
+        'related' => 'Esdeveniments rel·lacionats',
+        'empty' => 'Encara no hi ha esdeveniments relaciontas'
     ],
     'profile' => [
         'created' => 'Esdeveniments creats',
