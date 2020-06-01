@@ -16,7 +16,7 @@
     @else
 
         <div class="container-fluid">
-                <div class="row justify-content-center my-3  p-1">
+                <div class="row justify-content-center my-3 p-1 align-items-start">
                     <div class="col-8 col-md-6 col-lg-3 mb-4 border border-primary">
                         <img class="img-fluid my-1 p-5"
                              src="{{'/'.$user['uimg']}}"
@@ -47,9 +47,9 @@
 
                     </div>
 
-                    <div class="col-12 col-lg-8  ml-md-1 row justify-content-start">
+                    <div class="col-12 col-lg-8  ml-md-1 row justify-content-center">
                         <div class="text-center justify-content-center col-12">
-                            <ul class="list-group list-group-horizontal">
+                            <ul class="list-group list-group-horizontal justify-content-center">
                                 <li class="list-group-item btn " id="eventsBtn">
                                     <i class="far fa-calendar-plus mx-1"></i>{{__('messages.profile.created')}}
                                 </li>
@@ -59,7 +59,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div id="userContentField" class="justify-content-center align-items-start">
+                        <div id="userContentField" class="text-center">
                             <div class="col-12 p-2" id="usersEvents">
                                 <x-user-profile-event-card :events="$createdEvents"/>
                             </div>
