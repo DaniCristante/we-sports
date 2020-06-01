@@ -68,12 +68,13 @@
         let postParticipantUrl = 'http://52.91.0.226:8000/api/participants';
         let userUrl = 'http://52.91.0.226:8000/api/users/';
         let participantsUrl = 'http://52.91.0.226:8000/api/events/' + eventId + '/participants';
+        let profileUrl = 'http://52.91.0.226/profile/';
         if (isParticipating === 1) {
             $('#delete-button').show();
             $('#participate-button').hide();
             $('#event-full').hide();
         } else {
-            if (numberOfParticipants >= maxNumOfPArticipants){
+            if (numberOfParticipants >= maxNumOfPArticipants) {
                 $('#event-full').show();
                 $('#delete-button').hide();
                 $('#participate-button').hide();
@@ -112,7 +113,10 @@
                         success: function (result) {
                             $('#button-container').append(successElement);
                             let participantElement = document.createElement('li');
-                            participantElement.innerText = result.nickname;
+                            let participantA = document.createElement('a');
+                            participantA.setAttribute("href", profileUrl + result.nickname);
+                            participantA.innerText = result.nickname;
+                            participantElement.appendChild(participantA);
                             participantElement.setAttribute('class', 'my-1 participant-list text-uppercase text-dark');
                             listParent.appendChild(participantElement);
                             document.getElementById('current-participants').innerText = numberOfParticipants + 1;
@@ -159,8 +163,11 @@
                             $('#list-parent').empty();
                             for (var i = 0; i < result.length; i++) {
                                 let participantElement = document.createElement('li');
+                                let participantA = document.createElement('a');
+                                participantA.setAttribute("href", profileUrl + result[i].nickname);
+                                participantA.innerText = result[i].nickname;
+                                participantElement.appendChild(participantA);
                                 participantElement.setAttribute('class', 'my-1 participant-list text-uppercase text-dark');
-                                participantElement.innerText = result[i].nickname;
                                 listParent.appendChild(participantElement);
                             }
                             $('#participate-button').show().prop("disabled", true);
