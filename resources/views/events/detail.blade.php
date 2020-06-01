@@ -64,15 +64,24 @@
         let token = {!! json_encode($token) !!};
         let isParticipating = {!! json_encode($isParticipating) !!};
         let numberOfParticipants = {!! json_encode($event['current_participants']) !!};
+        let maxNumOfPArticipants = {!! json_encode($event['max_participants']) !!};
         let postParticipantUrl = 'http://52.91.0.226:8000/api/participants';
         let userUrl = 'http://52.91.0.226:8000/api/users/';
         let participantsUrl = 'http://52.91.0.226:8000/api/events/' + eventId + '/participants';
         if (isParticipating === 1) {
             $('#delete-button').show();
             $('#participate-button').hide();
+            $('#event-full').hide();
         } else {
-            $('#delete-button').hide();
-            $('#participate-button').show();
+            if (numberOfParticipants >= maxNumOfPArticipants){
+                $('#event-full').show();
+                $('#delete-button').hide();
+                $('#participate-button').hide();
+            } else {
+                $('#delete-button').hide();
+                $('#participate-button').show();
+                $('#event-full').hide();
+            }
         }
         $('#participate-button').click(function () {
             $.ajax
