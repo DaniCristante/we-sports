@@ -16,11 +16,7 @@
     @else
 
         <div class="container-fluid">
-            <<<<<<< HEAD
-            <div class="row justify-content-center my-3 align-items-start  p-1">
-                =======
                 <div class="row justify-content-center my-3  p-1">
-                    >>>>>>> 209216fc3dcfe1c9c7db6d11b8d17bd5b800cb59
                     <div class="col-8 col-md-6 col-lg-3 mb-4 border border-primary">
                         <img class="img-fluid my-1 p-5"
                              src="{{'/'.$user['uimg']}}"
