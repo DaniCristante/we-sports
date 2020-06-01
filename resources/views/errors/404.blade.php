@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center p-2 my-2 align-items-center">
         <div class="col-10 col-md-6">
-            <img src="{{asset('/images/404.jpg')}}" class="img-fluid border border-secondary">
+            <img src="{{asset('/images/75327756_photo-of-a-man-wearing-black-leather-jacket-977796.jpg')}}" class="img-fluid border border-secondary">
         </div>
         <div class="col-10 col-md-4 text-center">
             <h3 class="text-uppercase">OOOOOPPPPSSSS <br>página no encontrada</h3>
